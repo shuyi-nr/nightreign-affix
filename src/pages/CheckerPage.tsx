@@ -1,11 +1,15 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { ChangeEvent } from 'react';
 import { AffixPicker } from '../components/AffixPicker';
+import { EmptyState } from '../components/EmptyState';
 import { catalog, getAffix } from '../lib/catalog';
 import { CHECK_MODES, MODE_ORDER, validate } from '../lib/engine';
-import { loadFavorites, removeFavorite, saveFavorite, type SavedBuild } from '../lib/storage';
+import { exportFavoritesJson, importFavoritesJson, loadFavorites, removeFavorite, saveFavorite, type SavedBuild } from '../lib/storage';
 import type { CatalogEntry, CheckModeKey, CheckResult } from '../lib/types';
 import { CheckStatus, IssueKind } from '../lib/types';
 import { parseHash, readHash, shareUrl, writeHash } from '../lib/url';
+import { copyText } from '../lib/clipboard';
+import { buildTextSummary, statusLabel } from '../lib/summary';
 
 function candidatesFor(mode: CheckModeKey): CatalogEntry[] {
   switch (mode) {
@@ -33,6 +37,7 @@ export function CheckerPage() {
   const [ids, setIds] = useState<Array<number | null>>(initial.ids);
   const [toast, setToast] = useState<string | null>(null);
   const [favs, setFavs] = useState<SavedBuild[]>(() => loadFavorites());
+  const fileRef = useRef<HTMLInputElement>(null);
 
   const candidates = useMemo(() => candidatesFor(mode), [mode]);
   const selectedCount = useMemo(() => ids.filter((id) => id != null).length, [ids]);
@@ -115,13 +120,18 @@ export function CheckerPage() {
 
   const copyLink = useCallback(() => {
     const url = shareUrl({ page: 'check', mode, ids });
-    const done = () => showToast('链接已复制，可直接分享复现结果');
-    if (navigator.clipboard?.writeText) {
-      navigator.clipboard.writeText(url).then(done).catch(() => fallbackCopy(url, done));
-    } else {
-      fallbackCopy(url, done);
-    }
+    copyText(url).then((ok) => showToast(ok ? '链接已复制，可直接分享复现结果' : '复制失败，请手动复制'));
   }, [mode, ids, showToast]);
+
+  const copySummary = useCallback(() => {
+    const names = ids
+      .filter((id): id is number => id != null)
+      .map((id) => getAffix(id)?.name)
+      .filter((n): n is string => n != null);
+    copyText(buildTextSummary(mode, names, result.status)).then((ok) =>
+      showToast(ok ? '文本摘要已复制' : '复制失败，请手动复制'),
+    );
+  }, [ids, mode, result.status, showToast]);
 
   const doSave = useCallback(() => {
     if (selectedCount < 3) {
@@ -133,6 +143,43 @@ export function CheckerPage() {
     setFavs(loadFavorites());
     showToast('已收藏到本地');
   }, [ids, mode, selectedCount, showToast]);
+
+  const exportFavorites = useCallback(() => {
+    const blob = new Blob([exportFavoritesJson()], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const d = new Date();
+    const stamp = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
+    a.href = url;
+    a.download = `nightreign-affix-favorites-${stamp}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    showToast('收藏已导出为 JSON 备份文件');
+  }, [showToast]);
+
+  const onImportFile = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const text = String(reader.result ?? '');
+        const { imported, skipped } = importFavoritesJson(text);
+        setFavs(loadFavorites());
+        showToast(
+          imported > 0
+            ? `已导入 ${imported} 条收藏${skipped > 0 ? `，跳过 ${skipped} 条重复或无效` : ''}`
+            : '未发现可导入的有效收藏',
+        );
+      };
+      reader.onerror = () => showToast('读取文件失败，请重试');
+      reader.readAsText(file);
+      e.target.value = '';
+    },
+    [showToast],
+  );
 
   const status = result.status;
   const statusClass =
@@ -222,34 +269,30 @@ export function CheckerPage() {
                   : '…'}
           </div>
           <div className="verdict-body">
-            <div className="verdict-status">
-              {status === CheckStatus.VALID
-                ? '合法'
-                : status === CheckStatus.WRONG_ORDER
-                  ? '顺序错误'
-                  : status === CheckStatus.INVALID
-                    ? '非法'
-                    : '待补全'}
-            </div>
+            <div className="verdict-status">{statusLabel(status)}</div>
             <div className="verdict-msg">{result.message}</div>
             {status === CheckStatus.INCOMPLETE && (
               <div className="verdict-sub">已选择 {selectedCount} / 3 个词条，选满后自动判定。</div>
             )}
 
+            <div className="verdict-tools">
+              <button className="btn ghost small" onClick={copySummary}>
+                复制文本摘要
+              </button>
+            </div>
+
+            {result.issues.length > 0 && <div className="reasons-label">违规原因</div>}
             {result.issues.map((issue, i) => (
               <div key={i} className={`issue ${issue.kind.toLowerCase()}`}>
                 <div className="issue-title">
-                  {issue.kind === IssueKind.DUPLICATE
-                    ? '🔁 '
-                    : issue.kind === IssueKind.CONFLICT
-                      ? '⛔ '
-                      : '🚫 '}
+                  {issueIcon(issue.kind)}
                   {issue.title}
                 </div>
                 <div className="issue-detail">{issue.detail}</div>
               </div>
             ))}
 
+            {result.warnings.length > 0 && <div className="reasons-label warn">警告提示</div>}
             {result.warnings.map((w, i) => (
               <div key={i} className="warning">
                 <div className="issue-title">⚠ {w.title}</div>
@@ -277,11 +320,26 @@ export function CheckerPage() {
         </div>
       </div>
 
-      {favs.length > 0 && (
-        <div className="card favs">
-          <h2>本地收藏</h2>
-          <p className="hint">保存在浏览器 localStorage，仅本机可见。</p>
-          {favs.map((f) => (
+      <div className="card favs">
+        <div className="favs-head">
+          <div>
+            <h2>本地收藏</h2>
+            <p className="hint">保存在浏览器 localStorage，仅本机可见；可导出备份，清理缓存后导入恢复。</p>
+          </div>
+          <div className="favs-tools">
+            <button className="btn ghost small" onClick={exportFavorites}>
+              导出
+            </button>
+            <button className="btn ghost small" onClick={() => fileRef.current?.click()}>
+              导入
+            </button>
+            <input ref={fileRef} type="file" accept="application/json,.json" hidden onChange={onImportFile} />
+          </div>
+        </div>
+        {favs.length === 0 ? (
+          <EmptyState icon="📦" title="暂无收藏" hint="选满三个词条后点「收藏此组合」即可保存。" />
+        ) : (
+          favs.map((f) => (
             <div key={f.id} className="fav-item">
               <span className="tag">{CHECK_MODES[f.mode].shortTitle}</span>
               <span className="fav-name">{f.name}</span>
@@ -308,27 +366,24 @@ export function CheckerPage() {
                 删除
               </button>
             </div>
-          ))}
-        </div>
-      )}
+          ))
+        )}
+      </div>
 
       {toast && <div className="toast">{toast}</div>}
     </div>
   );
 }
 
-function fallbackCopy(text: string, done: () => void): void {
-  const ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.position = 'fixed';
-  ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.select();
-  try {
-    document.execCommand('copy');
-    done();
-  } catch {
-    /* ignore */
+function issueIcon(kind: IssueKind): string {
+  switch (kind) {
+    case IssueKind.DUPLICATE:
+      return '🔁 ';
+    case IssueKind.CONFLICT:
+      return '⛔ ';
+    case IssueKind.CURSE_PAIRING:
+      return '⚠ ';
+    case IssueKind.UNAVAILABLE:
+      return '🚫 ';
   }
-  document.body.removeChild(ta);
 }

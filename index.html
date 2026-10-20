@@ -2,13 +2,59 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
     <meta name="description" content="《艾尔登法环 黑夜君临》遗物三词条合法性检测站（非官方工具，数据仅供参考）" />
+    <meta name="theme-color" content="#0a0c13" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="遗物检测站" />
     <title>黑夜君临 · 遗物检测站</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+
+    <!-- Open Graph / Twitter（QQ · 微信 · Discord 分享预览） -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="黑夜君临 · 遗物检测站" />
+    <meta property="og:title" content="黑夜君临 · 遗物检测站" />
+    <meta property="og:description" content="《艾尔登法环 黑夜君临》遗物三词条合法性检测站（非官方工具，数据仅供参考）" />
+    <meta property="og:image" content="https://shuyi-nr.github.io/nightreign-affix/og-image.png" />
+    <meta property="og:url" content="https://shuyi-nr.github.io/nightreign-affix/" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="黑夜君临 · 遗物检测站" />
+    <meta name="twitter:description" content="《艾尔登法环 黑夜君临》遗物三词条合法性检测站（非官方工具，数据仅供参考）" />
+    <meta name="twitter:image" content="https://shuyi-nr.github.io/nightreign-affix/og-image.png" />
+
+    <style>
+      /* shown while the JS bundle loads; replaced when React mounts */
+      .boot-splash {
+        min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+        color: #9aa3b8; font-family: system-ui, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+        background: radial-gradient(1100px 460px at 50% -120px, rgba(201, 162, 92, 0.14), transparent 62%),
+          linear-gradient(180deg, #0e1119 0%, #0a0c13 320px);
+      }
+      .boot-mark {
+        width: 46px; height: 46px; border-radius: 13px;
+        background: linear-gradient(135deg, #f0d489 0%, #c9a25c 45%, #9c7440 100%);
+        box-shadow: 0 6px 20px rgba(201, 162, 92, 0.35);
+        animation: boot-pulse 1.4s ease-in-out infinite;
+      }
+      .boot-text { font-size: 13px; letter-spacing: 3px; color: #67718a; }
+      @keyframes boot-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-splash">
+        <div class="boot-mark"></div>
+        <div class="boot-text">加载中…</div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
