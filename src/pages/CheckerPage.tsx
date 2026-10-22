@@ -4,12 +4,13 @@ import { AffixPicker } from '../components/AffixPicker';
 import { EmptyState } from '../components/EmptyState';
 import { catalog, getAffix } from '../lib/catalog';
 import { CHECK_MODES, MODE_ORDER, validate } from '../lib/engine';
-import { exportFavoritesJson, importFavoritesJson, loadFavorites, removeFavorite, saveFavorite, type SavedBuild } from '../lib/storage';
+import { exportFavoritesJson, importFavoritesJson, loadFavorites, removeFavorite, renameFavorite, saveFavorite, type SavedBuild } from '../lib/storage';
 import type { CatalogEntry, CheckModeKey, CheckResult } from '../lib/types';
 import { CheckStatus, IssueKind } from '../lib/types';
 import { parseHash, readHash, shareUrl, writeHash } from '../lib/url';
 import { copyText } from '../lib/clipboard';
 import { buildTextSummary, statusLabel } from '../lib/summary';
+import { deepRelics, sortPairedRows, validateDeep } from '../lib/deep';
 
 function candidatesFor(mode: CheckModeKey): CatalogEntry[] {
   switch (mode) {
@@ -35,6 +36,11 @@ export function CheckerPage() {
   const initial = useMemo(() => readHash(), []);
   const [mode, setMode] = useState<CheckModeKey>(initial.mode);
   const [ids, setIds] = useState<Array<number | null>>(initial.ids);
+  const [deepFull, setDeepFull] = useState(initial.deepFull ?? false);
+  const [curses, setCurses] = useState<Array<number | null>>(initial.curses ?? [null, null, null]);
+  const [relicId, setRelicId] = useState(initial.relicId ?? deepRelics[0].id);
+  const [buildName, setBuildName] = useState('');
+  const full = mode === 'DEEP_POSITIVE' && deepFull;
   const [toast, setToast] = useState<string | null>(null);
   const [favs, setFavs] = useState<SavedBuild[]>(() => loadFavorites());
   const fileRef = useRef<HTMLInputElement>(null);
@@ -49,8 +55,8 @@ export function CheckerPage() {
 
   // sync to URL
   useEffect(() => {
-    writeHash({ page: 'check', mode, ids });
-  }, [mode, ids]);
+    writeHash({ page: 'check', mode, ids, deepFull: mode === 'DEEP_POSITIVE' && deepFull, curses, relicId });
+  }, [mode, ids, deepFull, curses, relicId]);
 
   // react to browser back/forward
   useEffect(() => {
@@ -59,6 +65,9 @@ export function CheckerPage() {
       if (s.page !== 'check') return;
       setMode(s.mode);
       setIds(s.ids);
+      setDeepFull(s.deepFull ?? false);
+      setCurses(s.curses ?? [null, null, null]);
+      setRelicId(s.relicId ?? deepRelics[0].id);
     };
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
@@ -70,6 +79,9 @@ export function CheckerPage() {
   }, []);
 
   const result: CheckResult = useMemo(() => {
+    if (full) return validateDeep(ids, curses, relicId);
+    const unknown = ids.filter((id): id is number => id != null && !getAffix(id));
+    if (unknown.length) return { status: CheckStatus.INVALID, message: '存在未知词条，请重新选择', orderedAffixes: [], issues: [{ kind: IssueKind.UNAVAILABLE, title: '不存在的词条', detail: unknown.join('、'), effectIds: unknown }], warnings: [] };
     const affixes = selectedEntries.map((e) => ({
       effectId: e.effectId,
       name: e.name,
@@ -86,7 +98,7 @@ export function CheckerPage() {
       source: '',
     }));
     return validate(affixes, mode);
-  }, [selectedEntries, mode]);
+  }, [selectedEntries, mode, ids, full, curses, relicId]);
 
   const setSlot = useCallback((index: number, id: number) => {
     setIds((prev) => prev.map((v, i) => (i === index ? id : v)));
@@ -96,13 +108,28 @@ export function CheckerPage() {
     setIds((prev) => prev.map((v, i) => (i === index ? null : v)));
   }, []);
 
-  const clearAll = useCallback(() => setIds([null, null, null]), []);
+  const clearAll = useCallback(() => { setIds([null, null, null]); setCurses([null, null, null]); setBuildName(''); }, []);
 
   const takenIds = useMemo(() => {
     const s = new Set<number>();
     for (const id of ids) if (id != null) s.add(id);
     return s;
   }, [ids]);
+
+  const negativeCandidates = useMemo(() => catalog.all.filter((e) => e.deepCurse), []);
+  const negativeTaken = new Set(curses.filter((id): id is number => id != null));
+  const problemIds = new Set(result.issues.flatMap((issue) => issue.effectIds));
+  // Live conflict highlighting also works before the third positive is chosen.
+  for (const a of selectedEntries) for (const b of selectedEntries) {
+    if (a !== b && a.compatibilityId !== -1 && a.compatibilityId === b.compatibilityId) { problemIds.add(a.effectId); problemIds.add(b.effectId); }
+  }
+
+  const applyOrder = () => {
+    const sorted = sortPairedRows(ids, curses);
+    setIds(sorted.ids);
+    setCurses(sorted.curses);
+    showToast(full ? '已按正面词条排序，配对负面随整行一起移动' : '已调整为正确顺序');
+  };
 
   // live pairwise conflict among currently-selected affixes
   const liveConflicts = useMemo(() => {
@@ -119,19 +146,20 @@ export function CheckerPage() {
   }, [selectedEntries]);
 
   const copyLink = useCallback(() => {
-    const url = shareUrl({ page: 'check', mode, ids });
+    const url = shareUrl({ page: 'check', mode, ids, deepFull: full, curses, relicId });
     copyText(url).then((ok) => showToast(ok ? '链接已复制，可直接分享复现结果' : '复制失败，请手动复制'));
-  }, [mode, ids, showToast]);
+  }, [mode, ids, full, curses, relicId, showToast]);
 
   const copySummary = useCallback(() => {
     const names = ids
       .filter((id): id is number => id != null)
       .map((id) => getAffix(id)?.name)
       .filter((n): n is string => n != null);
-    copyText(buildTextSummary(mode, names, result.status)).then((ok) =>
+    const summary = buildTextSummary(mode, names, result.status) + (full ? `\n深夜完整（三词条）：${deepRelics.find((r) => r.id === relicId)?.name ?? relicId}\n逐行负面：${curses.map((id, i) => `第 ${i + 1} 行 ${id == null ? '无' : getAffix(id)?.name ?? id}`).join('；')}` : '') + `\n${result.message}\n${result.issues.map((i) => i.detail).join('\n')}\n复现：${shareUrl({ page: 'check', mode, ids, deepFull: full, curses, relicId })}`;
+    copyText(summary).then((ok) =>
       showToast(ok ? '文本摘要已复制' : '复制失败，请手动复制'),
     );
-  }, [ids, mode, result.status, showToast]);
+  }, [ids, mode, result, full, curses, relicId, showToast]);
 
   const doSave = useCallback(() => {
     if (selectedCount < 3) {
@@ -139,10 +167,10 @@ export function CheckerPage() {
       return;
     }
     const names = ids.map((id) => (id == null ? '—' : getAffix(id)?.name ?? String(id))).join(' / ');
-    saveFavorite({ name: names, mode, ids: ids.filter((id): id is number => id != null) });
+    saveFavorite({ name: buildName.trim() || names, mode, ids: ids.filter((id): id is number => id != null), ...(full ? { deepFull: true, curses, relicId } : {}) });
     setFavs(loadFavorites());
     showToast('已收藏到本地');
-  }, [ids, mode, selectedCount, showToast]);
+  }, [ids, mode, selectedCount, showToast, buildName, full, curses, relicId]);
 
   const exportFavorites = useCallback(() => {
     const blob = new Blob([exportFavoritesJson()], { type: 'application/json' });
@@ -212,15 +240,28 @@ export function CheckerPage() {
             </button>
           ))}
         </div>
+        {mode === 'DEEP_POSITIVE' && <div className="deep-options">
+          <label className="deep-toggle"><input type="checkbox" checked={deepFull} onChange={(e) => setDeepFull(e.target.checked)} />开启深夜完整检测（三词条，逐行正负配对）</label>
+          {full && <>
+            <label className="filter-field">选择游戏内的深夜遗物类型
+              <select className="input" value={relicId} onChange={(e) => setRelicId(Number(e.target.value))}>
+                {!deepRelics.some((r) => r.id === relicId) && <option value={relicId}>未知遗物 {relicId}，请重新选择</option>}
+                {deepRelics.map((r) => <option key={r.id} value={r.id}>{r.name} · ID {r.id}</option>)}
+              </select>
+            </label>
+            <p className="hint">依据游戏数据表与上游逐行校验规则：正面限深夜 A/B/C 池；需诅咒的词条必须在同一行配负面，其余行不得带负面。当前支持三词条深夜遗物，不读取存档。</p>
+          </>}
+        </div>}
       </div>
 
       <div className="card">
         <h2>
           <span className="idx-badge">2</span>三个词条
         </h2>
-        <p className="hint">三个槽位的候选集合相同，仅权重不同。</p>
+        <p className="hint">{full ? '每列为一行配对：上方选正面，下方选对应负面。没有负面的行请留空。' : '点击槽位搜索词条；冲突会实时标红。'}</p>
         <div className="slots">
           {[0, 1, 2].map((i) => (
+            <div className="paired-row" key={i}>
             <AffixPicker
               key={i}
               num={i + 1}
@@ -229,7 +270,11 @@ export function CheckerPage() {
               takenIds={takenIds}
               onSelect={(id) => setSlot(i, id)}
               onClear={() => clearSlot(i)}
+              invalid={ids[i] != null && problemIds.has(ids[i]!)}
+              label={full ? '正面词条' : '槽位'}
             />
+            {full && <AffixPicker num={i + 1} label="配对负面（可留空）" candidates={negativeCandidates} selectedId={curses[i]} takenIds={negativeTaken} onSelect={(id) => setCurses((prev) => prev.map((v, j) => i === j ? id : v))} onClear={() => setCurses((prev) => prev.map((v, j) => i === j ? null : v))} invalid={curses[i] != null && problemIds.has(curses[i]!)} />}
+            </div>
           ))}
         </div>
 
@@ -241,6 +286,7 @@ export function CheckerPage() {
           </div>
         )}
 
+        <label className="filter-field build-name">收藏名称（选填）<input className="input" value={buildName} onChange={(e) => setBuildName(e.target.value)} maxLength={80} placeholder="例如：追踪者物理流" /></label>
         <div className="actions">
           <button className="btn primary" onClick={doSave} disabled={selectedCount < 3}>
             收藏此组合
@@ -269,13 +315,14 @@ export function CheckerPage() {
                   : '…'}
           </div>
           <div className="verdict-body">
-            <div className="verdict-status">{statusLabel(status)}</div>
+            <div className="verdict-status">{mode === 'DEEP_POSITIVE' && !full && status === CheckStatus.VALID ? '正面预检通过' : statusLabel(status)}</div>
             <div className="verdict-msg">{result.message}</div>
             {status === CheckStatus.INCOMPLETE && (
               <div className="verdict-sub">已选择 {selectedCount} / 3 个词条，选满后自动判定。</div>
             )}
 
             <div className="verdict-tools">
+              {status === CheckStatus.WRONG_ORDER && <button className="btn primary small" onClick={applyOrder}>一键调整顺序{full ? '（保留配对）' : ''}</button>}
               <button className="btn ghost small" onClick={copySummary}>
                 复制文本摘要
               </button>
@@ -302,7 +349,7 @@ export function CheckerPage() {
 
             {orderedEntries.length === 3 && (
               <div className="order-strip">
-                <div className="order-label">正确排序（按 (sortId, effectId) 升序）：</div>
+                <div className="order-label">{status === CheckStatus.INVALID ? '排序参考（排序不能修复内容违规）' : '正确排序'}{full ? '（正负整行配对移动）' : ''}：</div>
                 <div className="order-flow">
                   {orderedEntries.map((e, i) => (
                     <span key={e.effectId} style={{ display: 'inline-flex', alignItems: 'center' }}>
@@ -310,6 +357,7 @@ export function CheckerPage() {
                       <span className="order-chip">
                         <span className="idx">{i + 1}</span>
                         <span className="nm">{e.name}</span>
+                        {full && <span className="small muted"> / {getAffix(curses[ids.indexOf(e.effectId)] ?? -1)?.name ?? '无负面'}</span>}
                       </span>
                     </span>
                   ))}
@@ -345,6 +393,10 @@ export function CheckerPage() {
               <span className="fav-name">{f.name}</span>
               <span className="fav-ids">{f.ids.join(', ')}</span>
               <span className="spacer" />
+              <button className="btn ghost small" onClick={() => {
+                const name = window.prompt('收藏的新名称', f.name);
+                if (name?.trim()) { renameFavorite(f.id, name); setFavs(loadFavorites()); }
+              }}>改名</button>
               <button
                 className="btn ghost small"
                 onClick={() => {
@@ -352,6 +404,10 @@ export function CheckerPage() {
                   const padded: Array<number | null> = [null, null, null];
                   f.ids.slice(0, 3).forEach((id, i) => (padded[i] = id));
                   setIds(padded);
+                  setDeepFull(f.deepFull ?? false);
+                  setCurses(f.curses ?? [null, null, null]);
+                  setRelicId(f.relicId ?? deepRelics[0].id);
+                  setBuildName(f.name);
                 }}
               >
                 载入

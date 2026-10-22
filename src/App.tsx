@@ -4,6 +4,8 @@ import { CheckerPage } from './pages/CheckerPage';
 import { CatalogPage } from './pages/CatalogPage';
 import { RulesPage } from './pages/RulesPage';
 import { MaoChi } from './components/MaoChi';
+import { VisitCounter } from './components/VisitCounter';
+import { Feedback } from './components/Feedback';
 import type { Page } from './lib/url';
 import { buildHash, parseHash } from './lib/url';
 
@@ -26,7 +28,7 @@ export default function App() {
     setPage(p);
     // keep current check state when switching back to the checker
     const cur = parseHash(window.location.hash);
-    window.location.hash = buildHash({ page: p, mode: cur.mode, ids: cur.ids });
+    window.location.hash = buildHash({ ...cur, page: p });
   };
 
   return (
@@ -56,9 +58,11 @@ export default function App() {
       {page === 'rules' && <RulesPage />}
 
       <MaoChi />
+      <Feedback />
+      <VisitCounter />
 
       <div className="disclaimer">
-        ⚠ 非官方工具，数据仅供参考。词条合法性以游戏内实际表现为准。本地运行，无需联网，无任何数据上传。
+        ⚠ 非官方工具，数据仅供参考。词条合法性以游戏内实际表现为准。查询与检测在本地完成，支持离线；公开浏览量使用第三方联网统计。
       </div>
       <div className="footer">
         数据来源：游戏参数与官方简中文本，以及开源项目{' '}

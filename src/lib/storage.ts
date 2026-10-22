@@ -8,6 +8,9 @@ export interface SavedBuild {
   mode: CheckModeKey;
   ids: number[];
   savedAt: number;
+  deepFull?: boolean;
+  curses?: Array<number | null>;
+  relicId?: number;
 }
 
 const KEY = 'nightreign-affix.favorites.v1';
@@ -19,7 +22,7 @@ export function loadFavorites(): SavedBuild[] {
     const raw = localStorage.getItem(KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw) as SavedBuild[];
-    return Array.isArray(parsed) ? parsed : [];
+    return Array.isArray(parsed) ? parsed.filter(isValidBuild) : [];
   } catch {
     return [];
   }
@@ -49,6 +52,11 @@ export function removeFavorite(id: string): void {
   persist(loadFavorites().filter((f) => f.id !== id));
 }
 
+export function renameFavorite(id: string, name: string): void {
+  if (!name.trim()) return;
+  persist(loadFavorites().map((f) => f.id === id ? { ...f, name: name.trim().slice(0, 80) } : f));
+}
+
 // --- 导出 / 导入（备份 / 恢复） ---
 
 function isValidBuild(v: unknown): v is SavedBuild {
@@ -63,6 +71,9 @@ function isValidBuild(v: unknown): v is SavedBuild {
     b.ids.length > 0 &&
     b.ids.every((n) => typeof n === 'number' && Number.isFinite(n) && n > 0) &&
     typeof b.savedAt === 'number'
+    && (b.deepFull === undefined || typeof b.deepFull === 'boolean')
+    && (b.curses === undefined || (Array.isArray(b.curses) && b.curses.length === 3 && b.curses.every((n) => n === null || (typeof n === 'number' && Number.isSafeInteger(n) && n > 0))))
+    && (b.relicId === undefined || (typeof b.relicId === 'number' && Number.isSafeInteger(b.relicId) && b.relicId > 0))
   );
 }
 

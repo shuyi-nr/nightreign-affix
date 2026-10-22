@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { KeyboardEvent } from 'react';
 import type { CatalogEntry } from '../lib/types';
 import { filterCandidates, poolOptionsFor } from '../lib/filter';
@@ -7,6 +7,7 @@ import { EmptyState } from './EmptyState';
 import { Highlight } from './Highlight';
 import { PoolFilter } from './PoolFilter';
 import { VirtualList } from './VirtualList';
+import { getAffix } from '../lib/catalog';
 
 const ITEM_HEIGHT = 44;
 
@@ -17,9 +18,18 @@ interface Props {
   takenIds: Set<number>;
   onSelect: (id: number) => void;
   onClear: () => void;
+  invalid?: boolean;
+  label?: string;
 }
 
-export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, onClear }: Props) {
+export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, onClear, invalid, label = '槽位' }: Props) {
+  const listId = useId();
+  const [recent, setRecent] = useState<number[]>(() => {
+    try {
+      const saved: unknown = JSON.parse(localStorage.getItem('nightreign-affix.recent.v1') ?? '[]');
+      return Array.isArray(saved) ? saved.filter((id): id is number => typeof id === 'number' && Number.isSafeInteger(id)).slice(0, 8) : [];
+    } catch { return []; }
+  });
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('');
@@ -31,7 +41,8 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
   const inputRef = useRef<HTMLInputElement>(null);
   const isMobile = useMediaQuery('(max-width: 640px)');
 
-  const selected = selectedId != null ? candidates.find((c) => c.effectId === selectedId) : undefined;
+  const selected = selectedId != null ? getAffix(selectedId) : undefined;
+  const recentCandidates = recent.flatMap((id) => candidates.find((c) => c.effectId === id) ?? []);
 
   const categories = useMemo(() => {
     const m = new Map<string, number>();
@@ -52,13 +63,19 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
   // clamp it here so a stale index can never read past the end of the new list.
   const activeIdx = activeIndex >= 0 && activeIndex < filtered.length ? activeIndex : -1;
 
-  const close = useCallback(() => setOpen(false), []);
+  const close = useCallback(() => {
+    setOpen(false);
+    requestAnimationFrame(() => rootRef.current?.querySelector<HTMLElement>('.slot-box')?.focus());
+  }, []);
   const commit = useCallback(
     (id: number) => {
       onSelect(id);
-      setOpen(false);
+      const next = [id, ...recent.filter((n) => n !== id)].slice(0, 8);
+      setRecent(next);
+      try { localStorage.setItem('nightreign-affix.recent.v1', JSON.stringify(next)); } catch { /* optional history */ }
+      close();
     },
-    [onSelect],
+    [onSelect, recent, close],
   );
 
   // close on outside click
@@ -79,6 +96,10 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
     setPools(new Set());
     setCurseOnly(false);
     setRequiresCurseOnly(false);
+    try {
+      const saved: unknown = JSON.parse(localStorage.getItem('nightreign-affix.recent.v1') ?? '[]');
+      if (Array.isArray(saved)) setRecent(saved.filter((id): id is number => typeof id === 'number' && Number.isSafeInteger(id)).slice(0, 8));
+    } catch { /* optional history */ }
     requestAnimationFrame(() => inputRef.current?.focus());
   }, [open]);
 
@@ -132,7 +153,7 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
     const active = index === activeIdx;
     return (
       <div
-        id={`pick-${c.effectId}`}
+        id={`${listId}-${c.effectId}`}
         role="option"
         aria-selected={active}
         aria-disabled={disabled}
@@ -156,9 +177,9 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
   };
 
   return (
-    <div className="slot" ref={rootRef}>
+    <div className={`slot${invalid ? ' slot-invalid' : ''}`} ref={rootRef}>
       <div className="slot-label">
-        <span className="num">{num}</span>槽位
+        <span className="num">{num}</span>{label}{invalid && <span className="slot-error-label">需检查</span>}
       </div>
       <div
         className={`slot-box${selected ? ' filled' : ''}`}
@@ -168,6 +189,7 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
         tabIndex={0}
         aria-haspopup="dialog"
         aria-expanded={open}
+        aria-label={`${label} ${num}：${selected?.name ?? (selectedId != null ? `未知词条 ${selectedId}` : '未选择')}`}
       >
         {selected ? (
           <>
@@ -182,11 +204,11 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
         ) : (
           <div className="empty-hint">
             <span className="plus">+</span>
-            点击选择词条
+            {selectedId != null ? `未知词条 ${selectedId}，请重新选择` : '点击选择词条'}
           </div>
         )}
       </div>
-      {selected && (
+      {selectedId != null && (
         <button
           className="clear"
           title="清除"
@@ -200,7 +222,15 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
       )}
 
       {open && (
-        <div className="picker-pop" role="dialog" aria-label={`槽位 ${num} 词条选择`} onKeyDown={(e) => e.key === 'Escape' && close()}>
+        <div className="picker-pop" role="dialog" aria-modal={isMobile || undefined} aria-label={`${label} ${num} 词条选择`} onKeyDown={(e) => {
+          if (e.key === 'Escape') close();
+          if (e.key === 'Tab' && isMobile) {
+            const items = Array.from(e.currentTarget.querySelectorAll<HTMLElement>('button:not(:disabled), input, select, [tabindex="0"]'));
+            const first = items[0]; const last = items[items.length - 1];
+            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+          }
+        }}>
           <div className="picker-head">
             <div className="picker-topline">
               <span className="picker-title">选择词条</span>
@@ -219,9 +249,10 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
                 role="combobox"
                 aria-expanded
                 aria-autocomplete="list"
-                aria-controls="picker-listbox"
-                aria-activedescendant={activeIdx >= 0 ? `pick-${filtered[activeIdx].effectId}` : undefined}
+                aria-controls={listId}
+                aria-activedescendant={activeIdx >= 0 ? `${listId}-${filtered[activeIdx].effectId}` : undefined}
               />
+              {query && <button className="btn ghost small" onClick={() => { setQuery(''); inputRef.current?.focus(); }} aria-label="清空搜索">清空</button>}
             </div>
             <div className="picker-filters">
               <select className="input filter-select" value={category} onChange={(e) => setCategory(e.target.value)} aria-label="按分类筛选">
@@ -245,13 +276,14 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
               )}
             </div>
           </div>
+          {!query && recentCandidates.length > 0 && <div className="recent-picks"><span>最近使用</span>{recentCandidates.slice(0, 4).map((c) => <button key={c.effectId} className="btn ghost small" disabled={takenIds.has(c.effectId)} onClick={() => commit(c.effectId)}>{c.name}</button>)}</div>}
           <div className="picker-count">共 {filtered.length} 条</div>
           {filtered.length === 0 ? (
             <EmptyState icon="🔍" title="无匹配词条" hint="试试清空搜索或调整筛选条件" />
           ) : (
             <VirtualList
               className="picker-list"
-              id="picker-listbox"
+              id={listId}
               role="listbox"
               ariaLabel="词条列表"
               items={filtered}

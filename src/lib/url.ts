@@ -11,6 +11,9 @@ export interface HashState {
   mode: CheckModeKey;
   /** Length-3 positional slot list; null = empty slot. */
   ids: Array<number | null>;
+  deepFull?: boolean;
+  curses?: Array<number | null>;
+  relicId?: number;
 }
 
 const DEFAULT_STATE: HashState = { page: 'check', mode: 'CURRENT_NORMAL', ids: [null, null, null] };
@@ -38,7 +41,18 @@ export function parseHash(hash: string): HashState {
     }
   }
 
-  return { page, mode, ids };
+  const extra: Partial<HashState> = {};
+  if (params.get('full') === '1') {
+    extra.deepFull = true;
+    extra.curses = [0, 1, 2].map((i) => {
+      const s = (params.get('curses') ?? '').split(',')[i];
+      const n = Number(s);
+      return Number.isSafeInteger(n) && n > 0 ? n : null;
+    });
+    const relic = Number(params.get('relic'));
+    if (Number.isSafeInteger(relic) && relic > 0) extra.relicId = relic;
+  }
+  return { page, mode, ids, ...extra };
 }
 
 function encodeIds(ids: Array<number | null>): string {
@@ -53,6 +67,11 @@ export function buildHash(state: HashState): string {
   const params = new URLSearchParams();
   params.set('mode', state.mode);
   if (state.ids.some((id) => id != null)) params.set('ids', encodeIds(state.ids));
+  if (state.deepFull) {
+    params.set('full', '1');
+    params.set('curses', encodeIds(state.curses ?? [null, null, null]));
+    if (state.relicId != null) params.set('relic', String(state.relicId));
+  }
   const q = params.toString();
   return `#/${state.page}${q ? `?${q}` : ''}`;
 }

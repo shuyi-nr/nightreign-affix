@@ -23,5 +23,11 @@ export function addEntry(state: HashState, e: CatalogEntry): HashState {
   const empty = ids.findIndex((id) => id == null);
   if (empty !== -1) ids[empty] = e.effectId;
   else ids[0] = e.effectId;
+  if (mode === state.mode && state.deepFull) {
+    const curses = [...(state.curses ?? [null, null, null])];
+    // Replacing a row invalidates its old pairing; let the user choose again.
+    curses[empty !== -1 ? empty : 0] = null;
+    return { ...state, page: 'check', mode, ids, curses };
+  }
   return { page: 'check', mode, ids };
 }

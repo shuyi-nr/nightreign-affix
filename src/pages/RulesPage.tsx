@@ -9,6 +9,18 @@ export function RulesPage() {
       <p className="hint">本页说明「三词条遗物」合法性判定的完整规则与判定顺序。点击各节标题展开 / 折叠。</p>
 
       <details className="rule-section" open>
+        <summary>更新记录 · 2026.10.23</summary>
+        <ul className="release-notes">
+          <li>深夜新增完整检测开关：选择具体三词条遗物，逐行校验正面与负面；分享链接和收藏同时保存配对。</li>
+          <li>冲突槽位高亮，顺序错误可一键调整；深夜排序时负面跟随正面整行移动。</li>
+          <li>选词条新增最近使用、清空搜索，手机全屏选择与键盘操作更方便。</li>
+          <li>收藏支持自定义名称与改名，保留导出、导入备份功能。</li>
+          <li>新增问题反馈和公开浏览量；计数需要联网，不上传检测组合或收藏。历史未记录访问无法补回。</li>
+        </ul>
+        <p className="hint release-notes">深夜正面预检仍按七种槽池模板检查；完整检测依据上游 RelicAudit 的真实存档规则，使用深夜 A/B/C 池并集及逐行诅咒配对。两者判定范围不同。遗物类型数据来自与词条库同版的 EquipParamAntique。</p>
+      </details>
+
+      <details className="rule-section" open>
         <summary>判定顺序（严格按此执行）</summary>
         <ol>
           <li>
