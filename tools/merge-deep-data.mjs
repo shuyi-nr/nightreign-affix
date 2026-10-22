@@ -5,6 +5,8 @@ const affixes = JSON.parse(readFileSync(new URL('../src/data/affixes.json', impo
 if (source.gameVersion !== affixes.gameVersion || source.dataVersion !== affixes.dataVersion) {
   throw new Error('Relic and affix dataset versions must match');
 }
-const relics = source.relics.filter((r) => r.deep && r.slots.filter((p) => p !== -1).length === 3);
+// Exclude two unnamed test/fixed records outside the supported random pools.
+// They are not ordinary drawable relics and must not receive a legal verdict.
+const relics = source.relics.filter((r) => r.deep && r.id >= 2000000 && r.id <= 2013322 && r.slots.length === 3 && r.slots.every((p) => [2000000, 2100000, 2200000].includes(p)));
 writeFileSync(new URL('../src/data/deep-relics.json', import.meta.url), JSON.stringify({ gameVersion: source.gameVersion, dataVersion: source.dataVersion, sources: source.sources, relics }, null, 2) + '\n');
 console.log(`Extracted ${relics.length} three-slot deep relics without modifying game parameters.`);

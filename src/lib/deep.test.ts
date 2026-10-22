@@ -38,6 +38,8 @@ describe('deep full validation with authoritative data', () => {
     expect(validateDeep([normalOnly.effectId, b.effectId, c.effectId], [null, null, null], relic).issues.some((i) => i.kind === IssueKind.UNAVAILABLE)).toBe(true);
     expect(validateDeep([999999999, b.effectId, c.effectId], base.curses, relic).status).toBe(CheckStatus.INVALID);
     expect(validateDeep(base.ids, base.curses, 42).status).toBe(CheckStatus.INVALID);
+    expect(validateDeep(base.ids, base.curses, 7900003).status).toBe(CheckStatus.INVALID);
+    expect(deepRelics.every((r) => r.name && r.slots.every((p) => [2000000, 2100000, 2200000].includes(p)))).toBe(true);
   });
   it('checks duplicates and compatibility across positive and negative effects', () => {
     const result = validateDeep([a.effectId, a.effectId, c.effectId], [curse.effectId, curse.effectId, null], relic);
