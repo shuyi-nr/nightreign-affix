@@ -82,6 +82,7 @@ try {
     assert(await evaluate('!!document.querySelector(".mode-grid")'), 'blocked statistics do not break the checker');
   } else {
     await go('#/check?mode=CURRENT_NORMAL&ids=6630000,6630100,7000000');
+    assert(await evaluate('!!document.querySelector(".maochi") && !document.querySelector(".maochi-launcher")'), 'desktop keeps the original four-character sticker');
     assert(await evaluate('document.querySelectorAll(".slot-invalid").length >= 2'), 'conflicting slots highlighted');
     assert(await evaluate('document.querySelector(".visit-counter").textContent.includes("本地预览不计数")'), 'preview excluded from count');
     const affixes = JSON.parse(readFileSync('src/data/affixes.json', 'utf8')).affixes;
@@ -111,10 +112,36 @@ try {
     await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
     await pause(300);
     assert(await evaluate('document.documentElement.scrollWidth <= innerWidth'), 'mobile has no horizontal overflow');
+    await send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 1 });
+    const tap = async (selector) => {
+      const point = await evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(selector)}); const r=e.getBoundingClientRect(); return {x:r.x+r.width/2,y:r.y+r.height/2}})()`);
+      await send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [point] });
+      await send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    };
+    assert(await evaluate('document.querySelector(".maochi-launcher")?.getBoundingClientRect().height >= 44'), 'mobile cheese launcher visible with touch target');
+    await tap('.maochi-launcher');
+    await waitFor('!!document.querySelector(".maochi-mobile.is-playing .maochi-panel")', 'touch plays real audio');
+    assert(await evaluate('document.querySelectorAll(".maochi-tiles .mc").length === 4'), 'touch opens four-character sound menu');
+    for (const width of [320, 768]) {
+      await send('Emulation.setDeviceMetricsOverride', { width, height: 844, deviceScaleFactor: 1, mobile: true });
+      await pause(100);
+      assert(await evaluate('(()=>{const r=document.querySelector(".maochi-panel").getBoundingClientRect();return r.left>=0 && r.right<=innerWidth && r.top>=0})()'), `sound menu stays inside ${width}px viewport`);
+    }
+    await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
+    await pause(100);
+    await tap('.maochi-tiles');
+    await waitFor('!!document.querySelector(".maochi-mobile.is-playing")', 'tap replays audio');
+    mkdirSync('tools/shots', { recursive: true });
+    const menuShot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
+    writeFileSync('tools/shots/cheese-mobile.png', Buffer.from(menuShot.data, 'base64'));
+    await tap('.maochi-close');
+    await waitFor('!document.querySelector(".maochi-panel")', 'close cheese menu');
+    assert(await evaluate('!document.querySelector(".maochi-mobile.is-playing")'), 'close stops sound');
     await evaluate('document.querySelector(".slot-box").click()');
     await waitFor('!!document.querySelector(".picker-pop")', 'mobile picker');
     const bounds = await evaluate('(()=>{const r=document.querySelector(".picker-pop").getBoundingClientRect(); return {x:r.x,y:r.y,w:r.width,h:r.height,list:document.querySelector(".picker-list")?.clientHeight}})()');
     assert(bounds.x === 0 && bounds.y === 0 && bounds.w === 390 && bounds.list > 50, 'mobile picker fills viewport and list scrolls');
+    assert(await evaluate('getComputedStyle(document.querySelector(".maochi-mobile")).visibility === "hidden"'), 'cheese menu stays out of full-screen picker');
     await fill('.picker-search input', '生命');
     await pause(100);
     await click('清空');

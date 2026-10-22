@@ -11,6 +11,7 @@ export function RulesPage() {
       <details className="rule-section" open>
         <summary>更新记录 · 2026.10.23</summary>
         <ul className="release-notes">
+          <li>手机与平板新增「狸喵芝士」悬浮菜单：点击立即播放音效，展开四字贴纸可重播；选词条时自动隐藏。</li>
           <li>深夜新增完整检测开关：选择具体三词条遗物，逐行校验正面与负面；分享链接和收藏同时保存配对。</li>
           <li>冲突槽位高亮，顺序错误可一键调整；深夜排序时负面跟随正面整行移动。</li>
           <li>选词条新增最近使用、清空搜索，手机全屏选择与键盘操作更方便。</li>

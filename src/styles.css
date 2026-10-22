@@ -482,6 +482,43 @@ mark.hl { background: rgba(201, 162, 92, 0.35); color: var(--gold-hi); border-ra
 }
 @media (max-width: 1200px) { .maochi { display: none; } }
 
+/* Compact screens: visible one-tap sound menu, below the full-screen picker. */
+.maochi-mobile {
+  position: fixed; right: max(14px, env(safe-area-inset-right));
+  bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 40;
+  font-family: var(--font); max-width: calc(100vw - 28px); user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.maochi-launcher {
+  display: flex; align-items: center; gap: 8px; min-height: 48px; margin-left: auto;
+  padding: 9px 15px; border-radius: 24px; border: 1px solid #efd299;
+  color: #31200e; background: linear-gradient(135deg, #ffe2a0, #f3bb79 60%, #efa997);
+  box-shadow: 0 5px 22px #0006, inset 0 1px 0 #fff9;
+  font-family: 'YouYuan', '幼圆', var(--font); font-size: 15px; font-weight: 800;
+  cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+}
+.maochi-launcher:active { transform: scale(.96); }
+.maochi-cat { font-size: 24px; line-height: 1; }
+.maochi-sound { font-size: 20px; }
+.maochi-mobile.is-playing .maochi-sound { animation: mc-note .7s ease-in-out infinite; }
+.maochi-panel {
+  width: min(288px, calc(100vw - 28px)); margin-bottom: 10px; padding: 12px;
+  border-radius: 18px; border: 1px solid var(--gold-lo);
+  background: linear-gradient(145deg, #252132, #151b29); box-shadow: var(--shadow-lg);
+}
+.maochi-panel-head { display: flex; align-items: center; gap: 8px; justify-content: space-between; color: var(--gold-hi); font-size: 12px; }
+.maochi-close { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; border: 0; background: transparent; color: var(--text-dim); font-size: 24px; cursor: pointer; }
+.maochi-tiles { display: flex; gap: 10px; justify-content: center; padding: 12px 2px; width: 100%; border: 0; background: transparent; cursor: pointer; touch-action: manipulation; }
+.maochi-tiles .mc { width: 50px; height: 54px; display: grid; place-items: center; border-radius: 16px; color: #2a1a05; font-family: 'YouYuan', '幼圆', var(--font); font-weight: 800; font-size: 27px; box-shadow: 0 5px 10px #0005, inset 0 2px 0 #fff8; }
+.maochi-tiles .mc-0 { background: linear-gradient(145deg, #ffb36b, #ff7a6e); transform: rotate(-8deg); }
+.maochi-tiles .mc-1 { background: linear-gradient(145deg, #7fe0b0, #3ec9a7); transform: rotate(6deg); }
+.maochi-tiles .mc-2 { background: linear-gradient(145deg, #ffe08a, #f4c04a); transform: rotate(-5deg); }
+.maochi-tiles .mc-3 { background: linear-gradient(145deg, #9fb4ff, #6f8bff); transform: rotate(8deg); }
+.maochi-tiles:active .mc { transform: scale(.92); }
+.maochi-status { text-align: center; color: var(--text-dim); font-size: 11px; padding-top: 6px; }
+.maochi-launcher:focus-visible, .maochi-tiles:focus-visible, .maochi-close:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 3px; }
+@media (max-width: 1200px) { .app-shell { padding-bottom: calc(100px + env(safe-area-inset-bottom)); } }
+
 @media (max-width: 640px) {
   .app-shell { padding: 0 14px 56px; }
   .card { padding: 18px 16px; }
@@ -560,4 +597,9 @@ mark.hl { background: rgba(201, 162, 92, 0.35); color: var(--gold-hi); border-ra
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media (max-width: 1200px) {
+  .app-shell { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
+  .toast { bottom: calc(84px + env(safe-area-inset-bottom)); }
+  body:has(.picker-pop) .maochi-mobile { visibility: hidden; }
 }
