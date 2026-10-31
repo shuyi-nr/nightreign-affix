@@ -31,28 +31,78 @@
     <meta name="twitter:image" content="https://shuyi-nr.github.io/nightreign-affix/og-image.png" />
 
     <style>
-      /* shown while the JS bundle loads; replaced when React mounts */
+      /* Real loading shell: no remote fonts or artificial startup delay. */
+      html, body { margin: 0; background: #080a10; }
       .boot-splash {
-        min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
-        color: #9aa3b8; font-family: system-ui, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
-        background: radial-gradient(1100px 460px at 50% -120px, rgba(201, 162, 92, 0.14), transparent 62%),
-          linear-gradient(180deg, #0e1119 0%, #0a0c13 320px);
+        position: relative; isolation: isolate; overflow: hidden; box-sizing: border-box;
+        min-height: 100vh; min-height: 100svh; padding: 40px 20px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        color: #d4b474; text-align: center;
+        background: radial-gradient(ellipse at 50% 49%, #c9a25c13, transparent 49%),
+          radial-gradient(ellipse at 50% 100%, #24395035, transparent 65%), #080a10;
       }
-      .boot-mark {
-        width: 46px; height: 46px; border-radius: 13px;
-        background: linear-gradient(135deg, #f0d489 0%, #c9a25c 45%, #9c7440 100%);
-        box-shadow: 0 6px 20px rgba(201, 162, 92, 0.35);
-        animation: boot-pulse 1.4s ease-in-out infinite;
+      .boot-splash::before {
+        content: ''; position: absolute; z-index: -1; width: min(66vw, 600px); aspect-ratio: 1;
+        border-radius: 50%; border: 1px solid #7192c41a;
+        box-shadow: 0 0 100px #c9a25c08, inset 0 0 90px #101b3655;
+        transform: translateY(-12px) skewX(-18deg) scaleY(.7) rotate(-16deg);
       }
-      .boot-text { font-size: 13px; letter-spacing: 3px; color: #67718a; }
-      @keyframes boot-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } }
+      .boot-kicker { font: italic 10px/1.6 Georgia, serif; letter-spacing: .42em; color: #9a8660; margin-bottom: 48px; }
+      .boot-sigil { position: relative; width: 30px; height: 30px; margin-bottom: 24px; border: 1px solid #c9a25c80; transform: rotate(45deg); box-shadow: 0 0 24px #c9a25c15; }
+      .boot-sigil::before { content: ''; position: absolute; inset: 7px; border: 1px solid #e8c884; }
+      .boot-title {
+        position: relative; isolation: isolate; margin: 8px 0 28px; padding: 12px 10px 24px;
+        font-family: 'STKaiti', 'KaiTi', '楷体', 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+        font-size: clamp(32px, 7.2vw, 102px); font-style: italic; font-weight: 900; line-height: 1.4; letter-spacing: .025em;
+        color: #edcf94; white-space: nowrap; transform: skewX(-13deg);
+      }
+      .boot-title::after {
+        content: ''; position: absolute; left: -4%; right: -8%; bottom: 11%; height: 2px;
+        background: linear-gradient(90deg, transparent, #7494bd80 12%, #fff2cc 64%, #b78939 86%, transparent);
+        box-shadow: 0 7px 0 #c9a25c13, 0 0 16px #dfc48a65;
+        clip-path: polygon(0 70%, 95% 0, 100% 30%, 10% 100%);
+      }
+      .boot-letter { position: relative; display: inline-block; color: #edcf94; }
+      .boot-letter::after {
+        content: attr(data-letter); position: absolute; inset: 0; color: #fff0cc;
+        clip-path: polygon(0 58%, 100% 45%, 100% 49%, 0 62%); transform: translateX(.035em);
+      }
+      @supports (-webkit-background-clip: text) {
+        .boot-letter { background: linear-gradient(168deg, #fff9df 8%, #e6ce97 35%, #ac7c37 49%, #fff2bf 51%, #d5af62 66%, #76532b 91%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      }
+      .boot-shine { display: none; }
+      @supports (-webkit-background-clip: text) {
+        .boot-shine {
+          display: block; position: absolute; inset: 0; z-index: 2; padding: inherit;
+          pointer-events: none; color: transparent; text-shadow: none;
+          background-image: linear-gradient(108deg, transparent 42%, #eaf5ff77 46%, #fff 49%, #fff 51%, #eaf5ff77 54%, transparent 58%);
+          background-size: 250% 100%; background-repeat: no-repeat;
+          -webkit-background-clip: text; background-clip: text;
+          animation: boot-shine-pass 3.8s ease-in-out infinite;
+        }
+      }
+      .boot-rule { display: flex; align-items: center; gap: 14px; width: min(72vw, 390px); margin-top: 6px; }
+      .boot-rule::before, .boot-rule::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, #c9a25c70); }
+      .boot-rule::after { transform: rotate(180deg); }
+      .boot-rule span { width: 4px; height: 4px; border: 1px solid #c9a25c; transform: rotate(45deg); }
+      .boot-text { margin: 32px 0 0; font: 10px/1.7 system-ui, sans-serif; letter-spacing: .35em; color: #8c8990; }
+      .boot-progress { position: relative; overflow: hidden; width: 96px; height: 1px; background: #c9a25c20; margin-top: 16px; }
+      .boot-progress::after { content: ''; position: absolute; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, #e8c884, transparent); animation: boot-travel 2s ease-in-out infinite; }
+      @keyframes boot-shine-pass { 0%, 8% { background-position: 120% 50%; } 68%, 100% { background-position: -120% 50%; } }
+      @keyframes boot-travel { from { transform: translateX(-110%); } to { transform: translateX(310%); } }
+      @media (max-width: 480px) { .boot-kicker { font-size: 9px; letter-spacing: .22em; margin-bottom: 30px; } .boot-title { letter-spacing: 0; margin-bottom: 18px; } .boot-splash::before { width: 86vw; } }
+      @media (prefers-reduced-motion: reduce) { .boot-title, .boot-progress::after, .boot-shine { animation: none; } .boot-shine { display: none; } }
     </style>
   </head>
   <body>
     <div id="root">
-      <div class="boot-splash">
-        <div class="boot-mark"></div>
-        <div class="boot-text">加载中…</div>
+      <div class="boot-splash" role="status" aria-label="黑夜从未结束，正在加载遗物检测站">
+        <div class="boot-kicker" aria-hidden="true">ELDEN RING NIGHTREIGN</div>
+        <div class="boot-sigil" aria-hidden="true"></div>
+        <h1 class="boot-title" data-title="黑夜从未结束" aria-label="黑夜从未结束"><span class="boot-letter" data-letter="黑" aria-hidden="true">黑</span><span class="boot-letter" data-letter="夜" aria-hidden="true">夜</span><span class="boot-letter" data-letter="从" aria-hidden="true">从</span><span class="boot-letter" data-letter="未" aria-hidden="true">未</span><span class="boot-letter" data-letter="结" aria-hidden="true">结</span><span class="boot-letter" data-letter="束" aria-hidden="true">束</span><span class="boot-shine" aria-hidden="true">黑夜从未结束</span></h1>
+        <div class="boot-rule" aria-hidden="true"><span></span></div>
+        <p class="boot-text">正在唤醒遗物档案</p>
+        <div class="boot-progress" aria-hidden="true"></div>
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
