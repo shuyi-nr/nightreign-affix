@@ -12,6 +12,9 @@
 - 手机全屏选择、最近使用、冲突槽位高亮和一键排序
 - 收藏命名 / 改名 / 导出导入，公开问题反馈入口与更新记录
 - 页脚公开浏览量（不蒜子，第三方联网服务）
+- 角色数值：10 位角色的 1–15 级八维雷达图、数值与属性条，支持点击顶点定位
+- Boss 抗性：127 个条目 / 229 个阶段及场合变体，基础伤害减伤率与异常累积阈值分开展示
+- 随机夜王推算：520 条真实模式记录，按两夜 Boss 配对、地形、基础 / DLC 范围筛选候选并显示证据
 
 **非官方工具，数据仅供参考。** 纯静态、无后端、无登录、无运行时 AI 调用；部署后不联网也能完成全部查询与检测。
 
@@ -47,6 +50,8 @@ upstream/                 # 克隆的开源参考实现（.gitignore 排除）
 ```
 
 ## 数据来源与许可
+
+角色、Boss 与模式数据的版本、提取方式和适用范围见 [DATA_SOURCES.md](DATA_SOURCES.md)。本次发布前逐字段复核报告见 [DATA_VERIFICATION.json](DATA_VERIFICATION.json)。角色 / Boss 参数为 v1.03.5 + DLC1；模式资料为 1.03.2，不代表实时游戏状态。
 
 - 权威合法性字段（`compatibilityId` / `sortId` / `poolIds` / `isCurse` / `requiresCurse`）来自开源项目
   [sganggs/nightreign-relic-checker](https://github.com/sganggs/nightreign-relic-checker)，

@@ -1,0 +1,3671 @@
+{
+  "gameVersion": "1.03.2",
+  "verifiedAt": "2026-10-31",
+  "snapshotDate": "2026-09-26",
+  "source": "https://nightfarerledger.com/nightmap",
+  "originalSource": "https://nightreign-seed-finder.com/faq",
+  "credits": [
+    "Artimuz",
+    "thefifthmatt",
+    "kevins78"
+  ],
+  "sourceFiles": [
+    "https://nightfarerledger.com/nightreign/nightmap/limveld.json",
+    "https://nightfarerledger.com/nightreign/nightmap/crater.json",
+    "https://nightfarerledger.com/nightreign/nightmap/mountaintop.json",
+    "https://nightfarerledger.com/nightreign/nightmap/rotted_woods.json",
+    "https://nightfarerledger.com/nightreign/nightmap/noklateo.json",
+    "https://nightfarerledger.com/nightreign/nightmap/great_hollow.json"
+  ],
+  "aliases": {
+    "Demihuman Queen & Swordmaster": "Demi-Human Queen and Swordmaster",
+    "Night's Cavalries": "Night's Cavalry Duo",
+    "Duke's Dear Freja": "The Duke's Dear Freja",
+    "Tree Sentinel": "Tree Sentinel and Royal Cavalrymen",
+    "Crucible Knight & Hippo": "Crucible Knight and Golden Hippopotamus",
+    "Draconic Tree Sentinel": "Draconic Tree Sentinel and Royal Cavalrymen",
+    "Dancer": "Dancer of the Boreal Valley"
+  },
+  "patterns": [
+    {
+      "id": "000",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "001",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "002",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "003",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "004",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "005",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "006",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "007",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "008",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "009",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "010",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "011",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "012",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "013",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "014",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "015",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "016",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "017",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "018",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "019",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "040",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "041",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Gaping Dragon",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "042",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "043",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Wormface",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "044",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Gaping Dragon",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "045",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "046",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "047",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Gaping Dragon",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "048",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "049",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "050",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "051",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "052",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "053",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "054",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "055",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Wormface",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "056",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Wormface",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "057",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "058",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Wormface",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "059",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Gaping Dragon",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "080",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Tibia Mariner",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "081",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Smelter Demon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "082",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Smelter Demon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "083",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "084",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Tibia Mariner",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "085",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Tibia Mariner",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "086",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Smelter Demon",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "087",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "088",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "089",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Smelter Demon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "090",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Centipede Demon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "091",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Centipede Demon",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "092",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "093",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "094",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "095",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "096",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "097",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Centipede Demon",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "098",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Tibia Mariner",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "099",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Centipede Demon",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "120",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Gaping Dragon",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "121",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "122",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Wormface",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "123",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Gaping Dragon",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "124",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Wormface",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "125",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Smelter Demon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "126",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "127",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "128",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Smelter Demon",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "129",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "130",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Smelter Demon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "131",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Gaping Dragon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "132",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Smelter Demon",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "133",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "134",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Wormface",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "135",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Gaping Dragon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "136",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Wormface",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "137",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "138",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "139",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "160",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "161",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Tibia Mariner",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "162",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Centipede Demon",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "163",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Tibia Mariner",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "164",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Centipede Demon",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "165",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "166",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "167",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "168",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "169",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Tibia Mariner",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "170",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "171",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "172",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Centipede Demon",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "173",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "174",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Centipede Demon",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "175",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Tibia Mariner",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "176",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "177",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "178",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "179",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "200",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Gaping Dragon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "201",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "202",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Centipede Demon",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "203",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Wormface",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "204",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "205",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Centipede Demon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "206",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "207",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Wormface",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "208",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Wormface",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "209",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Centipede Demon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "210",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Centipede Demon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "211",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Gaping Dragon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "212",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Gaping Dragon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "213",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "214",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "215",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "216",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Gaping Dragon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "217",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "218",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Wormface",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "219",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "240",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "241",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "242",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Smelter Demon",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "243",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "244",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Smelter Demon",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "245",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "246",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "247",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "248",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Tibia Mariner",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "249",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Smelter Demon",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "250",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "251",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "252",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "253",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Smelter Demon",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "254",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Tibia Mariner",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "255",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "256",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "257",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "258",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Tibia Mariner",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "259",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Tibia Mariner",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "280",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Valiant Gargoyle",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "281",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Smelter Demon",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "282",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "283",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Valiant Gargoyle",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "284",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Battlefield Commander",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "285",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Wormface",
+      "night2": "Morgott"
+    },
+    {
+      "id": "286",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "287",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Royal Revenant",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "288",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "289",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "290",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "291",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Gaping Dragon",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "292",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Centipede Demon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "293",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "294",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Royal Revenant",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "295",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Grafted Monarch",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "296",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Tibia Mariner",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "297",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "298",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Battlefield Commander",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "299",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Grafted Monarch",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "1000",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "1001",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "1002",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1003",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1004",
+      "earth": "limveld",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "1010",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "1011",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1012",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1013",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1014",
+      "earth": "limveld",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "1020",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1021",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "1022",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "1023",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1024",
+      "earth": "limveld",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1030",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "1031",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "1032",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "1033",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "1034",
+      "earth": "limveld",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "1040",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "1041",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1042",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1043",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1044",
+      "earth": "limveld",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "1050",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "1051",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "1052",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "1053",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "1054",
+      "earth": "limveld",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "1060",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1061",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1062",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "1063",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "1064",
+      "earth": "limveld",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1070",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Battlefield Commander",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1071",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1072",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1073",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Valiant Gargoyle",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1074",
+      "earth": "limveld",
+      "nightlord": "heolstor",
+      "night1": "Valiant Gargoyle",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1080",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1081",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1082",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1083",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1084",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1085",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1086",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1087",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1088",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1089",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1090",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1091",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1092",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1093",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1094",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1095",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1096",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1097",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1098",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1099",
+      "earth": "limveld",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1140",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1141",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1142",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1143",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1144",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1145",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1146",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1147",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1148",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1149",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1150",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1151",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1152",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1153",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1154",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1155",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1156",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1157",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1158",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1159",
+      "earth": "limveld",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "025",
+      "earth": "crater",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "026",
+      "earth": "crater",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "027",
+      "earth": "crater",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "028",
+      "earth": "crater",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "029",
+      "earth": "crater",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "065",
+      "earth": "crater",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "066",
+      "earth": "crater",
+      "nightlord": "adel",
+      "night1": "Gaping Dragon",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "067",
+      "earth": "crater",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "068",
+      "earth": "crater",
+      "nightlord": "adel",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "069",
+      "earth": "crater",
+      "nightlord": "adel",
+      "night1": "Wormface",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "105",
+      "earth": "crater",
+      "nightlord": "gnoster",
+      "night1": "Centipede Demon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "106",
+      "earth": "crater",
+      "nightlord": "gnoster",
+      "night1": "Tibia Mariner",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "107",
+      "earth": "crater",
+      "nightlord": "gnoster",
+      "night1": "Smelter Demon",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "108",
+      "earth": "crater",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "109",
+      "earth": "crater",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "145",
+      "earth": "crater",
+      "nightlord": "maris",
+      "night1": "Wormface",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "146",
+      "earth": "crater",
+      "nightlord": "maris",
+      "night1": "Smelter Demon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "147",
+      "earth": "crater",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "148",
+      "earth": "crater",
+      "nightlord": "maris",
+      "night1": "Gaping Dragon",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "149",
+      "earth": "crater",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "185",
+      "earth": "crater",
+      "nightlord": "libra",
+      "night1": "Centipede Demon",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "186",
+      "earth": "crater",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "187",
+      "earth": "crater",
+      "nightlord": "libra",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "188",
+      "earth": "crater",
+      "nightlord": "libra",
+      "night1": "Tibia Mariner",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "189",
+      "earth": "crater",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "225",
+      "earth": "crater",
+      "nightlord": "fulghor",
+      "night1": "Centipede Demon",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "226",
+      "earth": "crater",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "227",
+      "earth": "crater",
+      "nightlord": "fulghor",
+      "night1": "Gaping Dragon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "228",
+      "earth": "crater",
+      "nightlord": "fulghor",
+      "night1": "Wormface",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "229",
+      "earth": "crater",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "265",
+      "earth": "crater",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "266",
+      "earth": "crater",
+      "nightlord": "caligo",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "267",
+      "earth": "crater",
+      "nightlord": "caligo",
+      "night1": "Smelter Demon",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "268",
+      "earth": "crater",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "269",
+      "earth": "crater",
+      "nightlord": "caligo",
+      "night1": "Tibia Mariner",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "305",
+      "earth": "crater",
+      "nightlord": "heolstor",
+      "night1": "Grafted Monarch",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "306",
+      "earth": "crater",
+      "nightlord": "heolstor",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "307",
+      "earth": "crater",
+      "nightlord": "heolstor",
+      "night1": "Royal Revenant",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "308",
+      "earth": "crater",
+      "nightlord": "heolstor",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "309",
+      "earth": "crater",
+      "nightlord": "heolstor",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1105",
+      "earth": "crater",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1106",
+      "earth": "crater",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1107",
+      "earth": "crater",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1108",
+      "earth": "crater",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1109",
+      "earth": "crater",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1165",
+      "earth": "crater",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1166",
+      "earth": "crater",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1167",
+      "earth": "crater",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1168",
+      "earth": "crater",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1169",
+      "earth": "crater",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    },
+    {
+      "id": "020",
+      "earth": "mountaintop",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "021",
+      "earth": "mountaintop",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "022",
+      "earth": "mountaintop",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "023",
+      "earth": "mountaintop",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "024",
+      "earth": "mountaintop",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "060",
+      "earth": "mountaintop",
+      "nightlord": "adel",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "061",
+      "earth": "mountaintop",
+      "nightlord": "adel",
+      "night1": "Gaping Dragon",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "062",
+      "earth": "mountaintop",
+      "nightlord": "adel",
+      "night1": "Wormface",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "063",
+      "earth": "mountaintop",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "064",
+      "earth": "mountaintop",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "100",
+      "earth": "mountaintop",
+      "nightlord": "gnoster",
+      "night1": "Smelter Demon",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "101",
+      "earth": "mountaintop",
+      "nightlord": "gnoster",
+      "night1": "Centipede Demon",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "102",
+      "earth": "mountaintop",
+      "nightlord": "gnoster",
+      "night1": "Tibia Mariner",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "103",
+      "earth": "mountaintop",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "104",
+      "earth": "mountaintop",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "140",
+      "earth": "mountaintop",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "141",
+      "earth": "mountaintop",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "142",
+      "earth": "mountaintop",
+      "nightlord": "maris",
+      "night1": "Smelter Demon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "143",
+      "earth": "mountaintop",
+      "nightlord": "maris",
+      "night1": "Wormface",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "144",
+      "earth": "mountaintop",
+      "nightlord": "maris",
+      "night1": "Gaping Dragon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "180",
+      "earth": "mountaintop",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "181",
+      "earth": "mountaintop",
+      "nightlord": "libra",
+      "night1": "Centipede Demon",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "182",
+      "earth": "mountaintop",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "183",
+      "earth": "mountaintop",
+      "nightlord": "libra",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "184",
+      "earth": "mountaintop",
+      "nightlord": "libra",
+      "night1": "Tibia Mariner",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "220",
+      "earth": "mountaintop",
+      "nightlord": "fulghor",
+      "night1": "Wormface",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "221",
+      "earth": "mountaintop",
+      "nightlord": "fulghor",
+      "night1": "Gaping Dragon",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "222",
+      "earth": "mountaintop",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "223",
+      "earth": "mountaintop",
+      "nightlord": "fulghor",
+      "night1": "Centipede Demon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "224",
+      "earth": "mountaintop",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "260",
+      "earth": "mountaintop",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "261",
+      "earth": "mountaintop",
+      "nightlord": "caligo",
+      "night1": "Smelter Demon",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "262",
+      "earth": "mountaintop",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "263",
+      "earth": "mountaintop",
+      "nightlord": "caligo",
+      "night1": "Tibia Mariner",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "264",
+      "earth": "mountaintop",
+      "nightlord": "caligo",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "300",
+      "earth": "mountaintop",
+      "nightlord": "heolstor",
+      "night1": "Valiant Gargoyle",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "301",
+      "earth": "mountaintop",
+      "nightlord": "heolstor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "302",
+      "earth": "mountaintop",
+      "nightlord": "heolstor",
+      "night1": "Tibia Mariner",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "303",
+      "earth": "mountaintop",
+      "nightlord": "heolstor",
+      "night1": "Battlefield Commander",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "304",
+      "earth": "mountaintop",
+      "nightlord": "heolstor",
+      "night1": "Wormface",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "1100",
+      "earth": "mountaintop",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1101",
+      "earth": "mountaintop",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1102",
+      "earth": "mountaintop",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1103",
+      "earth": "mountaintop",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1104",
+      "earth": "mountaintop",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1160",
+      "earth": "mountaintop",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1161",
+      "earth": "mountaintop",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1162",
+      "earth": "mountaintop",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1163",
+      "earth": "mountaintop",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1164",
+      "earth": "mountaintop",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "030",
+      "earth": "rotted_woods",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "031",
+      "earth": "rotted_woods",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "032",
+      "earth": "rotted_woods",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "033",
+      "earth": "rotted_woods",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "034",
+      "earth": "rotted_woods",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "070",
+      "earth": "rotted_woods",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "071",
+      "earth": "rotted_woods",
+      "nightlord": "adel",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "072",
+      "earth": "rotted_woods",
+      "nightlord": "adel",
+      "night1": "Wormface",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "073",
+      "earth": "rotted_woods",
+      "nightlord": "adel",
+      "night1": "Gaping Dragon",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "074",
+      "earth": "rotted_woods",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "110",
+      "earth": "rotted_woods",
+      "nightlord": "gnoster",
+      "night1": "Smelter Demon",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "111",
+      "earth": "rotted_woods",
+      "nightlord": "gnoster",
+      "night1": "Centipede Demon",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "112",
+      "earth": "rotted_woods",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "113",
+      "earth": "rotted_woods",
+      "nightlord": "gnoster",
+      "night1": "Tibia Mariner",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "114",
+      "earth": "rotted_woods",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "150",
+      "earth": "rotted_woods",
+      "nightlord": "maris",
+      "night1": "Wormface",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "151",
+      "earth": "rotted_woods",
+      "nightlord": "maris",
+      "night1": "Gaping Dragon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "152",
+      "earth": "rotted_woods",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "153",
+      "earth": "rotted_woods",
+      "nightlord": "maris",
+      "night1": "Smelter Demon",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "154",
+      "earth": "rotted_woods",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "190",
+      "earth": "rotted_woods",
+      "nightlord": "libra",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "191",
+      "earth": "rotted_woods",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "192",
+      "earth": "rotted_woods",
+      "nightlord": "libra",
+      "night1": "Centipede Demon",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "193",
+      "earth": "rotted_woods",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "194",
+      "earth": "rotted_woods",
+      "nightlord": "libra",
+      "night1": "Tibia Mariner",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "230",
+      "earth": "rotted_woods",
+      "nightlord": "fulghor",
+      "night1": "Centipede Demon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "231",
+      "earth": "rotted_woods",
+      "nightlord": "fulghor",
+      "night1": "Wormface",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "232",
+      "earth": "rotted_woods",
+      "nightlord": "fulghor",
+      "night1": "Gaping Dragon",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "233",
+      "earth": "rotted_woods",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "234",
+      "earth": "rotted_woods",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "270",
+      "earth": "rotted_woods",
+      "nightlord": "caligo",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "271",
+      "earth": "rotted_woods",
+      "nightlord": "caligo",
+      "night1": "Smelter Demon",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "272",
+      "earth": "rotted_woods",
+      "nightlord": "caligo",
+      "night1": "Tibia Mariner",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "273",
+      "earth": "rotted_woods",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "274",
+      "earth": "rotted_woods",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "310",
+      "earth": "rotted_woods",
+      "nightlord": "heolstor",
+      "night1": "Gaping Dragon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "311",
+      "earth": "rotted_woods",
+      "nightlord": "heolstor",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "312",
+      "earth": "rotted_woods",
+      "nightlord": "heolstor",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "313",
+      "earth": "rotted_woods",
+      "nightlord": "heolstor",
+      "night1": "Smelter Demon",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "314",
+      "earth": "rotted_woods",
+      "nightlord": "heolstor",
+      "night1": "Centipede Demon",
+      "night2": "Morgott"
+    },
+    {
+      "id": "1110",
+      "earth": "rotted_woods",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1111",
+      "earth": "rotted_woods",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1112",
+      "earth": "rotted_woods",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1113",
+      "earth": "rotted_woods",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1114",
+      "earth": "rotted_woods",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1170",
+      "earth": "rotted_woods",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1171",
+      "earth": "rotted_woods",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1172",
+      "earth": "rotted_woods",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1173",
+      "earth": "rotted_woods",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1174",
+      "earth": "rotted_woods",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "035",
+      "earth": "noklateo",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "036",
+      "earth": "noklateo",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "037",
+      "earth": "noklateo",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "038",
+      "earth": "noklateo",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "039",
+      "earth": "noklateo",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "075",
+      "earth": "noklateo",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "076",
+      "earth": "noklateo",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "077",
+      "earth": "noklateo",
+      "nightlord": "adel",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "078",
+      "earth": "noklateo",
+      "nightlord": "adel",
+      "night1": "Wormface",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "079",
+      "earth": "noklateo",
+      "nightlord": "adel",
+      "night1": "Gaping Dragon",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "115",
+      "earth": "noklateo",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "116",
+      "earth": "noklateo",
+      "nightlord": "gnoster",
+      "night1": "Centipede Demon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "117",
+      "earth": "noklateo",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "118",
+      "earth": "noklateo",
+      "nightlord": "gnoster",
+      "night1": "Tibia Mariner",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "119",
+      "earth": "noklateo",
+      "nightlord": "gnoster",
+      "night1": "Smelter Demon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "155",
+      "earth": "noklateo",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "156",
+      "earth": "noklateo",
+      "nightlord": "maris",
+      "night1": "Gaping Dragon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "157",
+      "earth": "noklateo",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "158",
+      "earth": "noklateo",
+      "nightlord": "maris",
+      "night1": "Smelter Demon",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "159",
+      "earth": "noklateo",
+      "nightlord": "maris",
+      "night1": "Wormface",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "195",
+      "earth": "noklateo",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "196",
+      "earth": "noklateo",
+      "nightlord": "libra",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "197",
+      "earth": "noklateo",
+      "nightlord": "libra",
+      "night1": "Centipede Demon",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "198",
+      "earth": "noklateo",
+      "nightlord": "libra",
+      "night1": "Tibia Mariner",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "199",
+      "earth": "noklateo",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "235",
+      "earth": "noklateo",
+      "nightlord": "fulghor",
+      "night1": "Wormface",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "236",
+      "earth": "noklateo",
+      "nightlord": "fulghor",
+      "night1": "Gaping Dragon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "237",
+      "earth": "noklateo",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "238",
+      "earth": "noklateo",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "239",
+      "earth": "noklateo",
+      "nightlord": "fulghor",
+      "night1": "Centipede Demon",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "275",
+      "earth": "noklateo",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "276",
+      "earth": "noklateo",
+      "nightlord": "caligo",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "277",
+      "earth": "noklateo",
+      "nightlord": "caligo",
+      "night1": "Tibia Mariner",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "278",
+      "earth": "noklateo",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "279",
+      "earth": "noklateo",
+      "nightlord": "caligo",
+      "night1": "Smelter Demon",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "315",
+      "earth": "noklateo",
+      "nightlord": "heolstor",
+      "night1": "Valiant Gargoyle",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "316",
+      "earth": "noklateo",
+      "nightlord": "heolstor",
+      "night1": "Royal Revenant",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "317",
+      "earth": "noklateo",
+      "nightlord": "heolstor",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "318",
+      "earth": "noklateo",
+      "nightlord": "heolstor",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "319",
+      "earth": "noklateo",
+      "nightlord": "heolstor",
+      "night1": "Grafted Monarch",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "1135",
+      "earth": "noklateo",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1136",
+      "earth": "noklateo",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1137",
+      "earth": "noklateo",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1138",
+      "earth": "noklateo",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1139",
+      "earth": "noklateo",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1195",
+      "earth": "noklateo",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1196",
+      "earth": "noklateo",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1197",
+      "earth": "noklateo",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1198",
+      "earth": "noklateo",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1199",
+      "earth": "noklateo",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1005",
+      "earth": "great_hollow",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "1006",
+      "earth": "great_hollow",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Morgott"
+    },
+    {
+      "id": "1007",
+      "earth": "great_hollow",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Morgott"
+    },
+    {
+      "id": "1008",
+      "earth": "great_hollow",
+      "nightlord": "gladius",
+      "night1": "Bell Bearing Hunter",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1009",
+      "earth": "great_hollow",
+      "nightlord": "gladius",
+      "night1": "Demi-Human Queen and Swordmaster",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1015",
+      "earth": "great_hollow",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "1016",
+      "earth": "great_hollow",
+      "nightlord": "adel",
+      "night1": "Wormface",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1017",
+      "earth": "great_hollow",
+      "nightlord": "adel",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "1018",
+      "earth": "great_hollow",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "1019",
+      "earth": "great_hollow",
+      "nightlord": "adel",
+      "night1": "Valiant Gargoyle",
+      "night2": "Ancient Dragon"
+    },
+    {
+      "id": "1025",
+      "earth": "great_hollow",
+      "nightlord": "gnoster",
+      "night1": "Smelter Demon",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1026",
+      "earth": "great_hollow",
+      "nightlord": "gnoster",
+      "night1": "Tibia Mariner",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "1027",
+      "earth": "great_hollow",
+      "nightlord": "gnoster",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "1028",
+      "earth": "great_hollow",
+      "nightlord": "gnoster",
+      "night1": "Battlefield Commander",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "1029",
+      "earth": "great_hollow",
+      "nightlord": "gnoster",
+      "night1": "Centipede Demon",
+      "night2": "Great Wyrm"
+    },
+    {
+      "id": "1035",
+      "earth": "great_hollow",
+      "nightlord": "maris",
+      "night1": "Wormface",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "1036",
+      "earth": "great_hollow",
+      "nightlord": "maris",
+      "night1": "Valiant Gargoyle",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "1037",
+      "earth": "great_hollow",
+      "nightlord": "maris",
+      "night1": "Gaping Dragon",
+      "night2": "Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1038",
+      "earth": "great_hollow",
+      "nightlord": "maris",
+      "night1": "Grafted Monarch",
+      "night2": "Fallingstar Beast"
+    },
+    {
+      "id": "1039",
+      "earth": "great_hollow",
+      "nightlord": "maris",
+      "night1": "Smelter Demon",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "1045",
+      "earth": "great_hollow",
+      "nightlord": "libra",
+      "night1": "Centipede Demon",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "1046",
+      "earth": "great_hollow",
+      "nightlord": "libra",
+      "night1": "Battlefield Commander",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1047",
+      "earth": "great_hollow",
+      "nightlord": "libra",
+      "night1": "Royal Revenant",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "1048",
+      "earth": "great_hollow",
+      "nightlord": "libra",
+      "night1": "Tibia Mariner",
+      "night2": "Death Rite Bird"
+    },
+    {
+      "id": "1049",
+      "earth": "great_hollow",
+      "nightlord": "libra",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1055",
+      "earth": "great_hollow",
+      "nightlord": "fulghor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "1056",
+      "earth": "great_hollow",
+      "nightlord": "fulghor",
+      "night1": "Wormface",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "1057",
+      "earth": "great_hollow",
+      "nightlord": "fulghor",
+      "night1": "Gaping Dragon",
+      "night2": "Nameless King"
+    },
+    {
+      "id": "1058",
+      "earth": "great_hollow",
+      "nightlord": "fulghor",
+      "night1": "Royal Revenant",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "1059",
+      "earth": "great_hollow",
+      "nightlord": "fulghor",
+      "night1": "Centipede Demon",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "1065",
+      "earth": "great_hollow",
+      "nightlord": "caligo",
+      "night1": "Ulcerated Tree Spirit",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "1066",
+      "earth": "great_hollow",
+      "nightlord": "caligo",
+      "night1": "Tibia Mariner",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "1067",
+      "earth": "great_hollow",
+      "nightlord": "caligo",
+      "night1": "Grafted Monarch",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1068",
+      "earth": "great_hollow",
+      "nightlord": "caligo",
+      "night1": "Smelter Demon",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1069",
+      "earth": "great_hollow",
+      "nightlord": "caligo",
+      "night1": "The Duke's Dear Freja",
+      "night2": "Dancer of the Boreal Valley"
+    },
+    {
+      "id": "1075",
+      "earth": "great_hollow",
+      "nightlord": "heolstor",
+      "night1": "Wormface",
+      "night2": "Draconic Tree Sentinel and Royal Cavalrymen"
+    },
+    {
+      "id": "1076",
+      "earth": "great_hollow",
+      "nightlord": "heolstor",
+      "night1": "Battlefield Commander",
+      "night2": "Crucible Knight and Golden Hippopotamus"
+    },
+    {
+      "id": "1077",
+      "earth": "great_hollow",
+      "nightlord": "heolstor",
+      "night1": "Night's Cavalry Duo",
+      "night2": "Godskin Duo"
+    },
+    {
+      "id": "1078",
+      "earth": "great_hollow",
+      "nightlord": "heolstor",
+      "night1": "Tibia Mariner",
+      "night2": "Dragonkin Soldier"
+    },
+    {
+      "id": "1079",
+      "earth": "great_hollow",
+      "nightlord": "heolstor",
+      "night1": "Gaping Dragon",
+      "night2": "Outland Commander"
+    },
+    {
+      "id": "1115",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1116",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1117",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1118",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1119",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1120",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1121",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1122",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1123",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1124",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1125",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1126",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1127",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1128",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1129",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1130",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1131",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1132",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "Demons",
+      "night2": "Demon Prince"
+    },
+    {
+      "id": "1133",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1134",
+      "earth": "great_hollow",
+      "nightlord": "balancers",
+      "night1": "DBW & Curseblade",
+      "night2": "Mohg"
+    },
+    {
+      "id": "1175",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1176",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1177",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1178",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1179",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1180",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1181",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1182",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1183",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1184",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1185",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1186",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1187",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1188",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1189",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1190",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1191",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1192",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Dancing Lion"
+    },
+    {
+      "id": "1193",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Death Knights",
+      "night2": "Artorias"
+    },
+    {
+      "id": "1194",
+      "earth": "great_hollow",
+      "nightlord": "dreglord",
+      "night1": "Great Red Bear",
+      "night2": "Artorias"
+    }
+  ]
+}

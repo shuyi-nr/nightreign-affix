@@ -6,12 +6,18 @@ import { RulesPage } from './pages/RulesPage';
 import { MaoChi } from './components/MaoChi';
 import { VisitCounter } from './components/VisitCounter';
 import { Feedback } from './components/Feedback';
+import { HeroesPage } from './pages/HeroesPage';
+import { BossesPage } from './pages/BossesPage';
+import { NightlordPage } from './pages/NightlordPage';
 import type { Page } from './lib/url';
 import { buildHash, parseHash } from './lib/url';
 
 const NAV: Array<{ page: Page; label: string }> = [
   { page: 'check', label: '合法性检测' },
   { page: 'catalog', label: '词条查询' },
+  { page: 'heroes', label: '角色数值' },
+  { page: 'bosses', label: 'Boss 抗性' },
+  { page: 'nightlord', label: '夜王推算' },
   { page: 'rules', label: '规则说明' },
 ];
 
@@ -42,7 +48,7 @@ export default function App() {
             </h1>
             <span className="sub">三词条合法性 / 词条查询 · 纯本地</span>
           </div>
-          <span className="version-tag">{catalog.gameVersion}</span>
+          <span className="version-tag">{page==='heroes'||page==='bosses'?'参数 v1.03.5 + DLC1':page==='nightlord'?'模式资料 v1.03.2':catalog.gameVersion}</span>
         </div>
         <nav className="nav">
           {NAV.map((n) => (
@@ -56,6 +62,9 @@ export default function App() {
       {page === 'check' && <CheckerPage />}
       {page === 'catalog' && <CatalogPage />}
       {page === 'rules' && <RulesPage />}
+      {page === 'heroes' && <HeroesPage />}
+      {page === 'bosses' && <BossesPage />}
+      {page === 'nightlord' && <NightlordPage />}
 
       <MaoChi />
       <Feedback />

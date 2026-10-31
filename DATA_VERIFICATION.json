@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-31T11:46:49.539Z",
+  "sources": [
+    {
+      "url": "https://github.com/sganggs/nightreign-relic-checker/blob/6fe8267682149568058649b5f25a1481ac06384e/data/nightreign-heroes-v1.03.5.json",
+      "sha256": "1640d3cb6f2f0eb8844bd44697ac6c2a507bf9c99195cd17f1e1d1fb37d4b0d1"
+    },
+    {
+      "url": "https://github.com/sganggs/nightreign-relic-checker/blob/6fe8267682149568058649b5f25a1481ac06384e/data/nightreign-bosses-v1.03.5.json",
+      "sha256": "403c8641ed98cb96c85a085b1776c343db69fc94c0aa520d262700ecc969219e"
+    },
+    {
+      "url": "https://nightfarerledger.com/nightreign/nightmap/noklateo.json",
+      "gameVersion": "1.03.2",
+      "snapshotDate": "2026-09-26"
+    },
+    {
+      "url": "https://nightfarerledger.com/nightreign/nightmap/crater.json",
+      "gameVersion": "1.03.2",
+      "snapshotDate": "2026-09-26"
+    },
+    {
+      "url": "https://nightfarerledger.com/nightreign/nightmap/great_hollow.json",
+      "gameVersion": "1.03.2",
+      "snapshotDate": "2026-09-26"
+    },
+    {
+      "url": "https://nightfarerledger.com/nightreign/nightmap/rotted_woods.json",
+      "gameVersion": "1.03.2",
+      "snapshotDate": "2026-09-26"
+    },
+    {
+      "url": "https://nightfarerledger.com/nightreign/nightmap/mountaintop.json",
+      "gameVersion": "1.03.2",
+      "snapshotDate": "2026-09-26"
+    },
+    {
+      "url": "https://nightfarerledger.com/nightreign/nightmap/limveld.json",
+      "gameVersion": "1.03.2",
+      "snapshotDate": "2026-09-26"
+    }
+  ],
+  "checks": {
+    "heroNumbers": 1650,
+    "bossGroups": 127,
+    "variants": 229,
+    "damageNumbers": 1832,
+    "ailmentNumbers": 1603,
+    "patterns": 520,
+    "independentBasePairs": 320
+  },
+  "differences": []
+}

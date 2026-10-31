@@ -1,0 +1,2759 @@
+{
+  "gameVersion": "v1.03.5 + DLC1",
+  "dataVersion": "regulation 10350000",
+  "verifiedAt": "2026-10-31",
+  "source": "https://github.com/sganggs/nightreign-relic-checker",
+  "inputFile": "nightreign-heroes-v1.03.5.json",
+  "inputSha256": "38556c8ac9eea2c215fa83e4308465e06a78c03104449a3b309304448f95ac5b",
+  "sources": [
+    {
+      "name": "ELDEN RING NIGHTREIGN regulation.bin",
+      "url": "",
+      "revision": "regulation 10350000 / exe 1.3.3.0",
+      "license": "游戏本体数据，仅用于展示数值",
+      "usage": "HeroParam / HeroStatusParam / AttachEffectParam / AttachEffectTableParam（随机池权重）/ SpEffectParam / CalcCorrectGraph"
+    },
+    {
+      "name": "ELDEN RING NIGHTREIGN 游戏内文本 FMG（简体中文 / 英文）",
+      "url": "",
+      "revision": "regulation 10350000 + DLC1",
+      "license": "游戏本体数据，仅用于展示名称",
+      "usage": "menu/CL_MenuText（角色名、血量/专注值/精力标签）、item/AttachEffectName（词条名、8 项属性名）、item/AntiqueName（遗物名）、menu/SpEffectName + SpEffectInfo（扭曲的重生）、menu/EventTextForTalk（利普拉的 5 个交易选项）"
+    },
+    {
+      "name": "Smithbox Paramdex (NR)",
+      "url": "https://github.com/vawser/Smithbox/tree/f5969c060cea240476e9dd4d6a64eafa9dbafaab/src/Smithbox.Data/Assets/PARAM/NR",
+      "revision": "f5969c060cea240476e9dd4d6a64eafa9dbafaab",
+      "license": "MIT",
+      "usage": "paramdef 字段名、行名（Name 列，如「[Wylder] Level 12」「[Libra Deal] Respec to Strength」）"
+    },
+    {
+      "name": "Elden Ring Nightreign Wiki (Fextralife) — Wylder",
+      "url": "https://eldenringnightreign.wiki.fextralife.com/Wylder",
+      "revision": "2026-09 访问",
+      "license": "第三方 wiki，仅作交叉验证",
+      "usage": "追踪者 1–15 级 8 项属性全表 —— 与本脚本的线性插值 + 向下取整结果 120 格全中"
+    },
+    {
+      "name": "Eldenpedia (eldenring.wiki.gg) — Nightreign:Wylder",
+      "url": "https://eldenring.wiki.gg/wiki/Nightreign:Wylder",
+      "revision": "2026-09 访问",
+      "license": "第三方 wiki，仅作交叉验证",
+      "usage": "追踪者 1–15 级血量/专注值/精力 —— 44/45 格一致，12 级精力该页写 92（与 11 级重复）疑为笔误，按 CalcCorrectGraph 104 应为 96"
+    },
+    {
+      "name": "Elden Ring Nightreign Wiki (Fextralife) — 转职遗物词条页 / Relic Effects",
+      "url": "https://eldenringnightreign.wiki.fextralife.com/Relic_Effects",
+      "revision": "2026-09 访问",
+      "license": "第三方 wiki，仅作交叉验证",
+      "usage": "词条页写出的数值全部等于 Level 12 那一行（例：Revenant 提升生命力、耐力，降低集中力 = 集中力 −11 / 生命力 +5 / 耐力 +5），佐证「13–15 级沿用 L12 值」"
+    },
+    {
+      "name": "Elden Ring Nightreign Wiki (Fextralife) — Revenant Improved Vigor and Endurance, Reduced Mind",
+      "url": "https://eldenringnightreign.wiki.fextralife.com/Revenant_Improved_Vigor_and_Endurance,_Reduced_Mind",
+      "revision": "2026-09 访问",
+      "license": "第三方 wiki，仅作交叉验证",
+      "usage": "该页原文「Decreases mind by 11, increases vigor by 5 and endurance by 5」＝ HeroStatusParam 305001（L12 锚点）逐格一致，支撑 interpolation.modifierAnchorVerified"
+    },
+    {
+      "name": "Steam 社区讨论「New stat shifts are a mega trap.」（玩家 15 级实测）",
+      "url": "https://steamcommunity.com/app/2622380/discussions/0/572641938359169696/",
+      "revision": "2026-09 访问",
+      "license": "第三方玩家实测，仅作交叉验证",
+      "usage": "15 级实测逐条对上 L12 锚点：守护者 灵巧 31→50 / 力气 41→50 / 生命力 60→52（301001）、无赖 感应 10→27 / 生命力 56→52（304101）、隐士 智力 51→41 与 灵巧 +20（306000）、隐士 集中力 30→17（306101）；贴中作参照的裸属性（追踪者 力气 50 / 生命力 52、女爵 智力 42、执行者 感应 28）也与本数据集 L15 一致 —— 佐证「13–15 级沿用 L12 值」"
+    },
+    {
+      "name": "Steam 社区讨论「Revenant Needs a Real Identity」（15 级复仇者派生值实测）",
+      "url": "https://steamcommunity.com/app/2622380/discussions/0/603041689184442287/",
+      "revision": "2026-09 访问",
+      "license": "第三方玩家实测，仅作交叉验证",
+      "usage": "15 级复仇者裸装 血量 780 / 专注值 200 / 精力 90、带该词条后 880 / 145 / 100，与本数据集 L15 基础（生命力 35 / 集中力 31 / 耐力 21）叠加 305001 后（40 / 20 / 26）经 CalcCorrectGraph 100/101/104 算出的值完全一致 —— 同时佐证「13–15 级沿用 L12 值」与派生值公式"
+    },
+    {
+      "name": "本仓库遗物数据集 nightreign-relics-v1.03.4.json",
+      "url": "",
+      "revision": "v1.03.4 + DLC1",
+      "license": "本仓库产物",
+      "usage": "statModifiers[].relicItems：哪件遗物物品把转职词条写死在槽位上"
+    }
+  ],
+  "caveats": [
+    "中间等级不是参数表里的数字。HeroStatusParam 每个角色只有 4 行锚点（Level 1 / 2 / 12 / 15），2–11、13–14 这 11 级是**相邻锚点之间线性插值后向下取整（floor）**算出来的。该规则已用追踪者 1–15 级全表（8 项属性 120 格 + 血量/专注值/精力 45 格）逐格验证，见 sources 里的两个 wiki 与脚本内的 WYLDER_BASELINE 回归基线。levels[].isAnchor 标出哪几级是原始行。",
+    "派生值各自只吃一项属性，不吃等级也不吃别的属性：血量 ← 生命力（CalcCorrectGraph 100）、专注值 ← 集中力（101）、精力 ← 耐力（104）、负重上限 ← 耐力（220）。100/101/104 的 adjPt_maxGrowVal 全是 1，也就是纯分段线性、没有指数。100（血量）与 101（专注值）四段斜率相同，整条曲线其实是一条直线：血量 = 20 × 生命力 + 80、专注值 = 5 × 集中力 + 45，在 1–99 任何整数属性上都是整数。104（精力）前三段 [1,25] / [25,50] / [50,75] 斜率都是 2（精力 = 2 × 耐力 + 48），只有最后一段 [75,99] 是 25/12 ≈ 2.0833 不是整数——本作耐力最高 38（守护者 15 级；叠加转职遗物或利普拉交易之后也没有更高的），够不到那一段。所以血量/专注值/精力这三项必为整数，不存在取整争议。（补充：本数据集里用到了三段而不是两段——守护者 12–15 级生命力 54/56/58/60 落在 100 的 [50,75] 段，对应血量 1160/1200/1240/1280；该段斜率同样是 20，结论不受影响。self_check 会枚举数据集真正用到的每一段并断言斜率是整数。）",
+    "equipLoad（负重上限）是**未经实测的遗留值**，页面建议默认不展示。两个原因：①《黑夜君临》里装备没有重量、界面也没有负重条，社区资料明确说本作没有装备重量限制，CalcCorrectGraph 220 很可能只是从《艾尔登法环》继承下来没删的行；② 220 的 adjPt_maxGrowVal2 = 1.1，[25,60] 这一段不是直线，本脚本按 Elden Ring 通用的 CalcCorrectGraph 公式（ratio ** adjPt[下段下标]）实现，指数挂在哪一段没有第二处数据可交叉验证。",
+    "转职遗物（statModifiers）在参数表里**只有 Level 1 与 Level 12 两个锚点**，13–15 级没有行。本数据集按「1–12 线性插值、13–15 沿用 L12 值」处理。**13–15 级沿用 L12 这一条已由玩家 15 级实测确认**：① Fextralife 的词条页把 L12 行的数字直接当成词条效果写（[Revenant] 提升生命力、耐力，降低集中力 = 「集中力 −11、生命力 +5、耐力 +5」，正是 305001 那一行）；② Steam 讨论区的 15 级实测逐条对上 L12 锚点——守护者 灵巧 31→50 / 力气 41→50 / 生命力 60→52（301001 的 +19/+9/−8）、无赖 感应 10→27 / 生命力 56→52（304101 的 +17/−4）、隐士 智力 51→41 与 灵巧 +20（306000）、隐士 集中力 30→17（306101 的 −13）；③ 另一帖的 15 级复仇者实测 血量 880 / 专注值 145 / 精力 100，与本数据集 L15 基础（生命力 35 / 集中力 31 / 耐力 21）叠加 305001 后（40 / 20 / 26）算出来的派生值完全一致。所以 interpolation.modifierAnchorVerified = true。**还没实测的只剩 2–11 级**的逐级数值与取整方向（见下一条），interpolation.modifierMidLevelsVerified = false，levels[].inferred = true 标出所有推断出来的等级（锚点级为 false）。顶层的 modifierVerified 是这两个细分字段的保守合取（恒等于 modifierMidLevelsVerified），页面请优先读细分字段，别拿它把整张遗物表标成「未验证」。",
+    "转职遗物 delta 的取整方向存在一处无法区分的歧义：基础属性表全是非负数，floor 与「向零取整（trunc）」结果完全相同，验证不出游戏用的是哪一种；而转职遗物有负的增减量，两者会差 1。本数据集的 delta 按**向零取整**给出，在两种取整结果不同的等级额外给一个 deltaFloorAlt（只含结果不同的属性）供页面对照。",
+    "利普拉的交易与转职遗物走的是 SpEffectParam 的两个不同字段：交易是 heroStatusId（把整套 HeroStatusParam 换成 210000/220000/230000/240000/250000 那 5 套），转职遗物是 heroStatusModifier（在当前基础表上加减）。字段不同意味着二者不互斥，机制上应该是「先用交易的表替换基础属性，再叠加遗物的增减量」。这是按参数结构推断的，未在游戏里实测。",
+    "利普拉的 5 套替换表**不分角色**：210000–250003 是全局的 20 行，任何角色接受同一笔交易之后，属性表完全一样（连原角色的感应固定值也会被换掉）。所以 libraRespecs 里没有 heroId 字段。",
+    "5 笔交易在 SpEffectParam 里共用同一个文本 ID（120700「扭曲的重生」/ Twisted Reincarnation），参数里没有逐笔的名字。libraRespecs[].nameZh/nameEn 是脚本按「效果名（属性名）」拼出来的，真正能在游戏里看到的逐笔文案是 dealLineZh/dealLineEn（EventTextForTalk 27570060–27570100 的对话选项）。",
+    "abilityReinforce / revenantSpiritReinforce / executorBeastReinforce 三列在所有角色、所有锚点上都恰好等于「等级 − 1」（0 / 1 / 11 / 14），插值后每一级也正好是等级 − 1；attackRate 恒为 1。三列在本数据集里原样写出，页面一般不需要展示。",
+    "外部 wiki 的表不一定跟得上补丁。逐格比对过三张表：追踪者（Fextralife + eldenring.wiki.gg）与执行者（eldenring.wiki.gg）165 格全中；女爵的**灵巧那一列 1–14 级整列比本数据集低 1～3**，因为补丁 1.02.2「提高了女爵升级时的灵巧成长」，而两个 wiki 的女爵表还停在补丁之前（15 级两边都是 45，所以只看首尾看不出来）。本数据集一律以 regulation 10350000 的参数为准，比对结果原样写在 crossChecks 里。",
+    "statModifiers[].relicItems 只收「词条写死在槽位上」的遗物物品（每条词条各对应一件「辽阔的◯◯情景 / Grand ◯◯ Scene」）。这些词条同时出现在随机池 2100000 / 2200000 里，理论上也能从吃这两个池的遗物上掉出来，池号记在 rollablePoolIds，不逐件展开。遗物名来自 v1.03.4 的遗物数据集（data/nightreign-relics-v1.03.4.json），与本数据集的 1.03.5 参数存在一个小版本差；若该文件不存在，relicItems 为空数组。",
+    "relicPools[].relicCount 与 relicNames* 的长度**不是一回事**，不要假设两者相等：relicCount = 72 是真正吃这个池的遗物**件数**（EquipParamAntique 的 6 个 attachEffectTableId 列，isDeepRelic 全为 1）；relicNames / relicNamesZh / relicNamesEn 是这 72 件**去重后的名字**，只有 distinctNameCount = 12 个（端正/细腻/辽阔 × 光耀/幽静/水滴/火燃），差别在颜色（relicColor）与槽位，名字本身重复。要逐件展开请看 relicNames[].relicIds。另：relicNamesZh[i] 与 relicNamesEn[i] 现在保证指向同一件遗物（按遗物 ID 配对后整体排序），早期版本是中英文各自排序，下标配对会错译。",
+    "两个随机池并不对等，学者/送葬者的 4 条词条**只有开 DLC 才掉得出来**：AttachEffectTableParam 里，8 个基础角色的 16 条词条在池 2100000 是 (chanceWeight=50, chanceWeight_dlc=−1)、在 2200000 是 (50, 40)；而 6647200/6647300/6647400/6647500 这 4 条在 2100000 是 (0, −1)（根本不在池里）、在 2200000 是 (0, 40)——基础权重为 0，只有 DLC 权重 40 才让它们能掉。statModifiers[].poolWeights 逐池写出这两列（chanceWeight_dlc = −1 表示不覆盖、沿用基础权重，effectiveWeightDlc 给出折算后的值），dlcOnly / dlcOnlyPoolIds 直接标出这 4 条。"
+  ],
+  "attributes": [
+    {
+      "key": "vigor",
+      "zh": "生命力",
+      "en": "Vigor"
+    },
+    {
+      "key": "mind",
+      "zh": "集中力",
+      "en": "Mind"
+    },
+    {
+      "key": "endurance",
+      "zh": "耐力",
+      "en": "Endurance"
+    },
+    {
+      "key": "strength",
+      "zh": "力气",
+      "en": "Strength"
+    },
+    {
+      "key": "dexterity",
+      "zh": "灵巧",
+      "en": "Dexterity"
+    },
+    {
+      "key": "intelligence",
+      "zh": "智力",
+      "en": "Intelligence"
+    },
+    {
+      "key": "faith",
+      "zh": "信仰",
+      "en": "Faith"
+    },
+    {
+      "key": "arcane",
+      "zh": "感应",
+      "en": "Arcane"
+    }
+  ],
+  "heroes": [
+    {
+      "key": "wylder",
+      "nameZh": "追踪者",
+      "nameEn": "Wylder",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 8,
+            "mind": 4,
+            "endurance": 3,
+            "strength": 5,
+            "dexterity": 4,
+            "intelligence": 2,
+            "faith": 2,
+            "arcane": 10
+          },
+          "hp": 240,
+          "fp": 65,
+          "stamina": 54
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 16,
+            "mind": 6,
+            "endurance": 6,
+            "strength": 18,
+            "dexterity": 15,
+            "intelligence": 4,
+            "faith": 4,
+            "arcane": 10
+          },
+          "hp": 400,
+          "fp": 75,
+          "stamina": 60
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 19,
+            "mind": 7,
+            "endurance": 7,
+            "strength": 20,
+            "dexterity": 17,
+            "intelligence": 4,
+            "faith": 4,
+            "arcane": 10
+          },
+          "hp": 460,
+          "fp": 80,
+          "stamina": 62
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 22,
+            "mind": 8,
+            "endurance": 9,
+            "strength": 23,
+            "dexterity": 19,
+            "intelligence": 5,
+            "faith": 5,
+            "arcane": 10
+          },
+          "hp": 520,
+          "fp": 85,
+          "stamina": 66
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 25,
+            "mind": 9,
+            "endurance": 11,
+            "strength": 25,
+            "dexterity": 21,
+            "intelligence": 6,
+            "faith": 6,
+            "arcane": 10
+          },
+          "hp": 580,
+          "fp": 90,
+          "stamina": 70
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 28,
+            "mind": 10,
+            "endurance": 13,
+            "strength": 28,
+            "dexterity": 23,
+            "intelligence": 7,
+            "faith": 7,
+            "arcane": 10
+          },
+          "hp": 640,
+          "fp": 95,
+          "stamina": 74
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 31,
+            "mind": 11,
+            "endurance": 15,
+            "strength": 31,
+            "dexterity": 25,
+            "intelligence": 8,
+            "faith": 8,
+            "arcane": 10
+          },
+          "hp": 700,
+          "fp": 100,
+          "stamina": 78
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 34,
+            "mind": 12,
+            "endurance": 16,
+            "strength": 33,
+            "dexterity": 27,
+            "intelligence": 8,
+            "faith": 8,
+            "arcane": 10
+          },
+          "hp": 760,
+          "fp": 105,
+          "stamina": 80
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 37,
+            "mind": 13,
+            "endurance": 18,
+            "strength": 36,
+            "dexterity": 29,
+            "intelligence": 9,
+            "faith": 9,
+            "arcane": 10
+          },
+          "hp": 820,
+          "fp": 110,
+          "stamina": 84
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 40,
+            "mind": 14,
+            "endurance": 20,
+            "strength": 38,
+            "dexterity": 31,
+            "intelligence": 10,
+            "faith": 10,
+            "arcane": 10
+          },
+          "hp": 880,
+          "fp": 115,
+          "stamina": 88
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 43,
+            "mind": 15,
+            "endurance": 22,
+            "strength": 41,
+            "dexterity": 33,
+            "intelligence": 11,
+            "faith": 11,
+            "arcane": 10
+          },
+          "hp": 940,
+          "fp": 120,
+          "stamina": 92
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 46,
+            "mind": 16,
+            "endurance": 24,
+            "strength": 44,
+            "dexterity": 35,
+            "intelligence": 12,
+            "faith": 12,
+            "arcane": 10
+          },
+          "hp": 1000,
+          "fp": 125,
+          "stamina": 96
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 48,
+            "mind": 17,
+            "endurance": 25,
+            "strength": 46,
+            "dexterity": 36,
+            "intelligence": 13,
+            "faith": 13,
+            "arcane": 10
+          },
+          "hp": 1040,
+          "fp": 130,
+          "stamina": 98
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 50,
+            "mind": 18,
+            "endurance": 26,
+            "strength": 48,
+            "dexterity": 38,
+            "intelligence": 14,
+            "faith": 14,
+            "arcane": 10
+          },
+          "hp": 1080,
+          "fp": 135,
+          "stamina": 100
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 52,
+            "mind": 19,
+            "endurance": 27,
+            "strength": 50,
+            "dexterity": 40,
+            "intelligence": 15,
+            "faith": 15,
+            "arcane": 10
+          },
+          "hp": 1120,
+          "fp": 140,
+          "stamina": 102
+        }
+      ]
+    },
+    {
+      "key": "guardian",
+      "nameZh": "守护者",
+      "nameEn": "Guardian",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 10,
+            "mind": 2,
+            "endurance": 6,
+            "strength": 4,
+            "dexterity": 3,
+            "intelligence": 2,
+            "faith": 3,
+            "arcane": 10
+          },
+          "hp": 280,
+          "fp": 55,
+          "stamina": 60
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 19,
+            "mind": 3,
+            "endurance": 12,
+            "strength": 11,
+            "dexterity": 9,
+            "intelligence": 3,
+            "faith": 5,
+            "arcane": 10
+          },
+          "hp": 460,
+          "fp": 60,
+          "stamina": 72
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 22,
+            "mind": 3,
+            "endurance": 14,
+            "strength": 13,
+            "dexterity": 10,
+            "intelligence": 3,
+            "faith": 6,
+            "arcane": 10
+          },
+          "hp": 520,
+          "fp": 60,
+          "stamina": 76
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 26,
+            "mind": 4,
+            "endurance": 16,
+            "strength": 16,
+            "dexterity": 12,
+            "intelligence": 4,
+            "faith": 7,
+            "arcane": 10
+          },
+          "hp": 600,
+          "fp": 65,
+          "stamina": 80
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 29,
+            "mind": 5,
+            "endurance": 18,
+            "strength": 18,
+            "dexterity": 14,
+            "intelligence": 4,
+            "faith": 8,
+            "arcane": 10
+          },
+          "hp": 660,
+          "fp": 70,
+          "stamina": 84
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 33,
+            "mind": 6,
+            "endurance": 20,
+            "strength": 21,
+            "dexterity": 15,
+            "intelligence": 5,
+            "faith": 10,
+            "arcane": 10
+          },
+          "hp": 740,
+          "fp": 75,
+          "stamina": 88
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 36,
+            "mind": 7,
+            "endurance": 22,
+            "strength": 23,
+            "dexterity": 17,
+            "intelligence": 5,
+            "faith": 11,
+            "arcane": 10
+          },
+          "hp": 800,
+          "fp": 80,
+          "stamina": 92
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 40,
+            "mind": 7,
+            "endurance": 24,
+            "strength": 26,
+            "dexterity": 19,
+            "intelligence": 6,
+            "faith": 12,
+            "arcane": 10
+          },
+          "hp": 880,
+          "fp": 80,
+          "stamina": 96
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 43,
+            "mind": 8,
+            "endurance": 26,
+            "strength": 28,
+            "dexterity": 20,
+            "intelligence": 6,
+            "faith": 14,
+            "arcane": 10
+          },
+          "hp": 940,
+          "fp": 85,
+          "stamina": 100
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 47,
+            "mind": 9,
+            "endurance": 28,
+            "strength": 31,
+            "dexterity": 22,
+            "intelligence": 7,
+            "faith": 15,
+            "arcane": 10
+          },
+          "hp": 1020,
+          "fp": 90,
+          "stamina": 104
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 50,
+            "mind": 10,
+            "endurance": 30,
+            "strength": 33,
+            "dexterity": 24,
+            "intelligence": 7,
+            "faith": 16,
+            "arcane": 10
+          },
+          "hp": 1080,
+          "fp": 95,
+          "stamina": 108
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 54,
+            "mind": 11,
+            "endurance": 33,
+            "strength": 36,
+            "dexterity": 26,
+            "intelligence": 8,
+            "faith": 18,
+            "arcane": 10
+          },
+          "hp": 1160,
+          "fp": 100,
+          "stamina": 114
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 56,
+            "mind": 12,
+            "endurance": 34,
+            "strength": 37,
+            "dexterity": 27,
+            "intelligence": 8,
+            "faith": 19,
+            "arcane": 10
+          },
+          "hp": 1200,
+          "fp": 105,
+          "stamina": 116
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 58,
+            "mind": 13,
+            "endurance": 36,
+            "strength": 39,
+            "dexterity": 29,
+            "intelligence": 9,
+            "faith": 20,
+            "arcane": 10
+          },
+          "hp": 1240,
+          "fp": 110,
+          "stamina": 120
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 60,
+            "mind": 14,
+            "endurance": 38,
+            "strength": 41,
+            "dexterity": 31,
+            "intelligence": 10,
+            "faith": 21,
+            "arcane": 10
+          },
+          "hp": 1280,
+          "fp": 115,
+          "stamina": 124
+        }
+      ]
+    },
+    {
+      "key": "ironeye",
+      "nameZh": "铁之眼",
+      "nameEn": "Ironeye",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 6,
+            "mind": 2,
+            "endurance": 4,
+            "strength": 4,
+            "dexterity": 8,
+            "intelligence": 2,
+            "faith": 2,
+            "arcane": 13
+          },
+          "hp": 200,
+          "fp": 55,
+          "stamina": 56
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 12,
+            "mind": 3,
+            "endurance": 7,
+            "strength": 7,
+            "dexterity": 20,
+            "intelligence": 3,
+            "faith": 3,
+            "arcane": 13
+          },
+          "hp": 320,
+          "fp": 60,
+          "stamina": 62
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 14,
+            "mind": 3,
+            "endurance": 8,
+            "strength": 8,
+            "dexterity": 23,
+            "intelligence": 3,
+            "faith": 3,
+            "arcane": 13
+          },
+          "hp": 360,
+          "fp": 60,
+          "stamina": 64
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 16,
+            "mind": 4,
+            "endurance": 10,
+            "strength": 9,
+            "dexterity": 26,
+            "intelligence": 3,
+            "faith": 4,
+            "arcane": 13
+          },
+          "hp": 400,
+          "fp": 65,
+          "stamina": 68
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 18,
+            "mind": 5,
+            "endurance": 12,
+            "strength": 10,
+            "dexterity": 29,
+            "intelligence": 3,
+            "faith": 5,
+            "arcane": 13
+          },
+          "hp": 440,
+          "fp": 70,
+          "stamina": 72
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 20,
+            "mind": 6,
+            "endurance": 14,
+            "strength": 11,
+            "dexterity": 32,
+            "intelligence": 4,
+            "faith": 5,
+            "arcane": 13
+          },
+          "hp": 480,
+          "fp": 75,
+          "stamina": 76
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 23,
+            "mind": 7,
+            "endurance": 16,
+            "strength": 12,
+            "dexterity": 35,
+            "intelligence": 4,
+            "faith": 6,
+            "arcane": 13
+          },
+          "hp": 540,
+          "fp": 80,
+          "stamina": 80
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 25,
+            "mind": 7,
+            "endurance": 17,
+            "strength": 13,
+            "dexterity": 38,
+            "intelligence": 4,
+            "faith": 7,
+            "arcane": 13
+          },
+          "hp": 580,
+          "fp": 80,
+          "stamina": 82
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 27,
+            "mind": 8,
+            "endurance": 19,
+            "strength": 14,
+            "dexterity": 41,
+            "intelligence": 5,
+            "faith": 7,
+            "arcane": 13
+          },
+          "hp": 620,
+          "fp": 85,
+          "stamina": 86
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 29,
+            "mind": 9,
+            "endurance": 21,
+            "strength": 15,
+            "dexterity": 44,
+            "intelligence": 5,
+            "faith": 8,
+            "arcane": 13
+          },
+          "hp": 660,
+          "fp": 90,
+          "stamina": 90
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 31,
+            "mind": 10,
+            "endurance": 23,
+            "strength": 16,
+            "dexterity": 47,
+            "intelligence": 5,
+            "faith": 9,
+            "arcane": 13
+          },
+          "hp": 700,
+          "fp": 95,
+          "stamina": 94
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 34,
+            "mind": 11,
+            "endurance": 25,
+            "strength": 17,
+            "dexterity": 51,
+            "intelligence": 6,
+            "faith": 10,
+            "arcane": 13
+          },
+          "hp": 760,
+          "fp": 100,
+          "stamina": 98
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 35,
+            "mind": 12,
+            "endurance": 26,
+            "strength": 17,
+            "dexterity": 53,
+            "intelligence": 6,
+            "faith": 11,
+            "arcane": 13
+          },
+          "hp": 780,
+          "fp": 105,
+          "stamina": 100
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 36,
+            "mind": 13,
+            "endurance": 27,
+            "strength": 18,
+            "dexterity": 55,
+            "intelligence": 6,
+            "faith": 12,
+            "arcane": 13
+          },
+          "hp": 800,
+          "fp": 110,
+          "stamina": 102
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 37,
+            "mind": 14,
+            "endurance": 28,
+            "strength": 19,
+            "dexterity": 57,
+            "intelligence": 7,
+            "faith": 13,
+            "arcane": 13
+          },
+          "hp": 820,
+          "fp": 115,
+          "stamina": 104
+        }
+      ]
+    },
+    {
+      "key": "duchess",
+      "nameZh": "女爵",
+      "nameEn": "Duchess",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 7,
+            "mind": 6,
+            "endurance": 3,
+            "strength": 2,
+            "dexterity": 5,
+            "intelligence": 4,
+            "faith": 3,
+            "arcane": 11
+          },
+          "hp": 220,
+          "fp": 75,
+          "stamina": 54
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 13,
+            "mind": 9,
+            "endurance": 4,
+            "strength": 4,
+            "dexterity": 13,
+            "intelligence": 8,
+            "faith": 6,
+            "arcane": 11
+          },
+          "hp": 340,
+          "fp": 90,
+          "stamina": 56
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 15,
+            "mind": 10,
+            "endurance": 5,
+            "strength": 4,
+            "dexterity": 15,
+            "intelligence": 10,
+            "faith": 7,
+            "arcane": 11
+          },
+          "hp": 380,
+          "fp": 95,
+          "stamina": 58
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 17,
+            "mind": 12,
+            "endurance": 6,
+            "strength": 5,
+            "dexterity": 18,
+            "intelligence": 13,
+            "faith": 9,
+            "arcane": 11
+          },
+          "hp": 420,
+          "fp": 105,
+          "stamina": 60
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 19,
+            "mind": 13,
+            "endurance": 7,
+            "strength": 5,
+            "dexterity": 20,
+            "intelligence": 16,
+            "faith": 11,
+            "arcane": 11
+          },
+          "hp": 460,
+          "fp": 110,
+          "stamina": 62
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 21,
+            "mind": 15,
+            "endurance": 8,
+            "strength": 6,
+            "dexterity": 23,
+            "intelligence": 19,
+            "faith": 13,
+            "arcane": 11
+          },
+          "hp": 500,
+          "fp": 120,
+          "stamina": 64
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 24,
+            "mind": 16,
+            "endurance": 9,
+            "strength": 6,
+            "dexterity": 25,
+            "intelligence": 22,
+            "faith": 15,
+            "arcane": 11
+          },
+          "hp": 560,
+          "fp": 125,
+          "stamina": 66
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 26,
+            "mind": 18,
+            "endurance": 10,
+            "strength": 7,
+            "dexterity": 28,
+            "intelligence": 24,
+            "faith": 16,
+            "arcane": 11
+          },
+          "hp": 600,
+          "fp": 135,
+          "stamina": 68
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 28,
+            "mind": 19,
+            "endurance": 11,
+            "strength": 7,
+            "dexterity": 30,
+            "intelligence": 27,
+            "faith": 18,
+            "arcane": 11
+          },
+          "hp": 640,
+          "fp": 140,
+          "stamina": 70
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 30,
+            "mind": 21,
+            "endurance": 12,
+            "strength": 8,
+            "dexterity": 33,
+            "intelligence": 30,
+            "faith": 20,
+            "arcane": 11
+          },
+          "hp": 680,
+          "fp": 150,
+          "stamina": 72
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 32,
+            "mind": 22,
+            "endurance": 13,
+            "strength": 8,
+            "dexterity": 35,
+            "intelligence": 33,
+            "faith": 22,
+            "arcane": 11
+          },
+          "hp": 720,
+          "fp": 155,
+          "stamina": 74
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 35,
+            "mind": 24,
+            "endurance": 14,
+            "strength": 9,
+            "dexterity": 38,
+            "intelligence": 36,
+            "faith": 24,
+            "arcane": 11
+          },
+          "hp": 780,
+          "fp": 165,
+          "stamina": 76
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 36,
+            "mind": 25,
+            "endurance": 15,
+            "strength": 9,
+            "dexterity": 40,
+            "intelligence": 38,
+            "faith": 25,
+            "arcane": 11
+          },
+          "hp": 800,
+          "fp": 170,
+          "stamina": 78
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 37,
+            "mind": 26,
+            "endurance": 16,
+            "strength": 10,
+            "dexterity": 42,
+            "intelligence": 40,
+            "faith": 26,
+            "arcane": 11
+          },
+          "hp": 820,
+          "fp": 175,
+          "stamina": 80
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 39,
+            "mind": 27,
+            "endurance": 18,
+            "strength": 11,
+            "dexterity": 45,
+            "intelligence": 42,
+            "faith": 27,
+            "arcane": 11
+          },
+          "hp": 860,
+          "fp": 180,
+          "stamina": 84
+        }
+      ]
+    },
+    {
+      "key": "raider",
+      "nameZh": "无赖",
+      "nameEn": "Raider",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 9,
+            "mind": 2,
+            "endurance": 6,
+            "strength": 9,
+            "dexterity": 4,
+            "intelligence": 1,
+            "faith": 2,
+            "arcane": 10
+          },
+          "hp": 260,
+          "fp": 55,
+          "stamina": 60
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 18,
+            "mind": 3,
+            "endurance": 12,
+            "strength": 25,
+            "dexterity": 6,
+            "intelligence": 2,
+            "faith": 4,
+            "arcane": 10
+          },
+          "hp": 440,
+          "fp": 60,
+          "stamina": 72
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 21,
+            "mind": 3,
+            "endurance": 13,
+            "strength": 28,
+            "dexterity": 7,
+            "intelligence": 2,
+            "faith": 4,
+            "arcane": 10
+          },
+          "hp": 500,
+          "fp": 60,
+          "stamina": 74
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 24,
+            "mind": 4,
+            "endurance": 15,
+            "strength": 32,
+            "dexterity": 8,
+            "intelligence": 2,
+            "faith": 5,
+            "arcane": 10
+          },
+          "hp": 560,
+          "fp": 65,
+          "stamina": 78
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 27,
+            "mind": 4,
+            "endurance": 17,
+            "strength": 35,
+            "dexterity": 9,
+            "intelligence": 2,
+            "faith": 5,
+            "arcane": 10
+          },
+          "hp": 620,
+          "fp": 65,
+          "stamina": 82
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 30,
+            "mind": 5,
+            "endurance": 19,
+            "strength": 39,
+            "dexterity": 10,
+            "intelligence": 2,
+            "faith": 6,
+            "arcane": 10
+          },
+          "hp": 680,
+          "fp": 70,
+          "stamina": 86
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 34,
+            "mind": 5,
+            "endurance": 21,
+            "strength": 42,
+            "dexterity": 11,
+            "intelligence": 2,
+            "faith": 7,
+            "arcane": 10
+          },
+          "hp": 760,
+          "fp": 70,
+          "stamina": 90
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 37,
+            "mind": 6,
+            "endurance": 23,
+            "strength": 46,
+            "dexterity": 12,
+            "intelligence": 2,
+            "faith": 7,
+            "arcane": 10
+          },
+          "hp": 820,
+          "fp": 75,
+          "stamina": 94
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 40,
+            "mind": 6,
+            "endurance": 25,
+            "strength": 49,
+            "dexterity": 13,
+            "intelligence": 2,
+            "faith": 8,
+            "arcane": 10
+          },
+          "hp": 880,
+          "fp": 75,
+          "stamina": 98
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 43,
+            "mind": 7,
+            "endurance": 27,
+            "strength": 53,
+            "dexterity": 14,
+            "intelligence": 2,
+            "faith": 8,
+            "arcane": 10
+          },
+          "hp": 940,
+          "fp": 80,
+          "stamina": 102
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 46,
+            "mind": 7,
+            "endurance": 29,
+            "strength": 56,
+            "dexterity": 15,
+            "intelligence": 2,
+            "faith": 9,
+            "arcane": 10
+          },
+          "hp": 1000,
+          "fp": 80,
+          "stamina": 106
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 50,
+            "mind": 8,
+            "endurance": 31,
+            "strength": 60,
+            "dexterity": 16,
+            "intelligence": 2,
+            "faith": 10,
+            "arcane": 10
+          },
+          "hp": 1080,
+          "fp": 85,
+          "stamina": 110
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 52,
+            "mind": 8,
+            "endurance": 33,
+            "strength": 62,
+            "dexterity": 17,
+            "intelligence": 2,
+            "faith": 10,
+            "arcane": 10
+          },
+          "hp": 1120,
+          "fp": 85,
+          "stamina": 114
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 54,
+            "mind": 9,
+            "endurance": 35,
+            "strength": 65,
+            "dexterity": 18,
+            "intelligence": 2,
+            "faith": 11,
+            "arcane": 10
+          },
+          "hp": 1160,
+          "fp": 90,
+          "stamina": 118
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 56,
+            "mind": 10,
+            "endurance": 37,
+            "strength": 68,
+            "dexterity": 19,
+            "intelligence": 3,
+            "faith": 12,
+            "arcane": 10
+          },
+          "hp": 1200,
+          "fp": 95,
+          "stamina": 122
+        }
+      ]
+    },
+    {
+      "key": "revenant",
+      "nameZh": "复仇者",
+      "nameEn": "Revenant",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 6,
+            "mind": 7,
+            "endurance": 3,
+            "strength": 2,
+            "dexterity": 2,
+            "intelligence": 4,
+            "faith": 5,
+            "arcane": 12
+          },
+          "hp": 200,
+          "fp": 80,
+          "stamina": 54
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 11,
+            "mind": 11,
+            "endurance": 4,
+            "strength": 6,
+            "dexterity": 6,
+            "intelligence": 7,
+            "faith": 15,
+            "arcane": 12
+          },
+          "hp": 300,
+          "fp": 100,
+          "stamina": 56
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 13,
+            "mind": 12,
+            "endurance": 5,
+            "strength": 7,
+            "dexterity": 7,
+            "intelligence": 9,
+            "faith": 18,
+            "arcane": 12
+          },
+          "hp": 340,
+          "fp": 105,
+          "stamina": 58
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 15,
+            "mind": 14,
+            "endurance": 6,
+            "strength": 8,
+            "dexterity": 8,
+            "intelligence": 11,
+            "faith": 21,
+            "arcane": 12
+          },
+          "hp": 380,
+          "fp": 115,
+          "stamina": 60
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 17,
+            "mind": 16,
+            "endurance": 8,
+            "strength": 9,
+            "dexterity": 9,
+            "intelligence": 13,
+            "faith": 24,
+            "arcane": 12
+          },
+          "hp": 420,
+          "fp": 125,
+          "stamina": 64
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 19,
+            "mind": 17,
+            "endurance": 9,
+            "strength": 10,
+            "dexterity": 10,
+            "intelligence": 15,
+            "faith": 27,
+            "arcane": 12
+          },
+          "hp": 460,
+          "fp": 130,
+          "stamina": 66
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 21,
+            "mind": 19,
+            "endurance": 11,
+            "strength": 12,
+            "dexterity": 12,
+            "intelligence": 17,
+            "faith": 30,
+            "arcane": 12
+          },
+          "hp": 500,
+          "fp": 140,
+          "stamina": 70
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 23,
+            "mind": 21,
+            "endurance": 12,
+            "strength": 13,
+            "dexterity": 13,
+            "intelligence": 19,
+            "faith": 33,
+            "arcane": 12
+          },
+          "hp": 540,
+          "fp": 150,
+          "stamina": 72
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 25,
+            "mind": 22,
+            "endurance": 13,
+            "strength": 14,
+            "dexterity": 14,
+            "intelligence": 21,
+            "faith": 36,
+            "arcane": 12
+          },
+          "hp": 580,
+          "fp": 155,
+          "stamina": 74
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 27,
+            "mind": 24,
+            "endurance": 15,
+            "strength": 15,
+            "dexterity": 15,
+            "intelligence": 23,
+            "faith": 39,
+            "arcane": 12
+          },
+          "hp": 620,
+          "fp": 165,
+          "stamina": 78
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 29,
+            "mind": 26,
+            "endurance": 16,
+            "strength": 16,
+            "dexterity": 16,
+            "intelligence": 25,
+            "faith": 42,
+            "arcane": 12
+          },
+          "hp": 660,
+          "fp": 175,
+          "stamina": 80
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 32,
+            "mind": 28,
+            "endurance": 18,
+            "strength": 18,
+            "dexterity": 18,
+            "intelligence": 27,
+            "faith": 45,
+            "arcane": 12
+          },
+          "hp": 720,
+          "fp": 185,
+          "stamina": 84
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 33,
+            "mind": 29,
+            "endurance": 19,
+            "strength": 19,
+            "dexterity": 19,
+            "intelligence": 28,
+            "faith": 47,
+            "arcane": 12
+          },
+          "hp": 740,
+          "fp": 190,
+          "stamina": 86
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 34,
+            "mind": 30,
+            "endurance": 20,
+            "strength": 20,
+            "dexterity": 20,
+            "intelligence": 29,
+            "faith": 49,
+            "arcane": 12
+          },
+          "hp": 760,
+          "fp": 195,
+          "stamina": 88
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 35,
+            "mind": 31,
+            "endurance": 21,
+            "strength": 21,
+            "dexterity": 21,
+            "intelligence": 30,
+            "faith": 51,
+            "arcane": 12
+          },
+          "hp": 780,
+          "fp": 200,
+          "stamina": 90
+        }
+      ]
+    },
+    {
+      "key": "recluse",
+      "nameZh": "隐士",
+      "nameEn": "Recluse",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 6,
+            "mind": 7,
+            "endurance": 3,
+            "strength": 1,
+            "dexterity": 2,
+            "intelligence": 5,
+            "faith": 5,
+            "arcane": 10
+          },
+          "hp": 200,
+          "fp": 80,
+          "stamina": 54
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 10,
+            "mind": 11,
+            "endurance": 5,
+            "strength": 2,
+            "dexterity": 4,
+            "intelligence": 15,
+            "faith": 15,
+            "arcane": 10
+          },
+          "hp": 280,
+          "fp": 100,
+          "stamina": 58
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 12,
+            "mind": 12,
+            "endurance": 6,
+            "strength": 2,
+            "dexterity": 5,
+            "intelligence": 18,
+            "faith": 18,
+            "arcane": 10
+          },
+          "hp": 320,
+          "fp": 105,
+          "stamina": 60
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 14,
+            "mind": 14,
+            "endurance": 8,
+            "strength": 3,
+            "dexterity": 6,
+            "intelligence": 21,
+            "faith": 21,
+            "arcane": 10
+          },
+          "hp": 360,
+          "fp": 115,
+          "stamina": 64
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 16,
+            "mind": 15,
+            "endurance": 9,
+            "strength": 4,
+            "dexterity": 7,
+            "intelligence": 24,
+            "faith": 24,
+            "arcane": 10
+          },
+          "hp": 400,
+          "fp": 120,
+          "stamina": 66
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 18,
+            "mind": 17,
+            "endurance": 11,
+            "strength": 4,
+            "dexterity": 8,
+            "intelligence": 27,
+            "faith": 27,
+            "arcane": 10
+          },
+          "hp": 440,
+          "fp": 130,
+          "stamina": 70
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 20,
+            "mind": 19,
+            "endurance": 12,
+            "strength": 5,
+            "dexterity": 10,
+            "intelligence": 30,
+            "faith": 30,
+            "arcane": 10
+          },
+          "hp": 480,
+          "fp": 140,
+          "stamina": 72
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 22,
+            "mind": 20,
+            "endurance": 14,
+            "strength": 6,
+            "dexterity": 11,
+            "intelligence": 33,
+            "faith": 33,
+            "arcane": 10
+          },
+          "hp": 520,
+          "fp": 145,
+          "stamina": 76
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 24,
+            "mind": 22,
+            "endurance": 15,
+            "strength": 6,
+            "dexterity": 12,
+            "intelligence": 36,
+            "faith": 36,
+            "arcane": 10
+          },
+          "hp": 560,
+          "fp": 155,
+          "stamina": 78
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 26,
+            "mind": 23,
+            "endurance": 17,
+            "strength": 7,
+            "dexterity": 13,
+            "intelligence": 39,
+            "faith": 39,
+            "arcane": 10
+          },
+          "hp": 600,
+          "fp": 160,
+          "stamina": 82
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 28,
+            "mind": 25,
+            "endurance": 18,
+            "strength": 8,
+            "dexterity": 14,
+            "intelligence": 42,
+            "faith": 42,
+            "arcane": 10
+          },
+          "hp": 640,
+          "fp": 170,
+          "stamina": 84
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 30,
+            "mind": 27,
+            "endurance": 20,
+            "strength": 9,
+            "dexterity": 16,
+            "intelligence": 45,
+            "faith": 45,
+            "arcane": 10
+          },
+          "hp": 680,
+          "fp": 180,
+          "stamina": 88
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 31,
+            "mind": 28,
+            "endurance": 21,
+            "strength": 10,
+            "dexterity": 17,
+            "intelligence": 47,
+            "faith": 47,
+            "arcane": 10
+          },
+          "hp": 700,
+          "fp": 185,
+          "stamina": 90
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 32,
+            "mind": 29,
+            "endurance": 22,
+            "strength": 11,
+            "dexterity": 18,
+            "intelligence": 49,
+            "faith": 49,
+            "arcane": 10
+          },
+          "hp": 720,
+          "fp": 190,
+          "stamina": 92
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 33,
+            "mind": 30,
+            "endurance": 23,
+            "strength": 12,
+            "dexterity": 19,
+            "intelligence": 51,
+            "faith": 51,
+            "arcane": 10
+          },
+          "hp": 740,
+          "fp": 195,
+          "stamina": 94
+        }
+      ]
+    },
+    {
+      "key": "executor",
+      "nameZh": "执行者",
+      "nameEn": "Executor",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 7,
+            "mind": 2,
+            "endurance": 3,
+            "strength": 5,
+            "dexterity": 8,
+            "intelligence": 2,
+            "faith": 2,
+            "arcane": 28
+          },
+          "hp": 220,
+          "fp": 55,
+          "stamina": 54
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 14,
+            "mind": 3,
+            "endurance": 5,
+            "strength": 9,
+            "dexterity": 20,
+            "intelligence": 3,
+            "faith": 3,
+            "arcane": 28
+          },
+          "hp": 360,
+          "fp": 60,
+          "stamina": 58
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 16,
+            "mind": 3,
+            "endurance": 6,
+            "strength": 10,
+            "dexterity": 24,
+            "intelligence": 3,
+            "faith": 3,
+            "arcane": 28
+          },
+          "hp": 400,
+          "fp": 60,
+          "stamina": 60
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 19,
+            "mind": 4,
+            "endurance": 8,
+            "strength": 11,
+            "dexterity": 28,
+            "intelligence": 3,
+            "faith": 3,
+            "arcane": 28
+          },
+          "hp": 460,
+          "fp": 65,
+          "stamina": 64
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 21,
+            "mind": 4,
+            "endurance": 10,
+            "strength": 12,
+            "dexterity": 32,
+            "intelligence": 4,
+            "faith": 3,
+            "arcane": 28
+          },
+          "hp": 500,
+          "fp": 65,
+          "stamina": 68
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 24,
+            "mind": 5,
+            "endurance": 12,
+            "strength": 14,
+            "dexterity": 36,
+            "intelligence": 4,
+            "faith": 3,
+            "arcane": 28
+          },
+          "hp": 560,
+          "fp": 70,
+          "stamina": 72
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 27,
+            "mind": 6,
+            "endurance": 14,
+            "strength": 15,
+            "dexterity": 40,
+            "intelligence": 5,
+            "faith": 4,
+            "arcane": 28
+          },
+          "hp": 620,
+          "fp": 75,
+          "stamina": 76
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 29,
+            "mind": 6,
+            "endurance": 16,
+            "strength": 16,
+            "dexterity": 44,
+            "intelligence": 5,
+            "faith": 4,
+            "arcane": 28
+          },
+          "hp": 660,
+          "fp": 75,
+          "stamina": 80
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 32,
+            "mind": 7,
+            "endurance": 18,
+            "strength": 18,
+            "dexterity": 48,
+            "intelligence": 5,
+            "faith": 4,
+            "arcane": 28
+          },
+          "hp": 720,
+          "fp": 80,
+          "stamina": 84
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 34,
+            "mind": 7,
+            "endurance": 20,
+            "strength": 19,
+            "dexterity": 52,
+            "intelligence": 6,
+            "faith": 4,
+            "arcane": 28
+          },
+          "hp": 760,
+          "fp": 80,
+          "stamina": 88
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 37,
+            "mind": 8,
+            "endurance": 22,
+            "strength": 20,
+            "dexterity": 56,
+            "intelligence": 6,
+            "faith": 4,
+            "arcane": 28
+          },
+          "hp": 820,
+          "fp": 85,
+          "stamina": 92
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 40,
+            "mind": 9,
+            "endurance": 24,
+            "strength": 22,
+            "dexterity": 60,
+            "intelligence": 7,
+            "faith": 5,
+            "arcane": 28
+          },
+          "hp": 880,
+          "fp": 90,
+          "stamina": 96
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 42,
+            "mind": 9,
+            "endurance": 25,
+            "strength": 23,
+            "dexterity": 61,
+            "intelligence": 7,
+            "faith": 5,
+            "arcane": 28
+          },
+          "hp": 920,
+          "fp": 90,
+          "stamina": 98
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 44,
+            "mind": 10,
+            "endurance": 26,
+            "strength": 24,
+            "dexterity": 62,
+            "intelligence": 7,
+            "faith": 5,
+            "arcane": 28
+          },
+          "hp": 960,
+          "fp": 95,
+          "stamina": 100
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 46,
+            "mind": 11,
+            "endurance": 27,
+            "strength": 25,
+            "dexterity": 63,
+            "intelligence": 8,
+            "faith": 6,
+            "arcane": 28
+          },
+          "hp": 1000,
+          "fp": 100,
+          "stamina": 102
+        }
+      ]
+    },
+    {
+      "key": "scholar",
+      "nameZh": "学者",
+      "nameEn": "Scholar",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 7,
+            "mind": 4,
+            "endurance": 3,
+            "strength": 1,
+            "dexterity": 2,
+            "intelligence": 4,
+            "faith": 2,
+            "arcane": 50
+          },
+          "hp": 220,
+          "fp": 65,
+          "stamina": 54
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 14,
+            "mind": 6,
+            "endurance": 5,
+            "strength": 2,
+            "dexterity": 4,
+            "intelligence": 7,
+            "faith": 4,
+            "arcane": 50
+          },
+          "hp": 360,
+          "fp": 75,
+          "stamina": 58
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 16,
+            "mind": 7,
+            "endurance": 6,
+            "strength": 3,
+            "dexterity": 5,
+            "intelligence": 8,
+            "faith": 4,
+            "arcane": 50
+          },
+          "hp": 400,
+          "fp": 80,
+          "stamina": 60
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 18,
+            "mind": 8,
+            "endurance": 8,
+            "strength": 4,
+            "dexterity": 6,
+            "intelligence": 10,
+            "faith": 5,
+            "arcane": 50
+          },
+          "hp": 440,
+          "fp": 85,
+          "stamina": 64
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 20,
+            "mind": 9,
+            "endurance": 10,
+            "strength": 5,
+            "dexterity": 7,
+            "intelligence": 12,
+            "faith": 6,
+            "arcane": 50
+          },
+          "hp": 480,
+          "fp": 90,
+          "stamina": 68
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 22,
+            "mind": 10,
+            "endurance": 11,
+            "strength": 6,
+            "dexterity": 8,
+            "intelligence": 14,
+            "faith": 7,
+            "arcane": 50
+          },
+          "hp": 520,
+          "fp": 95,
+          "stamina": 70
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 25,
+            "mind": 11,
+            "endurance": 13,
+            "strength": 7,
+            "dexterity": 9,
+            "intelligence": 16,
+            "faith": 8,
+            "arcane": 50
+          },
+          "hp": 580,
+          "fp": 100,
+          "stamina": 74
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 27,
+            "mind": 12,
+            "endurance": 15,
+            "strength": 8,
+            "dexterity": 10,
+            "intelligence": 17,
+            "faith": 8,
+            "arcane": 50
+          },
+          "hp": 620,
+          "fp": 105,
+          "stamina": 78
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 29,
+            "mind": 13,
+            "endurance": 16,
+            "strength": 9,
+            "dexterity": 11,
+            "intelligence": 19,
+            "faith": 9,
+            "arcane": 50
+          },
+          "hp": 660,
+          "fp": 110,
+          "stamina": 80
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 31,
+            "mind": 14,
+            "endurance": 18,
+            "strength": 10,
+            "dexterity": 12,
+            "intelligence": 21,
+            "faith": 10,
+            "arcane": 50
+          },
+          "hp": 700,
+          "fp": 115,
+          "stamina": 84
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 33,
+            "mind": 15,
+            "endurance": 20,
+            "strength": 11,
+            "dexterity": 13,
+            "intelligence": 23,
+            "faith": 11,
+            "arcane": 50
+          },
+          "hp": 740,
+          "fp": 120,
+          "stamina": 88
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 36,
+            "mind": 17,
+            "endurance": 22,
+            "strength": 12,
+            "dexterity": 15,
+            "intelligence": 25,
+            "faith": 12,
+            "arcane": 50
+          },
+          "hp": 800,
+          "fp": 130,
+          "stamina": 92
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 37,
+            "mind": 18,
+            "endurance": 23,
+            "strength": 12,
+            "dexterity": 16,
+            "intelligence": 26,
+            "faith": 13,
+            "arcane": 50
+          },
+          "hp": 820,
+          "fp": 135,
+          "stamina": 94
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 39,
+            "mind": 19,
+            "endurance": 24,
+            "strength": 13,
+            "dexterity": 17,
+            "intelligence": 27,
+            "faith": 14,
+            "arcane": 50
+          },
+          "hp": 860,
+          "fp": 140,
+          "stamina": 96
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 41,
+            "mind": 20,
+            "endurance": 25,
+            "strength": 14,
+            "dexterity": 18,
+            "intelligence": 28,
+            "faith": 15,
+            "arcane": 50
+          },
+          "hp": 900,
+          "fp": 145,
+          "stamina": 98
+        }
+      ]
+    },
+    {
+      "key": "undertaker",
+      "nameZh": "送葬者",
+      "nameEn": "Undertaker",
+      "levels": [
+        {
+          "level": 1,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 7,
+            "mind": 4,
+            "endurance": 3,
+            "strength": 5,
+            "dexterity": 2,
+            "intelligence": 2,
+            "faith": 5,
+            "arcane": 10
+          },
+          "hp": 220,
+          "fp": 65,
+          "stamina": 54
+        },
+        {
+          "level": 2,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 14,
+            "mind": 6,
+            "endurance": 5,
+            "strength": 18,
+            "dexterity": 4,
+            "intelligence": 2,
+            "faith": 17,
+            "arcane": 10
+          },
+          "hp": 360,
+          "fp": 75,
+          "stamina": 58
+        },
+        {
+          "level": 3,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 16,
+            "mind": 6,
+            "endurance": 6,
+            "strength": 20,
+            "dexterity": 4,
+            "intelligence": 2,
+            "faith": 19,
+            "arcane": 10
+          },
+          "hp": 400,
+          "fp": 75,
+          "stamina": 60
+        },
+        {
+          "level": 4,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 19,
+            "mind": 7,
+            "endurance": 7,
+            "strength": 23,
+            "dexterity": 5,
+            "intelligence": 2,
+            "faith": 21,
+            "arcane": 10
+          },
+          "hp": 460,
+          "fp": 80,
+          "stamina": 62
+        },
+        {
+          "level": 5,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 22,
+            "mind": 7,
+            "endurance": 9,
+            "strength": 25,
+            "dexterity": 6,
+            "intelligence": 2,
+            "faith": 23,
+            "arcane": 10
+          },
+          "hp": 520,
+          "fp": 80,
+          "stamina": 66
+        },
+        {
+          "level": 6,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 25,
+            "mind": 8,
+            "endurance": 10,
+            "strength": 28,
+            "dexterity": 6,
+            "intelligence": 2,
+            "faith": 25,
+            "arcane": 10
+          },
+          "hp": 580,
+          "fp": 85,
+          "stamina": 68
+        },
+        {
+          "level": 7,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 28,
+            "mind": 9,
+            "endurance": 12,
+            "strength": 31,
+            "dexterity": 7,
+            "intelligence": 3,
+            "faith": 27,
+            "arcane": 10
+          },
+          "hp": 640,
+          "fp": 90,
+          "stamina": 72
+        },
+        {
+          "level": 8,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 30,
+            "mind": 9,
+            "endurance": 13,
+            "strength": 33,
+            "dexterity": 8,
+            "intelligence": 3,
+            "faith": 29,
+            "arcane": 10
+          },
+          "hp": 680,
+          "fp": 90,
+          "stamina": 74
+        },
+        {
+          "level": 9,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 33,
+            "mind": 10,
+            "endurance": 14,
+            "strength": 36,
+            "dexterity": 8,
+            "intelligence": 3,
+            "faith": 31,
+            "arcane": 10
+          },
+          "hp": 740,
+          "fp": 95,
+          "stamina": 76
+        },
+        {
+          "level": 10,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 36,
+            "mind": 10,
+            "endurance": 16,
+            "strength": 38,
+            "dexterity": 9,
+            "intelligence": 3,
+            "faith": 33,
+            "arcane": 10
+          },
+          "hp": 800,
+          "fp": 95,
+          "stamina": 80
+        },
+        {
+          "level": 11,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 39,
+            "mind": 11,
+            "endurance": 17,
+            "strength": 41,
+            "dexterity": 10,
+            "intelligence": 3,
+            "faith": 35,
+            "arcane": 10
+          },
+          "hp": 860,
+          "fp": 100,
+          "stamina": 82
+        },
+        {
+          "level": 12,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 42,
+            "mind": 12,
+            "endurance": 19,
+            "strength": 44,
+            "dexterity": 11,
+            "intelligence": 4,
+            "faith": 37,
+            "arcane": 10
+          },
+          "hp": 920,
+          "fp": 105,
+          "stamina": 86
+        },
+        {
+          "level": 13,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 44,
+            "mind": 12,
+            "endurance": 20,
+            "strength": 46,
+            "dexterity": 11,
+            "intelligence": 4,
+            "faith": 38,
+            "arcane": 10
+          },
+          "hp": 960,
+          "fp": 105,
+          "stamina": 88
+        },
+        {
+          "level": 14,
+          "isAnchor": false,
+          "stats": {
+            "vigor": 46,
+            "mind": 13,
+            "endurance": 21,
+            "strength": 48,
+            "dexterity": 12,
+            "intelligence": 4,
+            "faith": 39,
+            "arcane": 10
+          },
+          "hp": 1000,
+          "fp": 110,
+          "stamina": 90
+        },
+        {
+          "level": 15,
+          "isAnchor": true,
+          "stats": {
+            "vigor": 48,
+            "mind": 14,
+            "endurance": 22,
+            "strength": 50,
+            "dexterity": 13,
+            "intelligence": 5,
+            "faith": 41,
+            "arcane": 10
+          },
+          "hp": 1040,
+          "fp": 115,
+          "stamina": 92
+        }
+      ]
+    }
+  ]
+}
