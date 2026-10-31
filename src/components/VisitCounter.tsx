@@ -1,6 +1,13 @@
 import { useEffect, useState } from 'react';
 
 let request: Promise<number> | undefined;
+const CACHE_KEY = 'nightreign.visit.last.v1';
+function lastCount(): { value: number; at: number } | null {
+  try {
+    const v = JSON.parse(localStorage.getItem(CACHE_KEY) ?? 'null');
+    return v && Number.isSafeInteger(v.value) && v.value >= 0 && Number.isFinite(v.at) ? v : null;
+  } catch { return null; }
+}
 
 // One request per document, including React StrictMode remounts and hash navigation.
 function countVisit(): Promise<number> {
@@ -31,6 +38,7 @@ function countVisit(): Promise<number> {
     script.onerror = () => { finish(); reject(new Error('unavailable')); };
     document.head.appendChild(script);
   });
+  request.catch(() => { request = undefined; });
   return request;
 }
 
@@ -38,12 +46,19 @@ export function VisitCounter() {
   const production = location.hostname === 'shuyi-nr.github.io' && location.pathname.startsWith('/nightreign-affix/');
   const [count, setCount] = useState<number | null>(null);
   const [failed, setFailed] = useState(false);
+  const [cached, setCached] = useState(lastCount);
+  const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     if (!production) return;
     let active = true;
-    countVisit().then((n) => { if (active) setCount(n); }).catch(() => { if (active) setFailed(true); });
+    setFailed(false);
+    countVisit().then((n) => {
+      const snapshot = { value: n, at: Date.now() };
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify(snapshot)); } catch { /* optional cache */ }
+      if (active) { setCount(n); setCached(snapshot); }
+    }).catch(() => { if (active) setFailed(true); });
     return () => { active = false; };
-  }, [production]);
+  }, [production, attempt]);
   return (
     <div className="visit-counter">
       <div aria-live="polite">本站累计浏览 <strong>{count != null ? count.toLocaleString('zh-CN') : !production ? '本地预览不计数' : failed ? '暂不可用' : '读取中…'}</strong>{count != null && ' 次'}</div>
