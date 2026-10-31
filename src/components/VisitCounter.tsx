@@ -61,7 +61,12 @@ export function VisitCounter() {
   }, [production, attempt]);
   return (
     <div className="visit-counter">
-      <div aria-live="polite">本站累计浏览 <strong>{count != null ? count.toLocaleString('zh-CN') : !production ? '本地预览不计数' : failed ? '暂不可用' : '读取中…'}</strong>{count != null && ' 次'}</div>
+      <div aria-live="polite">本站累计浏览 <strong>{count != null ? count.toLocaleString('zh-CN') : !production ? '本地预览不计数' : failed && cached ? cached.value.toLocaleString('zh-CN') : failed ? '暂不可用' : '读取中…'}</strong>{(count != null || (production && failed && cached)) && ' 次'}</div>
+      {production && failed && <div role="status">
+        <p>{cached ? `上次成功读取：${new Date(cached.at).toLocaleString('zh-CN')}（历史缓存，非实时）` : '统计服务暂时无法连接，当前浏览量未知。'}</p>
+        <p>网络或统计服务证书异常时无法读取；词条检测不受影响。</p>
+        <button type="button" className="btn ghost small" onClick={() => setAttempt((v) => v + 1)}>重试读取</button>
+      </div>}
       <details>
         <summary>统计说明与隐私</summary>
         <p>由 <a href="https://busuanzi.ibruce.info/" target="_blank" rel="noreferrer">不蒜子</a> 提供联网计数；每次打开或刷新页面记录一次，站内切换和选择词条不重复计数。不是独立访客人数，接入前未记录的访问无法补回。</p>
