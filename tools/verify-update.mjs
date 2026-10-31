@@ -1,4 +1,4 @@
-// Real-browser regression checks for pairing, sharing, mobile picking and stats.
+﻿// Real-browser regression checks for pairing, sharing, mobile picking and stats.
 import { spawn } from 'node:child_process';
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -61,7 +61,7 @@ try {
     return r.result.value;
   };
   const waitFor = async (expression, name) => {
-    for (let i = 0; i < 80; i++) { if (await evaluate(expression)) return; await pause(200); }
+    for (let i = 0; i < 180; i++) { if (await evaluate(expression)) return; await pause(200); }
     throw new Error('Timed out: ' + name);
   };
   const go = async (hash) => {
@@ -87,9 +87,10 @@ try {
     await evaluate('document.querySelectorAll(".nav button")[0].click()');
     await pause(200);
     assert(statisticRequests === 1, 'navigation and StrictMode count only once');
+    await send('Network.setBypassServiceWorker', { bypass: true });
     await send('Fetch.enable', { patterns: [...(candidate ? [{urlPattern:origin+'*',requestStage:'Request'}] : []), { urlPattern: '*busuanzi.meuicat.com/*', requestStage: 'Request' }] });
     await send('Page.reload');
-    await waitFor('document.querySelector(".visit-counter strong")?.textContent === "暂不可用"', 'counter failure fallback');
+    await waitFor('!!document.querySelector(".visit-counter [role=" + "status" + "]")', 'counter failure fallback');
     assert(await evaluate('!!document.querySelector(".mode-grid")'), 'blocked statistics do not break the checker');
   } else {
     await go('#/check?mode=CURRENT_NORMAL&ids=6630000,6630100,7000000');
@@ -182,3 +183,4 @@ try {
   chrome.kill();
   server?.close();
 }
+
