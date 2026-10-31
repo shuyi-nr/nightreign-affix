@@ -68,7 +68,7 @@ npm run build
 
 ## 公开浏览量与反馈
 
-`VisitCounter.tsx` 使用 [不蒜子官方服务](https://busuanzi.ibruce.info/) 的页面 PV 回调接口。正式域名 `shuyi-nr.github.io/nightreign-affix/` 每次打开 / 刷新发一个请求；站内 hash 导航与 React StrictMode 不重复请求。local / file 预览不计数，不缓存或伪造计数，失败显示「暂不可用」。计数不是 UV，没有完整流量分析后台。第三方可以收到 IP、浏览器信息与不含 hash 的页面地址；不发送收藏和词条组合。未记录的历史访问无法补回，计数可能受网络、拦截和服务可用性影响。
+`VisitCounter.tsx` 自 2026-10-31 切换到 [xcsoft 不蒜子公共服务](https://busuanzi.meuicat.com/) 的 JSON POST API，重新累计页面 PV；旧服务证书失效，历史未合并。固定发送站点根路径作为 `x-bsz-referer`，不发送 hash、词条组合、收藏、Cookie 或身份令牌。正式域名每次打开 / 刷新一个请求，站内切换与 StrictMode 不重复计数；手动重试可能增加一次计数。local / file 预览不计数。新服务缓存使用独立键，失败可显示带时间的历史快照并明确标注非实时，不伪造新数字。服务方仍能收到 IP 与浏览器信息；这不是 UV 或完整分析后台。可用性和计数连续性依赖第三方。`node tools/verify-update.mjs --candidate` 可在正式源的模拟页面中验证本地构建与真实服务的跨域兼容性。
 
 问题反馈跳转仓库 GitHub Issues，由用户自行提交，自动带入当前复现链接、口径及数据版本；提供复制模板选项。提交公开且需 GitHub 登录。
 

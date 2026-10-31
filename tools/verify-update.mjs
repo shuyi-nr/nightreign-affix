@@ -5,7 +5,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createServer } from 'node:http';
 
-const live = process.argv.includes('--live');
+const candidate = process.argv.includes('--candidate');
+const live = process.argv.includes('--live') || candidate;
 const origin = live ? 'https://shuyi-nr.github.io/nightreign-affix/' : 'http://127.0.0.1:4176/';
 const server = live ? null : createServer((req, res) => {
   try {
@@ -41,8 +42,17 @@ try {
     const m = JSON.parse(data);
     if (m.id && pending.has(m.id)) { const p = pending.get(m.id); pending.delete(m.id); m.error ? p.reject(m.error) : p.resolve(m.result); }
     if (m.method === 'Runtime.exceptionThrown') errors.push(m.params.exceptionDetails);
-    if (m.method === 'Network.requestWillBeSent' && m.params.request.url.startsWith('https://busuanzi.ibruce.info/busuanzi?')) statisticRequests++;
-    if (m.method === 'Fetch.requestPaused') ws.send(JSON.stringify({ id: ++sequence, method: 'Fetch.failRequest', params: { requestId: m.params.requestId, errorReason: 'BlockedByClient' } }));
+    if (m.method === 'Network.requestWillBeSent' && m.params.request.method === 'POST' && m.params.request.url.startsWith('https://busuanzi.meuicat.com/api')) statisticRequests++;
+    if (m.method === 'Fetch.requestPaused') {
+      if (candidate && m.params.request.url.startsWith(origin)) {
+        const path = new URL(m.params.request.url).pathname.slice('/nightreign-affix/'.length) || 'index.html';
+        try {
+          const body = readFileSync(join('dist', path)).toString('base64');
+          const mime = path.endsWith('.js') ? 'text/javascript' : path.endsWith('.css') ? 'text/css' : path.endsWith('.png') ? 'image/png' : 'text/html';
+          ws.send(JSON.stringify({ id: ++sequence, method: 'Fetch.fulfillRequest', params: { requestId: m.params.requestId, responseCode: 200, responseHeaders: [{name:'Content-Type',value:mime}], body } }));
+        } catch { ws.send(JSON.stringify({id:++sequence,method:'Fetch.failRequest',params:{requestId:m.params.requestId,errorReason:'Failed'}})); }
+      } else ws.send(JSON.stringify({ id: ++sequence, method: 'Fetch.failRequest', params: { requestId: m.params.requestId, errorReason: 'BlockedByClient' } }));
+    }
   });
   const send = (method, params = {}) => new Promise((resolve, reject) => { const id = ++sequence; pending.set(id, { resolve, reject }); ws.send(JSON.stringify({ id, method, params })); });
   const evaluate = async (expression) => {
@@ -64,6 +74,7 @@ try {
   await send('Runtime.enable');
   await send('Page.enable');
   await send('Network.enable');
+  if (candidate) await send('Fetch.enable', {patterns:[{urlPattern:origin+'*',requestStage:'Request'}]});
   await send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 1000, deviceScaleFactor: 1, mobile: false });
   if (live) {
     await go('#/check');
@@ -76,7 +87,7 @@ try {
     await evaluate('document.querySelectorAll(".nav button")[0].click()');
     await pause(200);
     assert(statisticRequests === 1, 'navigation and StrictMode count only once');
-    await send('Fetch.enable', { patterns: [{ urlPattern: '*busuanzi.ibruce.info/*', requestStage: 'Request' }] });
+    await send('Fetch.enable', { patterns: [...(candidate ? [{urlPattern:origin+'*',requestStage:'Request'}] : []), { urlPattern: '*busuanzi.meuicat.com/*', requestStage: 'Request' }] });
     await send('Page.reload');
     await waitFor('document.querySelector(".visit-counter strong")?.textContent === "暂不可用"', 'counter failure fallback');
     assert(await evaluate('!!document.querySelector(".mode-grid")'), 'blocked statistics do not break the checker');
