@@ -34,7 +34,8 @@
       /* Real loading shell: no remote fonts or artificial startup delay. */
       html, body { margin: 0; background: #080a10; }
       .boot-splash {
-        position: relative; isolation: isolate; overflow: hidden; box-sizing: border-box;
+        position: fixed; inset: 0; z-index: 1000; cursor: pointer;
+        isolation: isolate; overflow: hidden; box-sizing: border-box;
         min-height: 100vh; min-height: 100svh; padding: 40px 20px;
         display: flex; flex-direction: column; align-items: center; justify-content: center;
         color: #d4b474; text-align: center;
@@ -88,23 +89,37 @@
       .boot-text { margin: 32px 0 0; font: 10px/1.7 system-ui, sans-serif; letter-spacing: .35em; color: #8c8990; }
       .boot-progress { position: relative; overflow: hidden; width: 96px; height: 1px; background: #c9a25c20; margin-top: 16px; }
       .boot-progress::after { content: ''; position: absolute; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, #e8c884, transparent); animation: boot-travel 2s ease-in-out infinite; }
-      @keyframes boot-shine-pass { 0%, 8% { background-position: 120% 50%; } 68%, 100% { background-position: -120% 50%; } }
+      .boot-skip { margin-top: 25px; min-height: 44px; padding: 8px 20px; border: 1px solid #c9a25c45; border-radius: 24px; background: #11151dcc; color: #b9aa8f; font: 12px system-ui, sans-serif; cursor: pointer; letter-spacing: .15em; }
+      .boot-skip:focus-visible { outline: 2px solid #edcf94; outline-offset: 4px; }
+      @keyframes boot-shine-pass { 0%, 4% { background-position: 120% 50%; } 48%, 100% { background-position: -120% 50%; } }
       @keyframes boot-travel { from { transform: translateX(-110%); } to { transform: translateX(310%); } }
       @media (max-width: 480px) { .boot-kicker { font-size: 9px; letter-spacing: .22em; margin-bottom: 30px; } .boot-title { letter-spacing: 0; margin-bottom: 18px; } .boot-splash::before { width: 86vw; } }
       @media (prefers-reduced-motion: reduce) { .boot-title, .boot-progress::after, .boot-shine { animation: none; } .boot-shine { display: none; } }
     </style>
   </head>
   <body>
-    <div id="root">
-      <div class="boot-splash" role="status" aria-label="黑夜从未结束，正在加载遗物检测站">
+    <div id="root" inert></div>
+      <div id="boot-screen" class="boot-splash" aria-label="黑夜从未结束，正在加载遗物检测站">
         <div class="boot-kicker" aria-hidden="true">ELDEN RING NIGHTREIGN</div>
         <div class="boot-sigil" aria-hidden="true"></div>
         <h1 class="boot-title" data-title="黑夜从未结束" aria-label="黑夜从未结束"><span class="boot-letter" data-letter="黑" aria-hidden="true">黑</span><span class="boot-letter" data-letter="夜" aria-hidden="true">夜</span><span class="boot-letter" data-letter="从" aria-hidden="true">从</span><span class="boot-letter" data-letter="未" aria-hidden="true">未</span><span class="boot-letter" data-letter="结" aria-hidden="true">结</span><span class="boot-letter" data-letter="束" aria-hidden="true">束</span><span class="boot-shine" aria-hidden="true">黑夜从未结束</span></h1>
         <div class="boot-rule" aria-hidden="true"><span></span></div>
         <p class="boot-text">正在唤醒遗物档案</p>
         <div class="boot-progress" aria-hidden="true"></div>
+        <button class="boot-skip" type="button">点击跳过</button>
       </div>
-    </div>
+    <script>
+      (() => {
+        const screen = document.getElementById('boot-screen');
+        screen.dataset.started = String(performance.now());
+        screen.addEventListener('click', () => {
+          screen.dataset.skip = 'true';
+          const button = screen.querySelector('button');
+          if (button) button.textContent = '正在进入…';
+          document.dispatchEvent(new Event('nr-intro-skip'));
+        });
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
