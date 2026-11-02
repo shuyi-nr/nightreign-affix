@@ -20,7 +20,14 @@ createRoot(document.getElementById('root')!).render(
 // Register the service worker for offline / install support (best-effort;
 // silently no-ops on http:// and file:// where service workers are unavailable).
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
-  });
+  if (import.meta.env.DEV) {
+    // Old preview workers can otherwise serve stale source after local edits.
+    navigator.serviceWorker.getRegistrations().then((workers) => {
+      workers.forEach((worker) => { void worker.unregister(); });
+    }).catch(() => {});
+  } else {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    });
+  }
 }

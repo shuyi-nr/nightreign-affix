@@ -1,0 +1,22 @@
+地图图片来源与处理说明
+更新：2026-11-02
+
+本目录七张地图均由本站站长亲自在《艾尔登法环 黑夜君临》中截图，
+并于2026-11-02明确提供给本站进行裁剪、清除角色标记、叠加点位和展示。
+未使用第三方攻略网站的地图图片作为本站底图。
+
+crater-surface.jpg / crater-underground.jpg：火山口地表、地下
+mountaintop-surface.jpg：山顶
+rotted-woods-surface.jpg：腐败森林
+noklateo-surface.jpg：隐城
+great-hollow-surface.jpg / great-hollow-underground.jpg：大空洞地表、地下
+
+处理：imagegen 局部清除蓝色角色圆标与方向箭头；
+仅在原截图角色标记附近合入修补，其他区域沿用原截图，裁去窄边并压缩。
+本站编号、候选点位叠层与要塞分层示意另行制作。
+截图中的营地、夜雨、原有图标来自一次示例出击，不能视作当局必刷配置。
+
+游戏地图美术及游戏素材的权利仍归原权利方所有。
+©Bandai Namco Entertainment Inc. / ©2025 FromSoftware, Inc.
+本站是非官方、非商业的玩家辅助工具，与上述公司没有关联或官方认证。
+本说明记录本站的素材来源，不授予其他人对游戏素材的独立转载许可。

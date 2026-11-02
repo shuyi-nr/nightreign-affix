@@ -3,7 +3,7 @@
 //   asset referenced by the built index.html (so the site works fully offline).
 // - fetch:   navigations are network-first with a cached-shell fallback;
 //            same-origin assets are cache-first.
-const VERSION = 'v8-20261031-compendium';
+const VERSION = 'v10-20261102-screenshot-maps';
 const CACHE = `nightreign-affix-${VERSION}`;
 
 // Files with names known at build time (copied verbatim from public/).
@@ -15,6 +15,14 @@ const STATIC = [
   './icons/icon-maskable-512.png',
   './icons/apple-touch-icon.png',
   './og-image.png',
+  './maps/crater-surface.jpg',
+  './maps/crater-underground.jpg',
+  './maps/mountaintop-surface.jpg',
+  './maps/rotted-woods-surface.jpg',
+  './maps/noklateo-surface.jpg',
+  './maps/great-hollow-surface.jpg',
+  './maps/great-hollow-underground.jpg',
+  './maps/SOURCES.txt',
 ];
 
 // Parse the freshly-built index.html for hashed `./assets/...` references.

@@ -1,0 +1,1844 @@
+{
+  "checkedAt": "2026-11-02",
+  "patternVersion": "1.03.2 / 2026-09-26",
+  "coordinateSystem": "0–1000 projected map plane; x right, y down; no elevation or routing data",
+  "artwork": "Original point overlays and castle structure diagrams; raster backgrounds are owner-provided gameplay screenshots. See public/maps/SOURCES.txt and MAP_ASSETS.md.",
+  "crystalSource": "https://nightfarerledger.com/nightmap/great-hollow",
+  "crystalScript": "https://nightfarerledger.com/assets/NightmapEarthPage-B-K7LE9j.js",
+  "crystalSourceSha256": "98420e94361255438f09d4d3adffc7f0d128611dc77135b06f8a23f627edae40",
+  "crystalCredits": [
+    "Alex0Goat",
+    "SisterNun",
+    "Nightfarer Ledger"
+  ],
+  "patternCredits": [
+    "Artimuz",
+    "thefifthmatt",
+    "kevins78"
+  ],
+  "crystals": [
+    {
+      "id": "C01",
+      "x": 451,
+      "y": 316,
+      "sets": [
+        "B"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C02",
+      "x": 709,
+      "y": 340,
+      "sets": [
+        "C"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C03",
+      "x": 534,
+      "y": 430,
+      "sets": [
+        "D"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C04",
+      "x": 375,
+      "y": 441,
+      "sets": [
+        "B",
+        "C"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C05",
+      "x": 731,
+      "y": 462,
+      "sets": [
+        "D"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C06",
+      "x": 637,
+      "y": 463,
+      "sets": [
+        "A",
+        "B"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C07",
+      "x": 418,
+      "y": 469,
+      "sets": [
+        "A",
+        "D"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C08",
+      "x": 270,
+      "y": 477,
+      "sets": [
+        "A",
+        "C"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C09",
+      "x": 449,
+      "y": 573,
+      "sets": [
+        "C",
+        "D"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C10",
+      "x": 294,
+      "y": 587,
+      "sets": [
+        "B"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C11",
+      "x": 241,
+      "y": 604,
+      "sets": [
+        "D"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C12",
+      "x": 401,
+      "y": 607,
+      "sets": [
+        "A",
+        "B"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C13",
+      "x": 512,
+      "y": 660,
+      "sets": [
+        "A"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C14",
+      "x": 362,
+      "y": 744,
+      "sets": [
+        "B",
+        "C"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C15",
+      "x": 422,
+      "y": 787,
+      "sets": [
+        "A"
+      ],
+      "underground": false
+    },
+    {
+      "id": "C16",
+      "x": 876,
+      "y": 744,
+      "sets": [
+        "C"
+      ],
+      "underground": true
+    },
+    {
+      "id": "C17",
+      "x": 838,
+      "y": 807,
+      "sets": [
+        "B"
+      ],
+      "underground": true
+    },
+    {
+      "id": "C18",
+      "x": 915,
+      "y": 825,
+      "sets": [
+        "A",
+        "D"
+      ],
+      "underground": true
+    },
+    {
+      "id": "C19",
+      "x": 801,
+      "y": 859,
+      "sets": [
+        "A",
+        "B"
+      ],
+      "underground": true
+    },
+    {
+      "id": "C20",
+      "x": 916,
+      "y": 916,
+      "sets": [
+        "C",
+        "D"
+      ],
+      "underground": true
+    },
+    {
+      "id": "C21",
+      "x": 807,
+      "y": 920,
+      "sets": [
+        "C",
+        "D"
+      ],
+      "underground": true
+    }
+  ],
+  "terrains": {
+    "crater": {
+      "records": 50,
+      "bosses": [
+        {
+          "id": "B01",
+          "x": 292,
+          "y": 193,
+          "names": [
+            "Elder Lion",
+            "Night's Cavalry",
+            "Ancient Hero of Zamor",
+            "Erdtree Avatar",
+            "Royal Revenant",
+            "Miranda Blossom",
+            "Leonine Misbegotten",
+            "Demi-Human Queen",
+            "Magma Wyrm",
+            "Royal Carian Knight",
+            "Black Knife Assassin",
+            "Ulcerated Tree Spirit",
+            "Flying Dragon",
+            "Draconic Tree Sentinel",
+            "Grafted Scion",
+            "Ancestor Spirit",
+            "Black Blade Kindred",
+            "Golden Hippopotamus",
+            "Bell Bearing Hunter",
+            "Tree Sentinel",
+            "Red Wolf"
+          ]
+        },
+        {
+          "id": "B02",
+          "x": 646,
+          "y": 214,
+          "names": [
+            "Flying Dragon"
+          ]
+        },
+        {
+          "id": "B03",
+          "x": 508,
+          "y": 253.5,
+          "names": [
+            "Fire Prelates"
+          ]
+        },
+        {
+          "id": "B04",
+          "x": 410.5,
+          "y": 263,
+          "names": [
+            "Demi-Human Queen"
+          ]
+        },
+        {
+          "id": "B05",
+          "x": 358.5,
+          "y": 303,
+          "names": [
+            "Red Wolf"
+          ]
+        },
+        {
+          "id": "B06",
+          "x": 605,
+          "y": 317,
+          "names": [
+            "Demi-Human Queen"
+          ]
+        },
+        {
+          "id": "B07",
+          "x": 311.5,
+          "y": 375,
+          "names": [
+            "Death Rite Bird",
+            "Ulcerated Tree Spirit",
+            "Leonine Misbegotten",
+            "Grafted Scion",
+            "Tree Sentinel",
+            "Bell Bearing Hunter",
+            "Night's Cavalry",
+            "Black Knife Assassin",
+            "Flying Dragon",
+            "Erdtree Avatar",
+            "Golden Hippopotamus",
+            "Demi-Human Queen",
+            "Royal Carian Knight",
+            "Ancient Hero of Zamor",
+            "Draconic Tree Sentinel",
+            "Miranda Blossom",
+            "Magma Wyrm",
+            "Elder Lion",
+            "Royal Revenant",
+            "Black Blade Kindred"
+          ]
+        },
+        {
+          "id": "B08",
+          "x": 572.5,
+          "y": 421.5,
+          "names": [
+            "Magma Wyrm"
+          ]
+        },
+        {
+          "id": "B09",
+          "x": 511,
+          "y": 433,
+          "names": [
+            "Fallingstar Beast"
+          ]
+        },
+        {
+          "id": "B10",
+          "x": 396,
+          "y": 436,
+          "names": [
+            "Valiant Gargoyle"
+          ]
+        },
+        {
+          "id": "B11",
+          "x": 762,
+          "y": 509.5,
+          "names": [
+            "Royal Revenant",
+            "Erdtree Avatar",
+            "Bell Bearing Hunter",
+            "Ulcerated Tree Spirit",
+            "Draconic Tree Sentinel",
+            "Tree Sentinel",
+            "Demi-Human Queen",
+            "Leonine Misbegotten",
+            "Grafted Scion",
+            "Miranda Blossom",
+            "Black Blade Kindred",
+            "Golden Hippopotamus",
+            "Red Wolf",
+            "Ancient Hero of Zamor",
+            "Flying Dragon",
+            "Night's Cavalry",
+            "Ancestor Spirit",
+            "Death Rite Bird",
+            "Royal Carian Knight",
+            "Black Knife Assassin",
+            "Elder Lion"
+          ]
+        },
+        {
+          "id": "B12",
+          "x": 442,
+          "y": 542,
+          "names": [
+            "Black Blade Kindred",
+            "Ancestor Spirit",
+            "Death Rite Bird",
+            "Erdtree Avatar",
+            "Royal Carian Knight",
+            "Bell Bearing Hunter",
+            "Ulcerated Tree Spirit",
+            "Tree Sentinel",
+            "Magma Wyrm",
+            "Draconic Tree Sentinel"
+          ]
+        },
+        {
+          "id": "B13",
+          "x": 472.5,
+          "y": 543.5,
+          "names": [
+            "Grafted Scion",
+            "Royal Revenant",
+            "Leonine Misbegotten",
+            "Black Knife Assassin",
+            "Ancient Hero of Zamor",
+            "Bell Bearing Hunter",
+            "Red Wolf"
+          ]
+        },
+        {
+          "id": "B14",
+          "x": 432,
+          "y": 716.5,
+          "names": [
+            "Ancestor Spirit",
+            "Elder Lion",
+            "Grafted Scion",
+            "Tree Sentinel",
+            "Black Knife Assassin",
+            "Flying Dragon",
+            "Golden Hippopotamus",
+            "Night's Cavalry",
+            "Ulcerated Tree Spirit",
+            "Red Wolf",
+            "Bell Bearing Hunter",
+            "Draconic Tree Sentinel",
+            "Magma Wyrm",
+            "Demi-Human Queen",
+            "Royal Revenant",
+            "Erdtree Avatar",
+            "Miranda Blossom",
+            "Black Blade Kindred",
+            "Royal Carian Knight",
+            "Death Rite Bird"
+          ]
+        },
+        {
+          "id": "B15",
+          "x": 681.5,
+          "y": 781,
+          "names": [
+            "Flying Dragon",
+            "Miranda Blossom",
+            "Red Wolf",
+            "Elder Lion",
+            "Night's Cavalry",
+            "Tree Sentinel",
+            "Golden Hippopotamus",
+            "Draconic Tree Sentinel",
+            "Ancient Hero of Zamor",
+            "Black Blade Kindred",
+            "Ulcerated Tree Spirit",
+            "Leonine Misbegotten",
+            "Black Knife Assassin",
+            "Magma Wyrm",
+            "Erdtree Avatar",
+            "Royal Revenant",
+            "Demi-Human Queen",
+            "Royal Carian Knight",
+            "Bell Bearing Hunter",
+            "Ancestor Spirit"
+          ]
+        },
+        {
+          "id": "B16",
+          "x": 309,
+          "y": 823.5,
+          "names": [
+            "Black Knife Assassin",
+            "Draconic Tree Sentinel",
+            "Black Blade Kindred",
+            "Miranda Blossom",
+            "Flying Dragon",
+            "Demi-Human Queen",
+            "Royal Carian Knight",
+            "Red Wolf",
+            "Ulcerated Tree Spirit",
+            "Magma Wyrm",
+            "Royal Revenant",
+            "Death Rite Bird",
+            "Golden Hippopotamus",
+            "Night's Cavalry",
+            "Ancient Hero of Zamor",
+            "Bell Bearing Hunter",
+            "Tree Sentinel",
+            "Grafted Scion",
+            "Leonine Misbegotten",
+            "Ancestor Spirit"
+          ]
+        }
+      ],
+      "blessings": []
+    },
+    "mountaintop": {
+      "records": 50,
+      "bosses": [
+        {
+          "id": "B01",
+          "x": 336.5,
+          "y": 195,
+          "names": [
+            "Giant Crows"
+          ]
+        },
+        {
+          "id": "B02",
+          "x": 447,
+          "y": 196,
+          "names": [
+            "Demi-Human Swordmaster"
+          ]
+        },
+        {
+          "id": "B03",
+          "x": 395,
+          "y": 199.5,
+          "names": [
+            "Mountaintop Ice Dragon"
+          ]
+        },
+        {
+          "id": "B04",
+          "x": 244.5,
+          "y": 211.5,
+          "names": [
+            "Demi-Human Swordmaster"
+          ]
+        },
+        {
+          "id": "B05",
+          "x": 632,
+          "y": 219,
+          "names": [
+            "Draconic Tree Sentinel",
+            "Golden Hippopotamus",
+            "Elder Lion",
+            "Tree Sentinel",
+            "Royal Revenant",
+            "Magma Wyrm",
+            "Red Wolf",
+            "Flying Dragon",
+            "Royal Carian Knight",
+            "Black Blade Kindred",
+            "Demi-Human Queen",
+            "Leonine Misbegotten",
+            "Miranda Blossom",
+            "Night's Cavalry",
+            "Grafted Scion",
+            "Erdtree Avatar",
+            "Ulcerated Tree Spirit",
+            "Bell Bearing Hunter",
+            "Black Knife Assassin",
+            "Ancient Hero of Zamor"
+          ]
+        },
+        {
+          "id": "B06",
+          "x": 191.5,
+          "y": 251,
+          "names": [
+            "Mountaintop Ice Dragon"
+          ]
+        },
+        {
+          "id": "B07",
+          "x": 364,
+          "y": 285,
+          "names": [
+            "Mountaintop Ice Dragon"
+          ]
+        },
+        {
+          "id": "B08",
+          "x": 418,
+          "y": 339,
+          "names": [
+            "Snowfield Trolls"
+          ]
+        },
+        {
+          "id": "B09",
+          "x": 306,
+          "y": 352.5,
+          "names": [
+            "Flying Dragon"
+          ]
+        },
+        {
+          "id": "B10",
+          "x": 235,
+          "y": 356,
+          "names": [
+            "Mountaintop Ice Dragon"
+          ]
+        },
+        {
+          "id": "B11",
+          "x": 550,
+          "y": 381.5,
+          "names": [
+            "Grafted Scion",
+            "Royal Revenant",
+            "Draconic Tree Sentinel",
+            "Elder Lion",
+            "Death Rite Bird",
+            "Miranda Blossom",
+            "Ulcerated Tree Spirit",
+            "Royal Carian Knight",
+            "Ancient Hero of Zamor",
+            "Night's Cavalry",
+            "Golden Hippopotamus",
+            "Erdtree Avatar",
+            "Tree Sentinel",
+            "Magma Wyrm",
+            "Black Blade Kindred",
+            "Bell Bearing Hunter",
+            "Leonine Misbegotten"
+          ]
+        },
+        {
+          "id": "B12",
+          "x": 760.5,
+          "y": 509.5,
+          "names": [
+            "Black Knife Assassin",
+            "Draconic Tree Sentinel",
+            "Ancestor Spirit",
+            "Ancient Hero of Zamor",
+            "Night's Cavalry",
+            "Demi-Human Queen",
+            "Leonine Misbegotten",
+            "Ulcerated Tree Spirit",
+            "Royal Revenant",
+            "Red Wolf",
+            "Golden Hippopotamus",
+            "Erdtree Avatar",
+            "Flying Dragon",
+            "Elder Lion",
+            "Royal Carian Knight",
+            "Miranda Blossom",
+            "Black Blade Kindred",
+            "Bell Bearing Hunter",
+            "Magma Wyrm",
+            "Grafted Scion"
+          ]
+        },
+        {
+          "id": "B13",
+          "x": 442,
+          "y": 543,
+          "names": [
+            "Royal Carian Knight",
+            "Erdtree Avatar",
+            "Magma Wyrm",
+            "Ulcerated Tree Spirit",
+            "Black Blade Kindred",
+            "Bell Bearing Hunter",
+            "Tree Sentinel",
+            "Death Rite Bird",
+            "Draconic Tree Sentinel",
+            "Ancestor Spirit"
+          ]
+        },
+        {
+          "id": "B14",
+          "x": 471.5,
+          "y": 543.5,
+          "names": [
+            "Red Wolf",
+            "Ancient Hero of Zamor",
+            "Leonine Misbegotten",
+            "Black Knife Assassin",
+            "Royal Revenant",
+            "Bell Bearing Hunter",
+            "Grafted Scion"
+          ]
+        },
+        {
+          "id": "B15",
+          "x": 431.5,
+          "y": 716,
+          "names": [
+            "Erdtree Avatar",
+            "Black Blade Kindred",
+            "Death Rite Bird",
+            "Flying Dragon",
+            "Bell Bearing Hunter",
+            "Demi-Human Queen",
+            "Night's Cavalry",
+            "Red Wolf",
+            "Golden Hippopotamus",
+            "Elder Lion",
+            "Black Knife Assassin",
+            "Miranda Blossom",
+            "Draconic Tree Sentinel",
+            "Magma Wyrm",
+            "Grafted Scion",
+            "Ancestor Spirit",
+            "Royal Carian Knight",
+            "Ulcerated Tree Spirit",
+            "Leonine Misbegotten",
+            "Royal Revenant",
+            "Tree Sentinel"
+          ]
+        },
+        {
+          "id": "B16",
+          "x": 680.5,
+          "y": 781.5,
+          "names": [
+            "Magma Wyrm",
+            "Flying Dragon",
+            "Black Knife Assassin",
+            "Royal Carian Knight",
+            "Ancestor Spirit",
+            "Ulcerated Tree Spirit",
+            "Draconic Tree Sentinel",
+            "Death Rite Bird",
+            "Tree Sentinel",
+            "Royal Revenant",
+            "Golden Hippopotamus",
+            "Black Blade Kindred",
+            "Night's Cavalry",
+            "Grafted Scion",
+            "Bell Bearing Hunter",
+            "Leonine Misbegotten",
+            "Miranda Blossom",
+            "Erdtree Avatar",
+            "Demi-Human Queen",
+            "Ancient Hero of Zamor",
+            "Elder Lion"
+          ]
+        },
+        {
+          "id": "B17",
+          "x": 308.5,
+          "y": 823,
+          "names": [
+            "Elder Lion",
+            "Miranda Blossom",
+            "Night's Cavalry",
+            "Black Knife Assassin",
+            "Leonine Misbegotten",
+            "Magma Wyrm",
+            "Ulcerated Tree Spirit",
+            "Black Blade Kindred",
+            "Flying Dragon",
+            "Erdtree Avatar",
+            "Tree Sentinel",
+            "Bell Bearing Hunter",
+            "Royal Revenant",
+            "Royal Carian Knight",
+            "Grafted Scion",
+            "Golden Hippopotamus",
+            "Red Wolf",
+            "Death Rite Bird",
+            "Ancient Hero of Zamor",
+            "Demi-Human Queen",
+            "Ancestor Spirit"
+          ]
+        }
+      ],
+      "blessings": []
+    },
+    "rotted_woods": {
+      "records": 50,
+      "bosses": [
+        {
+          "id": "B01",
+          "x": 292.5,
+          "y": 193,
+          "names": [
+            "Flying Dragon",
+            "Night's Cavalry",
+            "Red Wolf",
+            "Bell Bearing Hunter",
+            "Black Knife Assassin",
+            "Royal Carian Knight",
+            "Elder Lion",
+            "Erdtree Avatar",
+            "Black Blade Kindred",
+            "Ancient Hero of Zamor",
+            "Grafted Scion",
+            "Golden Hippopotamus",
+            "Ulcerated Tree Spirit",
+            "Magma Wyrm",
+            "Leonine Misbegotten",
+            "Demi-Human Queen",
+            "Miranda Blossom",
+            "Death Rite Bird",
+            "Royal Revenant",
+            "Ancestor Spirit"
+          ]
+        },
+        {
+          "id": "B02",
+          "x": 632,
+          "y": 219,
+          "names": [
+            "Leonine Misbegotten",
+            "Golden Hippopotamus",
+            "Elder Lion",
+            "Red Wolf",
+            "Death Rite Bird",
+            "Ulcerated Tree Spirit",
+            "Tree Sentinel",
+            "Miranda Blossom",
+            "Grafted Scion",
+            "Ancient Hero of Zamor",
+            "Royal Carian Knight",
+            "Night's Cavalry",
+            "Magma Wyrm",
+            "Royal Revenant",
+            "Demi-Human Queen",
+            "Black Knife Assassin",
+            "Draconic Tree Sentinel",
+            "Black Blade Kindred"
+          ]
+        },
+        {
+          "id": "B03",
+          "x": 335,
+          "y": 238.5,
+          "names": [
+            "Golden Hippopotamus",
+            "Ancient Hero of Zamor",
+            "Night's Cavalry",
+            "Miranda Blossom",
+            "Grafted Scion",
+            "Demi-Human Queen",
+            "Ulcerated Tree Spirit",
+            "Black Knife Assassin",
+            "Flying Dragon",
+            "Elder Lion",
+            "Red Wolf",
+            "Magma Wyrm",
+            "Ancestor Spirit",
+            "Leonine Misbegotten",
+            "Erdtree Avatar",
+            "Royal Revenant"
+          ]
+        },
+        {
+          "id": "B04",
+          "x": 470.5,
+          "y": 360.5,
+          "names": [
+            "Night's Cavalry",
+            "Tree Sentinel",
+            "Death Rite Bird",
+            "Magma Wyrm",
+            "Elder Lion",
+            "Royal Revenant",
+            "Golden Hippopotamus",
+            "Grafted Scion",
+            "Ancestor Spirit",
+            "Black Knife Assassin",
+            "Miranda Blossom",
+            "Royal Carian Knight",
+            "Erdtree Avatar",
+            "Leonine Misbegotten",
+            "Ancient Hero of Zamor",
+            "Red Wolf",
+            "Draconic Tree Sentinel"
+          ]
+        },
+        {
+          "id": "B05",
+          "x": 310,
+          "y": 375,
+          "names": [
+            "Red Wolf",
+            "Miranda Blossom",
+            "Draconic Tree Sentinel",
+            "Night's Cavalry",
+            "Black Knife Assassin",
+            "Royal Revenant",
+            "Leonine Misbegotten",
+            "Grafted Scion",
+            "Bell Bearing Hunter",
+            "Demi-Human Queen",
+            "Death Rite Bird",
+            "Golden Hippopotamus",
+            "Ancient Hero of Zamor",
+            "Royal Carian Knight",
+            "Elder Lion",
+            "Tree Sentinel",
+            "Black Blade Kindred",
+            "Ulcerated Tree Spirit",
+            "Flying Dragon"
+          ]
+        },
+        {
+          "id": "B06",
+          "x": 547.5,
+          "y": 383,
+          "names": [
+            "Black Blade Kindred",
+            "Black Knife Assassin",
+            "Ancient Hero of Zamor",
+            "Royal Revenant",
+            "Miranda Blossom",
+            "Grafted Scion",
+            "Erdtree Avatar",
+            "Draconic Tree Sentinel",
+            "Elder Lion",
+            "Magma Wyrm",
+            "Ancestor Spirit",
+            "Night's Cavalry",
+            "Golden Hippopotamus",
+            "Leonine Misbegotten",
+            "Red Wolf",
+            "Death Rite Bird",
+            "Royal Carian Knight",
+            "Bell Bearing Hunter"
+          ]
+        },
+        {
+          "id": "B07",
+          "x": 440.5,
+          "y": 542.5,
+          "names": [
+            "Royal Carian Knight",
+            "Death Rite Bird",
+            "Black Blade Kindred",
+            "Draconic Tree Sentinel",
+            "Ulcerated Tree Spirit",
+            "Tree Sentinel",
+            "Erdtree Avatar",
+            "Bell Bearing Hunter",
+            "Ancestor Spirit",
+            "Magma Wyrm"
+          ]
+        },
+        {
+          "id": "B08",
+          "x": 472.5,
+          "y": 543.5,
+          "names": [
+            "Black Knife Assassin",
+            "Leonine Misbegotten",
+            "Red Wolf",
+            "Ancient Hero of Zamor",
+            "Bell Bearing Hunter",
+            "Royal Revenant",
+            "Grafted Scion"
+          ]
+        },
+        {
+          "id": "B09",
+          "x": 571.5,
+          "y": 565,
+          "names": [
+            "Ulcerated Tree Spirit",
+            "Bell Bearing Hunter",
+            "Erdtree Avatar",
+            "Black Blade Kindred",
+            "Tree Sentinel",
+            "Royal Carian Knight",
+            "Death Rite Bird",
+            "Ancestor Spirit",
+            "Draconic Tree Sentinel",
+            "Magma Wyrm"
+          ]
+        },
+        {
+          "id": "B10",
+          "x": 603.5,
+          "y": 617,
+          "names": [
+            "Ancestor Spirit",
+            "Ulcerated Tree Spirit",
+            "Black Blade Kindred",
+            "Erdtree Avatar",
+            "Royal Carian Knight",
+            "Magma Wyrm",
+            "Tree Sentinel",
+            "Death Rite Bird",
+            "Bell Bearing Hunter",
+            "Draconic Tree Sentinel"
+          ]
+        },
+        {
+          "id": "B11",
+          "x": 719.5,
+          "y": 639.5,
+          "names": [
+            "Bell Bearing Hunter",
+            "Magma Wyrm",
+            "Ancestor Spirit",
+            "Royal Carian Knight",
+            "Ulcerated Tree Spirit",
+            "Black Blade Kindred",
+            "Death Rite Bird",
+            "Erdtree Avatar",
+            "Draconic Tree Sentinel",
+            "Flying Dragon",
+            "Tree Sentinel"
+          ]
+        },
+        {
+          "id": "B12",
+          "x": 784,
+          "y": 691,
+          "names": [
+            "Tree Sentinel",
+            "Erdtree Avatar",
+            "Ulcerated Tree Spirit",
+            "Magma Wyrm",
+            "Death Rite Bird",
+            "Draconic Tree Sentinel",
+            "Bell Bearing Hunter",
+            "Black Blade Kindred",
+            "Ancestor Spirit",
+            "Royal Carian Knight",
+            "Flying Dragon"
+          ]
+        },
+        {
+          "id": "B13",
+          "x": 432,
+          "y": 716.5,
+          "names": [
+            "Miranda Blossom",
+            "Draconic Tree Sentinel",
+            "Golden Hippopotamus",
+            "Night's Cavalry",
+            "Red Wolf",
+            "Elder Lion",
+            "Royal Revenant",
+            "Demi-Human Queen",
+            "Magma Wyrm",
+            "Leonine Misbegotten",
+            "Grafted Scion",
+            "Black Knife Assassin",
+            "Royal Carian Knight",
+            "Ancient Hero of Zamor"
+          ]
+        },
+        {
+          "id": "B14",
+          "x": 647,
+          "y": 743,
+          "names": [
+            "Magma Wyrm",
+            "Erdtree Avatar",
+            "Bell Bearing Hunter",
+            "Black Blade Kindred",
+            "Royal Carian Knight",
+            "Tree Sentinel",
+            "Draconic Tree Sentinel",
+            "Ulcerated Tree Spirit",
+            "Ancestor Spirit",
+            "Death Rite Bird"
+          ]
+        },
+        {
+          "id": "B15",
+          "x": 310,
+          "y": 823,
+          "names": [
+            "Elder Lion",
+            "Grafted Scion",
+            "Black Knife Assassin",
+            "Golden Hippopotamus",
+            "Royal Carian Knight",
+            "Demi-Human Queen",
+            "Miranda Blossom",
+            "Ancient Hero of Zamor",
+            "Red Wolf",
+            "Night's Cavalry",
+            "Erdtree Avatar",
+            "Leonine Misbegotten",
+            "Tree Sentinel",
+            "Magma Wyrm",
+            "Ancestor Spirit",
+            "Draconic Tree Sentinel",
+            "Royal Revenant",
+            "Black Blade Kindred",
+            "Flying Dragon",
+            "Ulcerated Tree Spirit",
+            "Death Rite Bird"
+          ]
+        },
+        {
+          "id": "B16",
+          "x": 764,
+          "y": 600.5,
+          "names": [
+            "Erdtree Avatar",
+            "Black Blade Kindred",
+            "Royal Carian Knight",
+            "Tree Sentinel",
+            "Bell Bearing Hunter",
+            "Ulcerated Tree Spirit",
+            "Ancestor Spirit",
+            "Draconic Tree Sentinel",
+            "Death Rite Bird",
+            "Flying Dragon"
+          ]
+        },
+        {
+          "id": "B17",
+          "x": 628.5,
+          "y": 558.5,
+          "names": [
+            "Draconic Tree Sentinel",
+            "Magma Wyrm",
+            "Ancestor Spirit",
+            "Erdtree Avatar",
+            "Royal Carian Knight",
+            "Death Rite Bird",
+            "Black Blade Kindred",
+            "Ulcerated Tree Spirit",
+            "Bell Bearing Hunter"
+          ]
+        },
+        {
+          "id": "B18",
+          "x": 779,
+          "y": 554,
+          "names": [
+            "Ulcerated Tree Spirit",
+            "Draconic Tree Sentinel",
+            "Ancestor Spirit",
+            "Bell Bearing Hunter",
+            "Death Rite Bird",
+            "Magma Wyrm",
+            "Tree Sentinel",
+            "Royal Carian Knight",
+            "Erdtree Avatar",
+            "Flying Dragon"
+          ]
+        }
+      ],
+      "blessings": [
+        {
+          "x": 650,
+          "y": 786,
+          "place": "Southwest"
+        },
+        {
+          "x": 812.5,
+          "y": 605.5,
+          "place": "Northeast"
+        },
+        {
+          "x": 565,
+          "y": 664.5,
+          "place": "West"
+        }
+      ]
+    },
+    "noklateo": {
+      "records": 50,
+      "bosses": [
+        {
+          "id": "B01",
+          "x": 292,
+          "y": 193,
+          "names": [
+            "Flying Dragon",
+            "Royal Revenant",
+            "Miranda Blossom",
+            "Draconic Tree Sentinel",
+            "Death Rite Bird",
+            "Grafted Scion",
+            "Ancient Hero of Zamor",
+            "Night's Cavalry",
+            "Demi-Human Queen",
+            "Ulcerated Tree Spirit",
+            "Royal Carian Knight",
+            "Leonine Misbegotten",
+            "Black Blade Kindred",
+            "Elder Lion",
+            "Red Wolf",
+            "Golden Hippopotamus",
+            "Bell Bearing Hunter",
+            "Erdtree Avatar"
+          ]
+        },
+        {
+          "id": "B02",
+          "x": 632,
+          "y": 218.5,
+          "names": [
+            "Golden Hippopotamus",
+            "Ulcerated Tree Spirit",
+            "Flying Dragon",
+            "Black Knife Assassin",
+            "Demi-Human Queen",
+            "Erdtree Avatar",
+            "Death Rite Bird",
+            "Night's Cavalry",
+            "Grafted Scion",
+            "Black Blade Kindred",
+            "Leonine Misbegotten",
+            "Miranda Blossom",
+            "Magma Wyrm",
+            "Elder Lion",
+            "Ancient Hero of Zamor",
+            "Red Wolf",
+            "Bell Bearing Hunter",
+            "Draconic Tree Sentinel",
+            "Ancestor Spirit",
+            "Royal Carian Knight",
+            "Royal Revenant"
+          ]
+        },
+        {
+          "id": "B03",
+          "x": 335,
+          "y": 238,
+          "names": [
+            "Black Knife Assassin",
+            "Elder Lion",
+            "Ancestor Spirit",
+            "Grafted Scion",
+            "Ancient Hero of Zamor",
+            "Night's Cavalry",
+            "Golden Hippopotamus",
+            "Royal Carian Knight",
+            "Black Blade Kindred",
+            "Bell Bearing Hunter",
+            "Draconic Tree Sentinel",
+            "Death Rite Bird",
+            "Miranda Blossom",
+            "Leonine Misbegotten",
+            "Royal Revenant",
+            "Tree Sentinel",
+            "Red Wolf",
+            "Demi-Human Queen"
+          ]
+        },
+        {
+          "id": "B04",
+          "x": 471,
+          "y": 361,
+          "names": [
+            "Elder Lion",
+            "Ancient Hero of Zamor",
+            "Golden Hippopotamus",
+            "Bell Bearing Hunter",
+            "Tree Sentinel",
+            "Red Wolf",
+            "Magma Wyrm",
+            "Miranda Blossom",
+            "Demi-Human Queen",
+            "Night's Cavalry",
+            "Leonine Misbegotten",
+            "Royal Revenant",
+            "Flying Dragon",
+            "Grafted Scion",
+            "Black Knife Assassin",
+            "Draconic Tree Sentinel",
+            "Death Rite Bird",
+            "Ancestor Spirit",
+            "Black Blade Kindred",
+            "Ulcerated Tree Spirit"
+          ]
+        },
+        {
+          "id": "B05",
+          "x": 310.5,
+          "y": 375,
+          "names": [
+            "Red Wolf",
+            "Tree Sentinel",
+            "Death Rite Bird",
+            "Draconic Tree Sentinel",
+            "Leonine Misbegotten",
+            "Ulcerated Tree Spirit",
+            "Ancient Hero of Zamor",
+            "Flying Dragon",
+            "Erdtree Avatar",
+            "Miranda Blossom",
+            "Demi-Human Queen",
+            "Elder Lion",
+            "Bell Bearing Hunter",
+            "Royal Revenant",
+            "Magma Wyrm",
+            "Grafted Scion",
+            "Black Knife Assassin",
+            "Black Blade Kindred"
+          ]
+        },
+        {
+          "id": "B06",
+          "x": 547.5,
+          "y": 382.5,
+          "names": [
+            "Erdtree Avatar",
+            "Night's Cavalry",
+            "Red Wolf",
+            "Elder Lion",
+            "Bell Bearing Hunter",
+            "Royal Revenant",
+            "Grafted Scion",
+            "Death Rite Bird",
+            "Golden Hippopotamus",
+            "Demi-Human Queen",
+            "Black Blade Kindred",
+            "Miranda Blossom",
+            "Black Knife Assassin",
+            "Leonine Misbegotten",
+            "Magma Wyrm",
+            "Ulcerated Tree Spirit",
+            "Draconic Tree Sentinel",
+            "Ancient Hero of Zamor",
+            "Royal Carian Knight"
+          ]
+        },
+        {
+          "id": "B07",
+          "x": 761,
+          "y": 509.5,
+          "names": [
+            "Ulcerated Tree Spirit",
+            "Grafted Scion",
+            "Ancient Hero of Zamor",
+            "Red Wolf",
+            "Miranda Blossom",
+            "Erdtree Avatar",
+            "Royal Carian Knight",
+            "Tree Sentinel",
+            "Demi-Human Queen",
+            "Leonine Misbegotten",
+            "Golden Hippopotamus",
+            "Black Knife Assassin",
+            "Night's Cavalry",
+            "Royal Revenant",
+            "Bell Bearing Hunter",
+            "Black Blade Kindred",
+            "Draconic Tree Sentinel",
+            "Death Rite Bird",
+            "Magma Wyrm",
+            "Flying Dragon",
+            "Elder Lion"
+          ]
+        },
+        {
+          "id": "B08",
+          "x": 341,
+          "y": 530,
+          "names": [
+            "Royal Carian Knight"
+          ]
+        },
+        {
+          "id": "B09",
+          "x": 206,
+          "y": 666.5,
+          "names": [
+            "Black Knife Assassin"
+          ]
+        },
+        {
+          "id": "B10",
+          "x": 239.5,
+          "y": 695.5,
+          "names": [
+            "Royal Revenant"
+          ]
+        },
+        {
+          "id": "B11",
+          "x": 300.5,
+          "y": 698.5,
+          "names": [
+            "Dragonkin Soldier"
+          ]
+        },
+        {
+          "id": "B12",
+          "x": 315,
+          "y": 756,
+          "names": [
+            "Headless Troll"
+          ]
+        },
+        {
+          "id": "B13",
+          "x": 488,
+          "y": 765.5,
+          "names": [
+            "Flying Dragon"
+          ]
+        },
+        {
+          "id": "B14",
+          "x": 681.5,
+          "y": 781.5,
+          "names": [
+            "Ancient Hero of Zamor",
+            "Magma Wyrm",
+            "Grafted Scion",
+            "Death Rite Bird",
+            "Ancestor Spirit",
+            "Night's Cavalry",
+            "Red Wolf",
+            "Elder Lion",
+            "Leonine Misbegotten",
+            "Flying Dragon",
+            "Royal Carian Knight",
+            "Tree Sentinel",
+            "Demi-Human Queen",
+            "Ulcerated Tree Spirit",
+            "Miranda Blossom",
+            "Royal Revenant",
+            "Black Knife Assassin",
+            "Golden Hippopotamus",
+            "Erdtree Avatar"
+          ]
+        },
+        {
+          "id": "B15",
+          "x": 315.5,
+          "y": 783,
+          "names": [
+            "Black Knife Assassin"
+          ]
+        },
+        {
+          "id": "B16",
+          "x": 203,
+          "y": 791.5,
+          "names": [
+            "Astel"
+          ]
+        },
+        {
+          "id": "B17",
+          "x": 491,
+          "y": 556,
+          "names": [
+            "Golden Hippopotamus"
+          ]
+        }
+      ],
+      "blessings": []
+    },
+    "great_hollow": {
+      "records": 80,
+      "bosses": [
+        {
+          "id": "B01",
+          "x": 331,
+          "y": 285,
+          "names": [
+            "Royal Carian Knight",
+            "Erdtree Avatar",
+            "Death Rite Bird",
+            "Bell Bearing Hunter",
+            "Tree Sentinel",
+            "Ulcerated Tree Spirit",
+            "Draconic Tree Sentinel",
+            "Ancestor Spirit",
+            "Black Blade Kindred",
+            "Magma Wyrm"
+          ]
+        },
+        {
+          "id": "B02",
+          "x": 461.5,
+          "y": 350,
+          "names": [
+            "Ancestor Spirit",
+            "Ancient Hero of Zamor",
+            "Royal Carian Knight",
+            "Ulcerated Tree Spirit",
+            "Bell Bearing Hunter",
+            "Grafted Scion",
+            "Demi-Human Queen",
+            "Tree Sentinel",
+            "Black Knife Assassin",
+            "Night's Cavalry",
+            "Red Wolf",
+            "Royal Revenant",
+            "Miranda Blossom",
+            "Golden Hippopotamus",
+            "Elder Lion",
+            "Draconic Tree Sentinel",
+            "Leonine Misbegotten"
+          ]
+        },
+        {
+          "id": "B03",
+          "x": 587.5,
+          "y": 487,
+          "names": [
+            "Grafted Scion",
+            "Red Wolf",
+            "Leonine Misbegotten",
+            "Demi-Human Queen",
+            "Miranda Blossom",
+            "Elder Lion",
+            "Black Knife Assassin",
+            "Royal Revenant",
+            "Ancient Hero of Zamor",
+            "Night's Cavalry",
+            "Golden Hippopotamus"
+          ]
+        },
+        {
+          "id": "B04",
+          "x": 288,
+          "y": 509,
+          "names": [
+            "Night's Cavalry",
+            "Golden Hippopotamus",
+            "Grafted Scion",
+            "Miranda Blossom",
+            "Leonine Misbegotten",
+            "Royal Carian Knight",
+            "Magma Wyrm",
+            "Ancient Hero of Zamor",
+            "Demi-Human Queen",
+            "Bell Bearing Hunter",
+            "Royal Revenant",
+            "Black Blade Kindred",
+            "Red Wolf",
+            "Death Rite Bird",
+            "Elder Lion",
+            "Ulcerated Tree Spirit",
+            "Draconic Tree Sentinel",
+            "Black Knife Assassin",
+            "Ancestor Spirit",
+            "Tree Sentinel",
+            "Erdtree Avatar"
+          ]
+        },
+        {
+          "id": "B05",
+          "x": 241.5,
+          "y": 539,
+          "names": [
+            "Ulcerated Tree Spirit",
+            "Ancient Hero of Zamor",
+            "Black Blade Kindred",
+            "Ancestor Spirit",
+            "Black Knife Assassin",
+            "Golden Hippopotamus",
+            "Bell Bearing Hunter",
+            "Miranda Blossom",
+            "Draconic Tree Sentinel",
+            "Death Rite Bird",
+            "Erdtree Avatar",
+            "Grafted Scion",
+            "Red Wolf",
+            "Magma Wyrm",
+            "Royal Carian Knight",
+            "Tree Sentinel",
+            "Royal Revenant",
+            "Night's Cavalry",
+            "Elder Lion",
+            "Demi-Human Queen",
+            "Leonine Misbegotten"
+          ]
+        },
+        {
+          "id": "B06",
+          "x": 450,
+          "y": 547,
+          "names": [
+            "Erdtree Avatar",
+            "Ulcerated Tree Spirit",
+            "Black Knife Assassin",
+            "Elder Lion",
+            "Draconic Tree Sentinel",
+            "Red Wolf",
+            "Leonine Misbegotten",
+            "Miranda Blossom",
+            "Royal Revenant",
+            "Demi-Human Queen",
+            "Night's Cavalry",
+            "Tree Sentinel",
+            "Ancient Hero of Zamor",
+            "Golden Hippopotamus",
+            "Bell Bearing Hunter",
+            "Grafted Scion",
+            "Ancestor Spirit",
+            "Death Rite Bird",
+            "Royal Carian Knight",
+            "Magma Wyrm"
+          ]
+        },
+        {
+          "id": "B07",
+          "x": 444,
+          "y": 577,
+          "names": [
+            "Ancient Hero of Zamor",
+            "Elder Lion",
+            "Magma Wyrm",
+            "Erdtree Avatar",
+            "Black Knife Assassin",
+            "Night's Cavalry",
+            "Draconic Tree Sentinel",
+            "Ancestor Spirit",
+            "Red Wolf",
+            "Ulcerated Tree Spirit",
+            "Royal Revenant",
+            "Royal Carian Knight",
+            "Golden Hippopotamus",
+            "Miranda Blossom",
+            "Tree Sentinel",
+            "Black Blade Kindred",
+            "Bell Bearing Hunter",
+            "Death Rite Bird",
+            "Demi-Human Queen",
+            "Grafted Scion",
+            "Leonine Misbegotten"
+          ]
+        },
+        {
+          "id": "B08",
+          "x": 358,
+          "y": 607,
+          "names": [
+            "Elder Lion",
+            "Black Blade Kindred",
+            "Royal Carian Knight",
+            "Erdtree Avatar",
+            "Ancient Hero of Zamor",
+            "Draconic Tree Sentinel",
+            "Magma Wyrm",
+            "Grafted Scion",
+            "Ulcerated Tree Spirit",
+            "Leonine Misbegotten",
+            "Bell Bearing Hunter",
+            "Black Knife Assassin",
+            "Ancestor Spirit",
+            "Royal Revenant",
+            "Demi-Human Queen",
+            "Golden Hippopotamus",
+            "Tree Sentinel",
+            "Death Rite Bird",
+            "Miranda Blossom",
+            "Night's Cavalry",
+            "Red Wolf"
+          ]
+        },
+        {
+          "id": "B09",
+          "x": 466.5,
+          "y": 652,
+          "names": [
+            "Miranda Blossom",
+            "Leonine Misbegotten",
+            "Demi-Human Queen",
+            "Royal Carian Knight",
+            "Ancestor Spirit",
+            "Ulcerated Tree Spirit",
+            "Erdtree Avatar",
+            "Magma Wyrm",
+            "Tree Sentinel",
+            "Black Blade Kindred",
+            "Red Wolf",
+            "Black Knife Assassin",
+            "Death Rite Bird",
+            "Golden Hippopotamus",
+            "Night's Cavalry",
+            "Bell Bearing Hunter",
+            "Grafted Scion",
+            "Elder Lion",
+            "Draconic Tree Sentinel",
+            "Ancient Hero of Zamor"
+          ]
+        },
+        {
+          "id": "B10",
+          "x": 852.5,
+          "y": 756,
+          "names": [
+            "Demi-Human Queen",
+            "Grafted Scion",
+            "Golden Hippopotamus",
+            "Royal Revenant",
+            "Leonine Misbegotten",
+            "Royal Carian Knight",
+            "Ancient Hero of Zamor",
+            "Bell Bearing Hunter",
+            "Draconic Tree Sentinel",
+            "Elder Lion",
+            "Erdtree Avatar",
+            "Night's Cavalry",
+            "Ancestor Spirit",
+            "Death Rite Bird",
+            "Miranda Blossom",
+            "Black Knife Assassin",
+            "Red Wolf",
+            "Magma Wyrm",
+            "Black Blade Kindred"
+          ]
+        },
+        {
+          "id": "B11",
+          "x": 863,
+          "y": 822,
+          "names": [
+            "Magma Wyrm",
+            "Erdtree Avatar",
+            "Ulcerated Tree Spirit",
+            "Draconic Tree Sentinel",
+            "Golden Hippopotamus",
+            "Grafted Scion",
+            "Red Wolf",
+            "Elder Lion",
+            "Ancestor Spirit",
+            "Royal Carian Knight",
+            "Night's Cavalry",
+            "Miranda Blossom",
+            "Death Rite Bird",
+            "Bell Bearing Hunter",
+            "Black Knife Assassin",
+            "Tree Sentinel",
+            "Demi-Human Queen",
+            "Black Blade Kindred",
+            "Royal Revenant",
+            "Ancient Hero of Zamor",
+            "Leonine Misbegotten"
+          ]
+        },
+        {
+          "id": "B12",
+          "x": 920.5,
+          "y": 843,
+          "names": [
+            "Royal Revenant",
+            "Miranda Blossom",
+            "Red Wolf",
+            "Elder Lion",
+            "Ancient Hero of Zamor",
+            "Black Knife Assassin",
+            "Bell Bearing Hunter",
+            "Grafted Scion",
+            "Death Rite Bird",
+            "Draconic Tree Sentinel",
+            "Black Blade Kindred",
+            "Ulcerated Tree Spirit",
+            "Demi-Human Queen",
+            "Golden Hippopotamus",
+            "Erdtree Avatar",
+            "Royal Carian Knight",
+            "Leonine Misbegotten",
+            "Night's Cavalry",
+            "Ancestor Spirit"
+          ]
+        },
+        {
+          "id": "B13",
+          "x": 353.5,
+          "y": 325,
+          "names": [
+            "Godskin Duo",
+            "Golden Hippopotamus"
+          ]
+        },
+        {
+          "id": "B14",
+          "x": 886,
+          "y": 913,
+          "names": [
+            "Chief Purple Fiend",
+            "Red Wolf"
+          ]
+        },
+        {
+          "id": "B15",
+          "x": 920,
+          "y": 934,
+          "names": [
+            "Crucible Knights",
+            "Ancestor Spirit"
+          ]
+        },
+        {
+          "id": "B16",
+          "x": 246,
+          "y": 599,
+          "names": [
+            "Spider Scorpions",
+            "Chief Bloodfiend"
+          ]
+        },
+        {
+          "id": "B17",
+          "x": 270,
+          "y": 606,
+          "names": [
+            "Curseblade",
+            "Bloodbane Giant Crows"
+          ]
+        },
+        {
+          "id": "B18",
+          "x": 723,
+          "y": 426,
+          "names": [
+            "Mimic Tears",
+            "Giant Crabs"
+          ]
+        },
+        {
+          "id": "B19",
+          "x": 689,
+          "y": 889,
+          "names": [
+            "Ghostflame Dragon"
+          ]
+        },
+        {
+          "id": "B20",
+          "x": 652,
+          "y": 882,
+          "names": [
+            "Spiritcaller Snail",
+            "Elder Inquisitor"
+          ]
+        },
+        {
+          "id": "B21",
+          "x": 677.5,
+          "y": 584,
+          "names": [
+            "Divine Beast Warrior",
+            "Putrid Avatar"
+          ]
+        },
+        {
+          "id": "B22",
+          "x": 624.5,
+          "y": 710,
+          "names": [
+            "Divine Beast Warrior",
+            "Cleanrot Knights"
+          ]
+        },
+        {
+          "id": "B23",
+          "x": 711.5,
+          "y": 938,
+          "names": [
+            "Inquisitor"
+          ]
+        }
+      ],
+      "blessings": []
+    }
+  }
+}

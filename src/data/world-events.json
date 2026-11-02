@@ -1,0 +1,397 @@
+{
+  "checkedAt": "2026-11-02",
+  "version": "涵盖游戏本体与 The Forsaken Hollows DLC。13 类特别事件目录以 thefifthmatt 标注 App Ver. 1.03.2 的公开地图模式研究为基准，机制与应对用公开攻略交叉核对，并参考官方 1.02.3、1.03.1、1.03.2 更新说明。核验日期表示资料查阅日期，不代表对所有平台、人数及深夜深度逐项实测。",
+  "notes": [
+    "前 13 项对应 thefifthmatt 原目录：7 类突袭标为 raid，6 类其他特别事件标为 world。按该研究，每次出击至多配置其中一种，也可能没有；事件受远征目标、地图模式及现场条件限制，不是任意地图都能随机出现全部事件。",
+    "最后两项灾厄营地与天秤商人标为 encounter，明确不属于上述互斥特别事件池。它们不能用来推断本局已经占用特别事件名额；这也不表示它们与所有事件、目标的组合都必然可出现。",
+    "癫火塔、漫步灵庙、古老魔法师塔属于开局已配置的特殊地点，仍列入原研究的特别事件目录；其余事件可能在第一或第二天激活，并可能等待玩家位置等条件。发现时间不等于生成时间，不提供保证触发的倒计时或发生率。",
+    "三头野兽、冰龙、安定者三种突袭属于 DLC 地图模式。官方 1.03.1 已将 DLC 突袭等内容加入深夜模式；只有匹配成员均应用 DLC 时，相关新增内容才会进入该模式。本体目标在普通远征与深夜模式中的事件池不能直接混用。",
+    "火山、山顶、腐败森林、隐城与大空洞等 Shifting Earth 属于地形变化，不作为本文件中的随机世界事件。角色日志、追忆目标和追忆专属遭遇也不计入；追忆要求寻找商人，不代表触发了天秤诅咒突袭。",
+    "中文名称是供页面使用的描述性名称；英文优先保留原研究目录用名，并在必要处附常见攻略别名，不宣称每个名称都是游戏内统一的官方事件标题。奖励以效果概述为主，不强行统一各语种攻略的增益译名。",
+    "公开攻略对天秤诅咒的最大血量削减幅度、付费后攻击增益的具体受益对象，以及蒙葛特奖励所计算的赐福条件存在分歧，因此不填百分比、上限或全员受益保证。确定可由一人付费解除队伍诅咒；击败商人也是解咒途径。",
+    "DLC 冰龙完成条件在攻略中分别写作靠近惊动或攻击惊动，统一建议找到本体、靠近并攻击至其离场，不要求打完一场完整首领战。冰龙保命效果的刷新次数，以及安定者自行脱险的概率，未在此作保证。",
+    "官方 1.03.2 调整过三头野兽突袭的持续伤害与精力奖励、冰龙在深夜模式中的冰雹伤害，以及安定者魅惑敌人的强化。因此不沿用 DLC 首发攻略中的伤害数值，也不将深夜与普通模式的风险视为相同。",
+    "本文所说的持续增益均指本次出击中的效果，不代表跨局永久提升。奖励数目、卢恩数量、交易价格、增益幅度及触发概率没有充分把握时均省略；实际选项与效果以游戏内显示为准。",
+    "全部说明为重新总结的中文文字，仅保存来源链接，不包含第三方图片。sources 中官方资料用于确认内容范围与更新，原研究用于事件目录和模式限制，攻略用于识别、应对与奖励交叉核验。"
+  ],
+  "sources": [
+    {
+      "id": "map-patterns",
+      "title": "thefifthmatt — Nightreign Map Patterns：原始 13 类特别事件目录与地图模式研究",
+      "url": "https://thefifthmatt.github.io/nightreign/"
+    },
+    {
+      "id": "official-deep-night-dlc",
+      "title": "FromSoftware 官方 2025-12-17 更新：DLC 内容加入深夜及突袭修正（App 1.03.1）",
+      "url": "https://nightreign.eldenring.jp/article/251217_1.html"
+    },
+    {
+      "id": "official-patch-1032",
+      "title": "Bandai Namco 官方 2026-01-15 Patch Notes Version 1.03.2：DLC 突袭平衡调整",
+      "url": "https://en.bandainamcoent.eu/elden-ring/news/elden-ring-nightreign-patch-notes-version-1032"
+    },
+    {
+      "id": "official-patch-1023",
+      "title": "FromSoftware 官方 2025-09-24 更新：灾厄入侵者奖励、古老魔法师塔与圣杯瓶效果修正",
+      "url": "https://nightreign.eldenring.jp/article/250924_1.html"
+    },
+    {
+      "id": "powerpyx-raids",
+      "title": "PowerPyx — Elden Ring Nightreign All Raids：本体四类突袭实战攻略",
+      "url": "https://www.powerpyx.com/elden-ring-nightreign-all-raids/"
+    },
+    {
+      "id": "kamigame-events",
+      "title": "神ゲー攻略 — イベント一覧と報酬：本体事件与奖励汇总",
+      "url": "https://kamigame.jp/nightreign/page/372290719450152712.html"
+    },
+    {
+      "id": "kamigame-morgott",
+      "title": "神ゲー攻略 — 襲撃イベント「忌み鬼」の攻略と報酬",
+      "url": "https://kamigame.jp/nightreign/page/373404913406888264.html"
+    },
+    {
+      "id": "kamigame-pest",
+      "title": "神ゲー攻略 — 襲撃イベント「知性の蟲」の攻略と報酬",
+      "url": "https://kamigame.jp/nightreign/page/373433402579222587.html"
+    },
+    {
+      "id": "kamigame-cataclysm",
+      "title": "神ゲー攻略 — イベント「災域」の攻略と報酬",
+      "url": "https://kamigame.jp/nightreign/page/373547678572765731.html"
+    },
+    {
+      "id": "kamigame-merchant",
+      "title": "神ゲー攻略 — イベント「秤を持った商人」の攻略と報酬",
+      "url": "https://kamigame.jp/nightreign/page/373577976211616183.html"
+    },
+    {
+      "id": "gamerch-dlc-raids",
+      "title": "Gamerch — DLC の追加ランダムイベントまとめ：冰龙、三头野兽、安定者突袭",
+      "url": "https://gamerch.com/nightreign/953415"
+    },
+    {
+      "id": "eldenpedia-events",
+      "title": "Eldenpedia — Nightreign:Special Events：本体特别事件机制交叉核验",
+      "url": "https://eldenring.wiki.gg/wiki/Nightreign:Special_Events"
+    },
+    {
+      "id": "eldenpedia-rise",
+      "title": "Eldenpedia — Sorcerer's Rise：古老魔法师塔的三印记、陷阱与奖励",
+      "url": "https://eldenring.wiki.gg/wiki/Nightreign:Sorcerer's_Rise"
+    },
+    {
+      "id": "eldenpedia-caligo",
+      "title": "Eldenpedia — Caligo, Miasma of Night：Expedition Raid 完成条件与奖励",
+      "url": "https://eldenring.wiki.gg/wiki/Caligo,_Miasma_of_Night"
+    },
+    {
+      "id": "steam-field-guide",
+      "title": "Steam 社区实战指南 — Essential Information for Elden Ring Nightreign",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3490064474&l=english"
+    },
+    {
+      "id": "bwiki-events",
+      "title": "黑夜君临资料站 BWIKI — 特殊事件总览：中文机制与应对交叉核验",
+      "url": "https://wiki.biligame.com/nightreign/特殊事件总览"
+    },
+    {
+      "id": "shacknews-merchant",
+      "title": "Shacknews — What to choose from the Scale-Bearing Merchant：普通交易与代价",
+      "url": "https://www.shacknews.com/article/144477/what-to-choose-scale-bearing-merchant-elden-ring-nightreign"
+    }
+  ],
+  "events": [
+    {
+      "id": "morgott-invasion",
+      "name": "恶兆妖鬼突袭（源表 Morgott）",
+      "en": "Morgott Invasion / Fell Omen Raid",
+      "category": "raid",
+      "signal": "出现宣言与传送法阵，恶兆妖鬼追击带红色标记的玩家。原目录记录于目标为 Adel、Gnoster、Heolstor、Straghess 的特定地图模式。",
+      "steps": [
+        "被标记者移至开阔处，避开其他首领与敌群，优先保命。",
+        "队友集合输出并准备救援，尽快击败突袭者；单靠跑远无法摆脱其传送追击。"
+      ],
+      "reward": "击败后获得与赐福有关的攻击力增益；有效赐福的计数规则见资料限制，不写具体幅度。",
+      "risk": "被追击者死亡会导致事件失败，并可能留下本局持续的受伤加重效果；拖延也有失败风险。",
+      "sources": [
+        "map-patterns",
+        "powerpyx-raids",
+        "kamigame-morgott",
+        "eldenpedia-events"
+      ]
+    },
+    {
+      "id": "maris-bubbles",
+      "name": "巨大水泡突袭（玛利斯）",
+      "en": "Maris Bubbles / Augur Raid",
+      "category": "raid",
+      "signal": "野外出现追向玩家的巨大蓝色水泡，接触后被传送至玛利斯战场。原目录记录于 Gnoster、Caligo、Heolstor、Straghess 的特定地图模式。",
+      "steps": [
+        "接触前先检查队伍状态、地图标记与缩圈位置；没有余裕时避开水泡。",
+        "决定挑战就集合进入；已经被传送时，队友尽快跟进并击败玛利斯。"
+      ],
+      "reward": "完成后获得使用圣杯瓶时也恢复专注值的本局增益。",
+      "risk": "进入后不能自由离开，探索时间与缩圈仍在推进；死亡可能导致突袭失败。",
+      "sources": [
+        "map-patterns",
+        "powerpyx-raids",
+        "kamigame-events",
+        "official-patch-1023"
+      ]
+    },
+    {
+      "id": "gnoster-plague",
+      "name": "盗取等级的虫群",
+      "en": "Gnoster Plague / Sentient Pest Raid",
+      "category": "raid",
+      "signal": "黑色虫群反复在玩家附近袭击，命中会损失等级。原目录记录于 Maris、Libra、Heolstor、Straghess 的特定地图模式。",
+      "steps": [
+        "躲开虫群攻击，抬头观察每次袭击后虫群飞离的方向。",
+        "沿飞行轨迹寻找虫群本体并击败它；无需故意让虫群命中来获取方向。",
+        "获得返还的卢恩后，在赐福处重新提升等级。"
+      ],
+      "reward": "返还用于补回被盗等级的卢恩，并获得攻击敌人时偶尔额外取得卢恩的本局增益。",
+      "risk": "连续中招会削弱当前战力；若未及时找到本体，不应期待被盗等级自动恢复。",
+      "sources": [
+        "map-patterns",
+        "powerpyx-raids",
+        "kamigame-pest",
+        "bwiki-events"
+      ]
+    },
+    {
+      "id": "libra-curse",
+      "name": "天秤诅咒突袭",
+      "en": "Libra Curse / Equilibrious Beast Raid",
+      "category": "raid",
+      "signal": "商人面孔或诅咒提示出现，队伍最大血量下降，地图给出寻找商人的区域。原目录记录于 Fulghor、Caligo、Heolstor、Straghess 的特定地图模式。",
+      "steps": [
+        "优先沿地图标记找到持秤商人，准备在区域被黑夜雨覆盖前处理。",
+        "由一名队员按当前对话报价付费即可解除队伍诅咒；也可集结后攻击并击败商人。",
+        "付费后再次查看对话，可选择不附原有代价的交易；逐人确认实际获得的效果。"
+      ],
+      "reward": "解除最大血量诅咒；付费路线可获得与所持卢恩有关的攻击增益，并开放无代价交易。增益具体受益对象的资料有分歧。",
+      "risk": "拖延会以降低后的最大血量继续战斗；主动攻击商人会转为首领战，付费所需卢恩也会挤占升级资源。",
+      "sources": [
+        "map-patterns",
+        "powerpyx-raids",
+        "kamigame-events",
+        "eldenpedia-events",
+        "bwiki-events"
+      ]
+    },
+    {
+      "id": "gladius-invasion",
+      "name": "三头野兽突袭（格拉狄乌斯）",
+      "en": "Gladius Invasion / Tricephalos Raid",
+      "category": "raid",
+      "signal": "DLC 突袭：天空与场景出现火焰异象，队伍持续失血，地图分散标出三个本体。仅限 DLC 地图模式，不出现在以 Gladius 为目标的模式。",
+      "steps": [
+        "持续失血会压缩后续战斗的补给，优先查看三个目标与安全区位置，尽快安排清理顺序。",
+        "若挑战，规划分工或集中清理顺序，击败三个分离本体；圣属性可帮助压制它们。",
+        "击败首个本体后尽快处理其余目标，不与不断出现的小型猎犬纠缠。"
+      ],
+      "reward": "完成后解除事件压力，获得连续攻击时恢复自身及附近队友精力的增益；官方后续补丁加强过该奖励。",
+      "risk": "持续失血消耗补给，首个本体被击败后会出现追击猎犬；只完成一部分可能拖累探索与后续战斗。",
+      "sources": [
+        "map-patterns",
+        "gamerch-dlc-raids",
+        "official-deep-night-dlc",
+        "official-patch-1032"
+      ]
+    },
+    {
+      "id": "caligo-blizzard",
+      "name": "冰龙暴风雪（卡莉果）",
+      "en": "Caligo Blizzard / Fissure in the Fog Raid",
+      "category": "raid",
+      "signal": "DLC 突袭：浓重冰雾降低全图能见度，间歇降下冰雹，地图出现搜索区域。仅限 DLC 地图模式，不出现在以 Caligo 为目标的模式。",
+      "steps": [
+        "打开地图定位搜索区域，注意高度差与缩圈；用锁定辅助识别近处敌人。",
+        "找到休眠的卡莉果，靠近并攻击以惊动它，观察其起飞离场。",
+        "确认事件结束后再恢复探索，不必按完整冰龙首领战追杀。"
+      ],
+      "reward": "获得遭遇致命危险时隐去身形、短时间免受攻击的保命效果；不将它写成抗冻增益。",
+      "risk": "视野受限，冰雹造成伤害并累积冻伤；不同模式与补丁的伤害不能混用，保命效果的刷新次数未作保证。",
+      "sources": [
+        "map-patterns",
+        "gamerch-dlc-raids",
+        "eldenpedia-caligo",
+        "official-patch-1032"
+      ]
+    },
+    {
+      "id": "balancers-raid",
+      "name": "安定者突袭",
+      "en": "Balancers Raid",
+      "category": "raid",
+      "signal": "DLC 突袭：审判提示后队员被传送至不同据点，部分圣杯瓶使用次数被暂时夺走，据点中出现安定者。仅限 DLC 地图模式，不出现在以 Harmonia 为目标的模式。",
+      "steps": [
+        "落地后确认位置、剩余补给和安定者所在处，优先处理事件目标。",
+        "利用据点敌人相互交战的机会靠近安定者，避免同时拉到所有强化敌人。",
+        "清掉各处安定者以取回补给并结束事件；先完成的人尽快支援队友，无需为完成事件杀光据点敌人。"
+      ],
+      "reward": "取回被夺走的圣杯瓶使用次数；完成后获得濒死时有机会自行脱险、受救援后提高攻击力的本局增益。",
+      "risk": "队伍被拆散且补给受限，受魅惑的据点敌人被强化；自行脱险具有概率，不能保证每次救回。",
+      "sources": [
+        "map-patterns",
+        "gamerch-dlc-raids",
+        "official-deep-night-dlc",
+        "official-patch-1032"
+      ]
+    },
+    {
+      "id": "frenzy-tower",
+      "name": "癫火塔",
+      "en": "Frenzy Tower / Frenzied Flame Tower",
+      "category": "world",
+      "signal": "开局已配置的特殊地点：破塔上方出现巨大癫火眼球，暴露在其视线内会累积发狂。原目录记录于 Gnoster、Libra、Harmonia、Straghess 的特定地图模式。",
+      "steps": [
+        "利用墙壁和地形遮挡视线，分段接近塔楼。",
+        "消灭维持癫火的全部村民，检查塔顶与地面，不要只清其中一层。"
+      ],
+      "reward": "清除危险区域，取得潜在力量奖励，包括癫火相关装备与能力选项；不保证某一把固定武器。",
+      "risk": "接近过程会受到癫火威胁并累积发狂；清漏村民会导致危险持续，搜寻也会占用探索时间。",
+      "sources": [
+        "map-patterns",
+        "kamigame-events",
+        "eldenpedia-events"
+      ]
+    },
+    {
+      "id": "extra-night-boss",
+      "name": "额外夜间首领",
+      "en": "Extra Night Boss",
+      "category": "world",
+      "signal": "击败第一或第二夜首领后，前进用的赐福或引导迟迟未出现，随后出现新的黑夜威胁提示与追加首领。原目录记录于 Adel、Fulghor、Harmonia、Straghess 的特定地图模式。",
+      "steps": [
+        "首战结束后继续留意提示，不要把没有出现出口误认为已经完成当晚流程。",
+        "利用追加战前恢复的血量、专注值与圣杯瓶重新整队，再击败追加首领。"
+      ],
+      "reward": "额外首领提供另一份卢恩与潜在力量奖励。",
+      "risk": "需要连续通过另一场首领战，增加失败机会；它是地图模式事件，不把商人交易写成必然触发条件。",
+      "sources": [
+        "map-patterns",
+        "eldenpedia-events",
+        "steam-field-guide",
+        "bwiki-events"
+      ]
+    },
+    {
+      "id": "night-horde",
+      "name": "黑夜军势",
+      "en": "Night Horde",
+      "category": "world",
+      "signal": "附近出现深色云雾或浮空黑夜球，靠近后刷新一组敌人并出现军势提示。原目录记录于 Gladius、Maris、Fulghor、Harmonia 的特定地图模式。",
+      "steps": [
+        "触发前确认队伍位置与剩余时间，避免在其他首领旁同时开战。",
+        "按敌群类型拉开距离或集中处理，利用范围攻击与绝招清掉整组事件敌人。"
+      ],
+      "reward": "获得卢恩及加快绝招量表积累的本局增益。",
+      "risk": "多只大型敌人可能包围队伍；撤离可以止损，但未清完就无法获得完成奖励。",
+      "sources": [
+        "map-patterns",
+        "kamigame-events",
+        "steam-field-guide",
+        "bwiki-events"
+      ]
+    },
+    {
+      "id": "meteor-strike",
+      "name": "陨石坠落",
+      "en": "Meteor Strike",
+      "category": "world",
+      "signal": "出现陨石落下提示，某处地点成为小型陨石坑，靠近后可遭遇坠星兽物。原目录记录于 Gladius、Adel、Caligo、Harmonia 的特定地图模式。",
+      "steps": [
+        "检查落点是否在安全区与当前路线附近，装备和时间不足时可绕开。",
+        "准备好后靠近陨石坑并击败坠星兽物，领取首领奖励。"
+      ],
+      "reward": "获得卢恩与潜在力量奖励。",
+      "risk": "新增野外首领战会消耗时间和补给；这是局部陨石遭遇，与火山地形变化 The Crater 不同。",
+      "sources": [
+        "map-patterns",
+        "kamigame-events",
+        "eldenpedia-events",
+        "bwiki-events"
+      ]
+    },
+    {
+      "id": "walking-mausoleum",
+      "name": "漫步灵庙",
+      "en": "Walking Mausoleum",
+      "category": "world",
+      "signal": "开局已配置的特殊地点：野外出现大型灵庙，可由外观或地图标记发现。原目录记录于 Maris、Caligo、Harmonia 的特定地图模式。",
+      "steps": [
+        "利用攀爬、跳跃或附近灵魂气流抵达灵庙内部；本作灵庙静止，不必攻击腿部让它倒下。",
+        "在复制祭坛查看符合条件的持有武器，优先复制能补齐队伍装备或适合自身构筑的武器。"
+      ],
+      "reward": "取得武器复制机会，具体可复制对象以祭坛菜单为准。",
+      "risk": "没有合适武器时收益有限，绕路可能影响发育；它不是本篇的追忆复制，也不要与隐城内的复制祭坛混为同一事件。",
+      "sources": [
+        "map-patterns",
+        "eldenpedia-events",
+        "bwiki-events"
+      ]
+    },
+    {
+      "id": "difficult-sorcerers-rise",
+      "name": "古老魔法师塔",
+      "en": "Difficult Sorcerer's Rise / Old Sorcerer's Rise",
+      "category": "world",
+      "signal": "开局已配置的魔法师塔特殊变体，使用独特地图图标，封印需要多个印记共同解除。原目录记录于 Gnoster、Libra、Harmonia 的特定地图模式。",
+      "steps": [
+        "围绕塔内外寻找并破坏三处印记，检查墙壁、幻象与普通塔少见的点位。",
+        "对可疑印记优先使用远程攻击，破坏后避开可能发生的魔力爆炸。",
+        "确认封印解除，再进入上层领取潜在力量。"
+      ],
+      "reward": "获得面向较高品质装备的潜在力量选项；攻略记录为稀有及以上，不保证必出传奇武器。",
+      "risk": "搜寻隐藏印记会占用探索时间，部分印记可能爆炸伤人；本项仅指特殊变体，不把普通魔法师塔全部计为随机事件。",
+      "sources": [
+        "map-patterns",
+        "eldenpedia-rise",
+        "official-patch-1023",
+        "bwiki-events"
+      ]
+    },
+    {
+      "id": "cataclysm-camp",
+      "name": "灾厄营地（黑夜入侵者）",
+      "en": "Cataclysm / Night Invaders",
+      "category": "encounter",
+      "signal": "非互斥特别事件池：开局部分营地被暗色区域或风暴笼罩，营地敌人强化，进入后出现以渡夜者为原型的敌对 NPC。",
+      "steps": [
+        "先确认队伍战力和周围敌群，装备不足时标记后再来。",
+        "尽量把入侵者引离营地敌群，集火或控制逐个击败，避免同时与整个强化营地交战。",
+        "领取入侵者的潜在力量奖励，再决定是否继续清理营地首领。"
+      ],
+      "reward": "入侵者提供卢恩与潜在力量，可获得对应角色的强化初始武器；数量与品质以当局实际奖励为准。",
+      "risk": "营地敌人与敌对 NPC 容易同时加入战斗，早期强攻可能迅速倒地；它不是玩家 PvP 入侵，也不是上述 13 类特别事件之一。",
+      "sources": [
+        "map-patterns",
+        "kamigame-cataclysm",
+        "steam-field-guide",
+        "official-patch-1023"
+      ]
+    },
+    {
+      "id": "scale-bearing-merchant",
+      "name": "天秤商人（普通交易）",
+      "en": "Scale-Bearing Merchant",
+      "category": "encounter",
+      "signal": "非互斥特别事件池：野外遇到持秤商人，可以主动对话交易；单纯遇见商人，不等于发生全队最大血量下降的 Libra Curse。",
+      "steps": [
+        "先阅读当前交易的收益与代价，结合角色、装备和剩余探索时间决定是否接受。",
+        "无法确认交易是否有利时可以离开；普通交易不需要为解除全队诅咒而强制支付卢恩。",
+        "只有队伍准备挑战时才主动攻击，商人敌对后会进入战斗。"
+      ],
+      "reward": "可用等级、属性或其他代价换取装备与特殊能力；击败敌对商人也可取得卢恩和潜在力量。交易结果按当前选项判断。",
+      "risk": "代价可能削弱当前构筑，攻击商人可能让队伍陷入首领战。第三天利普拉战前交易、野外普通商人和天秤诅咒突袭应分别理解；追忆要求找商人也不改变本条分类。",
+      "sources": [
+        "kamigame-merchant",
+        "shacknews-merchant",
+        "bwiki-events"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-02",
+  "sources": [
+    {"id":"objects","title":"Nightreign Objects · 地形奖励对象","url":"https://eldenring.fandom.com/wiki/Nightreign_Objects"},
+    {"id":"earth","title":"Eldenpedia · Shifting Earth","url":"https://eldenring.wiki.gg/wiki/Nightreign:Shifting_Earth"},
+    {"id":"powerpyx","title":"PowerPyx · 地形探索实测指南","url":"https://www.powerpyx.com/elden-ring-nightreign-all-shifting-earth-locations-guide/"},
+    {"id":"effects","title":"Nightreign Effects · 恩惠效果文本","url":"https://eldenring.fandom.com/wiki/Nightreign_Effects"},
+    {"id":"hollow","title":"大空洞探索笔记 · eshinao201（游民转载）","url":"https://www.gamersky.com/handbook/202512/2054250.shtml"},
+    {"id":"ledger","title":"Nightfarer Ledger · 地图模式与事实点位","url":"https://nightfarerledger.com/nightmap"}
+  ],
+  "guides": [
+    {"id":"crater","name":"火山口","en":"The Crater","color":"#e69b69","region":"宁姆韦德北部","summary":"沿火山遗迹下行，争取把主力武器强化为传说品质。","hazard":"熔岩、火焰敌人与纵向高差；下到深处前先确认夜雨和撤离时间。","steps":["从火山遗迹沿可落脚的平台下行，清理沿路敌人，保留补给。","抵达底部区域击败土龙；确认锻造台可以交互。","在特殊锻造台选择本局要保留的武器进行传说强化。"],"reward":"特殊锻造台：将一件符合条件的武器提升至传说品质。","rewardLocation":"火山下部、土龙守卫区域的特殊锻造台。暂无已核验的独立坐标，不在地图上虚标。","bossTips":"关注土龙、坠星兽、火焰主教等点位；图中只列该地形模式资料收录的 Boss 投影点，部分位于地形外围。","sources":["objects","earth","powerpyx","ledger"]},
+    {"id":"mountaintop","name":"山顶","en":"The Mountaintop","color":"#99cdeb","region":"宁姆韦德西北部","summary":"攀上雪山取得山顶恩惠，途中可选择挑战冰龙。","hazard":"冰冻积累、狭窄平台和长距离移动；冰龙存在多处候选遭遇点。","steps":["沿山路和巨链向高处移动，提前观察落脚点。","以山顶恩惠为目标前进，冰龙属于可选挑战，不必为拿恩惠清空所有 Boss。","在山顶奖励处交互领取恩惠，撤离前检查夜雨范围。"],"reward":"山顶恩惠：减少冻伤伤害与累积，附近发生冻伤时暂时提高攻击力。对龙特攻属于其他击杀奖励，不与此恩惠混为一项。","rewardLocation":"山峰顶部奖励处。暂无独立可靠坐标，按游戏中的地形奖励旗标定位。","bossTips":"冰龙在多个候选遭遇点之一出现；地图总览同时列出四个候选点，不代表一局有四条冰龙。","sources":["objects","effects","earth","powerpyx","ledger"]},
+    {"id":"rotted_woods","name":"腐败森林","en":"The Rotted Woods","color":"#cba1a4","region":"宁姆韦德东南部","summary":"先查要塞线索，再前往本局被选中的大花取得恩惠。","hazard":"区域内持续积累猩红腐败；留意可交互的圣血木芽，管理血量和补给。","steps":["前往森林内的要塞，在塔楼上读取线索。","根据地图揭示的奖励位置前往大树 / 大花，攀爬时留意落脚处。","在花朵处交互领取恩惠；读线索帮助定位，但不是领取奖励的必要条件。"],"reward":"腐败森林恩惠：提供猩红腐败免疫及生命相关增益。","rewardLocation":"三个候选位置每局选其一；图中 R1–R3 为候选总览，以要塞线索揭示的当局旗标为准。","bossTips":"森林 Boss 随模式改变。总览显示的候选种类不能视作本局必刷配置。","sources":["objects","earth","powerpyx","ledger"]},
+    {"id":"noklateo","name":"隐城","en":"Noklateo, the Shrouded City","color":"#b1a4e3","region":"宁姆韦德西南部","summary":"穿过立体遗迹进入深处大厅，击败黑暗弃子取得恩惠。","hazard":"地形高差和坠落风险较高；气流、平台与建筑内部通路要结合实景判断。","steps":["利用平台与气流穿越城市，队伍保持接近，避免从未知边缘跳落。","前往城市深处的大殿，处理守卫后挑战黑暗弃子（Astel）。","击败守卫 Boss 后，打开大厅内的奖励宝箱。"],"reward":"隐城恩惠：给予本次出击的一次自动复起机会及复起后的暂时增益。","rewardLocation":"城市深处、黑暗弃子守卫的大厅宝箱。图中 Astel 点标出 Boss 投影位置，宝箱不另造坐标。","bossTips":"黑刀刺客、龙人士兵和黑暗弃子分布在不同位置，投影图无法表达楼层。","sources":["objects","earth","powerpyx","ledger"]}
+  ]
+}

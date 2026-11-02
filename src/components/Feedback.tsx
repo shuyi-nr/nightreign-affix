@@ -9,9 +9,9 @@ export function Feedback() {
   const [message, setMessage] = useState('');
   const template = () => {
     const s = readHash();
-    const dataVersion = s.page === 'heroes' || s.page === 'bosses' ? `${gameDataVersion} / regulation 10350000` : s.page === 'nightlord' ? '模式 1.03.2 / 快照 2026-09-26' : `${catalog.gameVersion} / ${catalog.dataVersion}`;
-    const pageName = {heroes:'角色数值',bosses:'Boss 抗性',nightlord:'夜王推算',check:'合法性检测',catalog:'词条查询',rules:'规则说明'}[s.page];
-    return `问题描述：\n\n预期结果：\n\n实际结果：\n\n所在页面：${pageName}\n页面链接：${shareUrl(s)}\n检测口径：${CHECK_MODES[s.mode].title}\n数据版本：${dataVersion}\n工具版本：2026.10.31\n\n（角色等级、Boss阶段和推算筛选请补充描述或截图；请勿填写存档、邮箱、手机号等个人信息。）`;
+    const dataVersion = s.page==='world'||s.page==='hollow'?'探索资料核对 2026-11-02 / 坐标模式 1.03.2':s.page === 'heroes' || s.page === 'bosses' ? `${gameDataVersion} / regulation 10350000` : s.page === 'nightlord' ? '模式 1.03.2 / 快照 2026-09-26' : `${catalog.gameVersion} / ${catalog.dataVersion}`;
+    const pageName = {heroes:'角色数值',bosses:'Boss 抗性',nightlord:'夜王推算',world:'事件与地形',hollow:'大空洞',check:'合法性检测',catalog:'词条查询',rules:'规则说明'}[s.page];
+    return `问题描述：\n\n预期结果：\n\n实际结果：\n\n所在页面：${pageName}\n页面链接：${shareUrl(s)}\n检测口径：${CHECK_MODES[s.mode].title}\n数据版本：${dataVersion}\n工具版本：2026.11.02\n\n（角色等级、Boss阶段、推算筛选及地图分布/城内配置请补充描述或截图；请勿填写存档、邮箱、手机号等个人信息。）`;
   };
   return (
     <details className="card feedback-panel">

@@ -4,7 +4,7 @@
 import type { CheckModeKey } from './types';
 import { MODE_ORDER } from './engine';
 
-export type Page = 'check' | 'catalog' | 'rules' | 'heroes' | 'bosses' | 'nightlord';
+export type Page = 'check' | 'catalog' | 'rules' | 'heroes' | 'bosses' | 'nightlord' | 'world' | 'hollow';
 
 export interface HashState {
   page: Page;
@@ -25,7 +25,7 @@ function isModeKey(v: string): v is CheckModeKey {
 export function parseHash(hash: string): HashState {
   const raw = hash.replace(/^#\/?/, '');
   const [path, query = ''] = raw.split('?');
-  const page: Page = ['catalog','rules','heroes','bosses','nightlord'].includes(path) ? path as Page : 'check';
+  const page: Page = ['catalog','rules','heroes','bosses','nightlord','world','hollow'].includes(path) ? path as Page : 'check';
 
   const params = new URLSearchParams(query);
   const mode = isModeKey(params.get('mode') ?? '') ? (params.get('mode') as CheckModeKey) : DEFAULT_STATE.mode;

@@ -1,0 +1,152 @@
+/* Keep app navigation separate from each page's tabs and controls. */
+.app-header.site-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px 0 12px;
+  margin-bottom: 18px;
+}
+
+.site-header .brand {
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+}
+
+.site-header .brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0 3px 12px rgba(201, 162, 92, 0.2);
+}
+
+.site-header .brand-text {
+  min-width: 0;
+}
+
+.site-header .brand-text h1 {
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.site-header .site-header-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-top: 4px;
+}
+
+.site-header .brand-text .sub {
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.site-header .version-tag {
+  padding: 1px 7px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.site-header .site-navigation {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.site-header .site-group-nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.site-header .site-page-nav {
+  display: flex;
+  gap: 4px;
+  min-width: 0;
+}
+
+.site-header .site-navigation button {
+  appearance: none;
+  min-width: 0;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-dim);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.16s, background-color 0.16s, border-color 0.16s;
+}
+
+.site-header .site-navigation button:hover {
+  color: var(--text);
+  background: var(--panel-2);
+}
+
+.site-header .site-group-nav button[aria-current] {
+  color: var(--gold-hi);
+  background: rgba(201, 162, 92, 0.12);
+  border-color: var(--gold-lo);
+}
+
+.site-header .site-page-nav button[aria-current='page'] {
+  color: var(--gold-hi);
+  background: var(--panel-2);
+  border-color: var(--border-strong);
+}
+
+.site-header .site-navigation button:focus-visible {
+  outline: 2px solid var(--gold-hi);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .app-header.site-header {
+    gap: 10px;
+    padding-top: 12px;
+    margin-bottom: 16px;
+  }
+
+  .site-header .brand-text h1 {
+    font-size: 17px;
+  }
+
+  .site-header .version-tag {
+    font-size: 10px;
+  }
+
+  .site-header .site-group-nav {
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .site-header .site-navigation button {
+    min-height: 44px;
+  }
+
+  .site-header .site-group-nav button {
+    padding: 6px 2px;
+    font-size: 12px;
+  }
+
+  .site-header .site-page-nav button {
+    flex: 1;
+    padding: 6px;
+    font-size: 12px;
+  }
+}

@@ -67,6 +67,7 @@ try {
   const go = async (hash) => {
     await send('Page.navigate', { url: origin + hash });
     await waitFor('!!document.querySelector(".verdict-status")', 'React mount');
+    await waitFor('!document.querySelector("#boot-screen")', 'intro ends before interactions');
     await pause(200);
   };
   const click = (text) => evaluate(`Array.from(document.querySelectorAll('button')).find(b=>b.textContent.trim()===${JSON.stringify(text)})?.click()`);
@@ -82,9 +83,9 @@ try {
     assert(await evaluate('document.querySelector(".visit-counter strong").textContent'), 'live counter has a real numeric value');
     assert(await evaluate('!!document.querySelector(".feedback-panel")'), 'live feedback entry');
     console.log('PUBLIC COUNT', await evaluate('document.querySelector(".visit-counter").innerText'));
-    await evaluate('document.querySelectorAll(".nav button")[1].click()');
+    await evaluate('document.querySelectorAll(".site-page-nav button")[1].click()');
     await pause(200);
-    await evaluate('document.querySelectorAll(".nav button")[0].click()');
+    await evaluate('document.querySelectorAll(".site-page-nav button")[0].click()');
     await pause(200);
     assert(statisticRequests === 1, 'navigation and StrictMode count only once');
     await send('Network.setBypassServiceWorker', { bypass: true });
@@ -116,9 +117,9 @@ try {
     await send('Page.reload');
     await waitFor('document.querySelector(".verdict-status")?.textContent === "合法"', 'refresh restores pair');
     assert(true, 'refresh reproduces legal result');
-    await evaluate('document.querySelectorAll(".nav button")[1].click()');
+    await evaluate('document.querySelectorAll(".site-page-nav button")[1].click()');
     await pause(200);
-    await evaluate('document.querySelectorAll(".nav button")[0].click()');
+    await evaluate('document.querySelectorAll(".site-page-nav button")[0].click()');
     await waitFor('document.querySelector(".verdict-status")?.textContent === "合法"', 'navigation preserves pair');
     assert(true, 'tab switching preserves deep state');
     await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });

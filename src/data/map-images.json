@@ -1,0 +1,366 @@
+{
+  "checkedAt": "2026-11-02",
+  "source": "Site owner gameplay screenshots provided for use on this fan site",
+  "images": {
+    "rotted-woods-surface.jpg": {
+      "file": "rotted-woods-surface.jpg",
+      "source": "腐败森林.png",
+      "width": 727,
+      "height": 725,
+      "bounds": {
+        "x": 12.165421,
+        "y": 9.764742,
+        "width": 981.793622,
+        "height": 987.52817
+      },
+      "method": "hand-read stationary map landmarks with independent x/y least-squares fit; pixel values approximate",
+      "anchors": [
+        {
+          "mapX": 481,
+          "mapY": 197,
+          "imageX": 351,
+          "imageY": 143
+        },
+        {
+          "mapX": 788,
+          "mapY": 489,
+          "imageX": 579,
+          "imageY": 357
+        },
+        {
+          "mapX": 346,
+          "mapY": 632,
+          "imageX": 251,
+          "imageY": 463
+        },
+        {
+          "mapX": 630,
+          "mapY": 363,
+          "imageX": 461,
+          "imageY": 266
+        },
+        {
+          "mapX": 167,
+          "mapY": 317,
+          "imageX": 119,
+          "imageY": 232
+        }
+      ],
+      "rmsPx": 0.6744471309944746,
+      "maxErrorPx": 0.9766148102850556
+    },
+    "crater-surface.jpg": {
+      "file": "crater-surface.jpg",
+      "source": "火山地形1.png",
+      "width": 737,
+      "height": 725,
+      "bounds": {
+        "x": 5.675631,
+        "y": 12.947695,
+        "width": 998.60474,
+        "height": 980.575808
+      },
+      "method": "hand-read stationary map landmarks with independent x/y least-squares fit; pixel values approximate",
+      "anchors": [
+        {
+          "mapX": 167,
+          "mapY": 317,
+          "imageX": 124,
+          "imageY": 231
+        },
+        {
+          "mapX": 788,
+          "mapY": 489,
+          "imageX": 582,
+          "imageY": 358
+        },
+        {
+          "mapX": 346,
+          "mapY": 632,
+          "imageX": 254,
+          "imageY": 463
+        },
+        {
+          "mapX": 620,
+          "mapY": 767,
+          "imageX": 457,
+          "imageY": 564
+        }
+      ],
+      "rmsPx": 0.9423196742494364,
+      "maxErrorPx": 1.3647622411355917
+    },
+    "crater-underground.jpg": {
+      "crop": {
+        "height": 715,
+        "x": 4,
+        "width": 729,
+        "y": 6
+      },
+      "height": 715,
+      "width": 729,
+      "source": "火山地形2.png",
+      "file": "crater-underground.jpg",
+      "bounds": {
+        "x": 5.675631,
+        "y": 12.947695,
+        "width": 998.487078,
+        "height": 980.352558
+      },
+      "anchors": [],
+      "method": "shared north-up outer map frame; approximate visual coast check against surface view",
+      "rmsPx": null,
+      "maxErrorPx": null
+    },
+    "mountaintop-surface.jpg": {
+      "file": "mountaintop-surface.jpg",
+      "source": "雪山地形.png",
+      "width": 732,
+      "height": 725,
+      "bounds": {
+        "x": 10.59714,
+        "y": 18.980107,
+        "width": 989.07073,
+        "height": 974.618474
+      },
+      "method": "hand-read stationary map landmarks with independent x/y least-squares fit; pixel values approximate",
+      "anchors": [
+        {
+          "mapX": 630,
+          "mapY": 363,
+          "imageX": 462,
+          "imageY": 262
+        },
+        {
+          "mapX": 788,
+          "mapY": 489,
+          "imageX": 579,
+          "imageY": 356
+        },
+        {
+          "mapX": 346,
+          "mapY": 632,
+          "imageX": 252,
+          "imageY": 461
+        },
+        {
+          "mapX": 620,
+          "mapY": 767,
+          "imageX": 456,
+          "imageY": 563
+        }
+      ],
+      "rmsPx": 0.8368580321121897,
+      "maxErrorPx": 1.1367143301529907
+    },
+    "noklateo-surface.jpg": {
+      "file": "noklateo-surface.jpg",
+      "source": "隐城.png",
+      "width": 732,
+      "height": 729,
+      "bounds": {
+        "x": 5.283127,
+        "y": 10.980262,
+        "width": 987.09278,
+        "height": 980.757254
+      },
+      "method": "hand-read stationary map landmarks with independent x/y least-squares fit; pixel values approximate",
+      "anchors": [
+        {
+          "mapX": 481,
+          "mapY": 197,
+          "imageX": 356,
+          "imageY": 144
+        },
+        {
+          "mapX": 788,
+          "mapY": 489,
+          "imageX": 584,
+          "imageY": 361
+        },
+        {
+          "mapX": 620,
+          "mapY": 767,
+          "imageX": 461,
+          "imageY": 568
+        },
+        {
+          "mapX": 167,
+          "mapY": 317,
+          "imageX": 124,
+          "imageY": 234
+        }
+      ],
+      "rmsPx": 0.801795846224509,
+      "maxErrorPx": 1.1444192748598006
+    },
+    "great-hollow-surface.jpg": {
+      "file": "great-hollow-surface.jpg",
+      "width": 734,
+      "height": 725,
+      "bounds": {
+        "x": 75.49313,
+        "y": 115.256266,
+        "width": 795.52669,
+        "height": 785.772276
+      },
+      "method": "three manually identified architectural centers; approximate, partly icon-occluded; no independent held-out accuracy claim",
+      "anchors": [
+        {
+          "mapX": 347.65625,
+          "mapY": 309.2447916666667,
+          "imageX": 255,
+          "imageY": 185
+        },
+        {
+          "mapX": 583.3333333333334,
+          "mapY": 324.21875,
+          "imageX": 472.5,
+          "imageY": 198.5
+        },
+        {
+          "mapX": 261.71875,
+          "mapY": 430.3385416666667,
+          "imageX": 176,
+          "imageY": 297
+        }
+      ]
+    },
+    "great-hollow-underground.jpg": {
+      "file": "great-hollow-underground.jpg",
+      "width": 734,
+      "height": 734,
+      "bounds": {
+        "x": 379.707219,
+        "y": 431.805196,
+        "width": 618.023036,
+        "height": 618.023036
+      },
+      "method": "independent underground projection, scale/translation fit on terrain patches; held-out matching residuals describe image alignment, not absolute game-location precision",
+      "anchors": [
+        {
+          "mapX": 912.7604166666666,
+          "mapY": 792.3177083333334,
+          "imageX": 637,
+          "imageY": 434
+        },
+        {
+          "mapX": 912.7604166666666,
+          "mapY": 925.1302083333333,
+          "imageX": 637,
+          "imageY": 592
+        },
+        {
+          "mapX": 686.1979166666666,
+          "mapY": 899.0885416666666,
+          "imageX": 368,
+          "imageY": 561
+        },
+        {
+          "mapX": 807.2916666666666,
+          "mapY": 821.6145833333334,
+          "imageX": 512,
+          "imageY": 469
+        }
+      ],
+      "validation": [
+        {
+          "name": "北端蓝色水域顶部凸起",
+          "mapX": 912.109375,
+          "mapY": 708.3333333333334,
+          "imageX": 636.5,
+          "imageY": 335.5,
+          "matchingErrorPx": 1.0954556583460193
+        },
+        {
+          "name": "北端蓝色水域西岸转折",
+          "mapX": 890.625,
+          "mapY": 731.1197916666666,
+          "imageX": 611,
+          "imageY": 362,
+          "matchingErrorPx": 0.5555971654858298
+        },
+        {
+          "name": "蓝色水域南端弯尾",
+          "mapX": 916.6666666666666,
+          "mapY": 757.1614583333334,
+          "imageX": 641.5,
+          "imageY": 392.5,
+          "matchingErrorPx": 0.24084673753063976
+        },
+        {
+          "name": "北侧白色气流起点",
+          "mapX": 846.3541666666666,
+          "mapY": 743.4895833333334,
+          "imageX": 558,
+          "imageY": 376,
+          "matchingErrorPx": 0.2784134869295884
+        },
+        {
+          "name": "东侧青绿色石块桥道",
+          "mapX": 914.0625,
+          "mapY": 867.1875,
+          "imageX": 639,
+          "imageY": 523,
+          "matchingErrorPx": 0.37841153511099623
+        },
+        {
+          "name": "东侧深色坑与南侧石阶交界",
+          "mapX": 906.25,
+          "mapY": 887.3697916666666,
+          "imageX": 629,
+          "imageY": 547,
+          "matchingErrorPx": 0.3569957447942471
+        },
+        {
+          "name": "东南外缘海岸转角",
+          "mapX": 929.0364583333333,
+          "mapY": 953.125,
+          "imageX": 656.5,
+          "imageY": 625.5,
+          "matchingErrorPx": 0.36046792223122237
+        },
+        {
+          "name": "南侧孤立浅色岩块",
+          "mapX": 815.1041666666666,
+          "mapY": 924.4791666666666,
+          "imageX": 521,
+          "imageY": 591,
+          "matchingErrorPx": 0.16422706193676725
+        },
+        {
+          "name": "白色气流西南端",
+          "mapX": 755.2083333333334,
+          "mapY": 908.203125,
+          "imageX": 450,
+          "imageY": 572,
+          "matchingErrorPx": 0.2048819778140406
+        },
+        {
+          "name": "西南金色建筑内部",
+          "mapX": 680.3385416666666,
+          "mapY": 934.8958333333333,
+          "imageX": 360.5,
+          "imageY": 603.5,
+          "matchingErrorPx": 0.5471942106556821
+        },
+        {
+          "name": "西侧浅色圆环遗迹",
+          "mapX": 744.7916666666666,
+          "mapY": 873.6979166666666,
+          "imageX": 437.5,
+          "imageY": 530.5,
+          "matchingErrorPx": 0.3314671400347329
+        },
+        {
+          "name": "气流中段右侧回钩",
+          "mapX": 851.5625,
+          "mapY": 835.2864583333334,
+          "imageX": 564,
+          "imageY": 485,
+          "matchingErrorPx": 0.4486300850916273
+        }
+      ]
+    }
+  }
+}
