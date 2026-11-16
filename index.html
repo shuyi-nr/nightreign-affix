@@ -52,7 +52,7 @@
       .boot-sigil { position: relative; width: 30px; height: 30px; margin-bottom: 24px; border: 1px solid #c9a25c80; transform: rotate(45deg); box-shadow: 0 0 24px #c9a25c15; }
       .boot-sigil::before { content: ''; position: absolute; inset: 7px; border: 1px solid #e8c884; }
       .boot-title {
-        position: relative; isolation: isolate; margin: 8px 0 28px; padding: 12px 10px 24px;
+        position: relative; isolation: isolate; margin: 8px 0 28px;
         font-family: 'STKaiti', 'KaiTi', '楷体', 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
         font-size: clamp(32px, 7.2vw, 102px); font-style: italic; font-weight: 900; line-height: 1.4; letter-spacing: .025em;
         color: #edcf94; white-space: nowrap; transform: skewX(-13deg);
@@ -63,18 +63,19 @@
         box-shadow: 0 7px 0 #c9a25c13, 0 0 16px #dfc48a65;
         clip-path: polygon(0 70%, 95% 0, 100% 30%, 10% 100%);
       }
-      .boot-letter { position: relative; display: inline-block; color: #edcf94; }
-      .boot-letter::after {
-        content: attr(data-letter); position: absolute; inset: 0; color: #fff0cc;
-        clip-path: polygon(0 58%, 100% 45%, 100% 49%, 0 62%); transform: translateX(.035em);
-      }
+      /* Give the italic glyphs room to extend beyond their text run. */
+      .boot-title-text, .boot-shine { padding: 12px .42em 24px; }
+      .boot-title-text { display: block; }
       @supports (-webkit-background-clip: text) {
-        .boot-letter { background: linear-gradient(168deg, #fff9df 8%, #e6ce97 35%, #ac7c37 49%, #fff2bf 51%, #d5af62 66%, #76532b 91%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .boot-title-text {
+          background: linear-gradient(168deg, #fff9df 8%, #e6ce97 35%, #c69a50 48%, #fff2bf 54%, #d5af62 66%, #76532b 91%);
+          -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
       }
       .boot-shine { display: none; }
       @supports (-webkit-background-clip: text) {
         .boot-shine {
-          display: block; position: absolute; inset: 0; z-index: 2; padding: inherit;
+          display: block; position: absolute; inset: 0; z-index: 2;
           pointer-events: none; color: transparent; text-shadow: none;
           background-image: linear-gradient(108deg, transparent 42%, #eaf5ff77 46%, #fff 49%, #fff 51%, #eaf5ff77 54%, transparent 58%);
           background-size: 250% 100%; background-repeat: no-repeat;
@@ -102,7 +103,7 @@
       <div id="boot-screen" class="boot-splash" aria-label="黑夜从未结束，正在加载遗物检测站">
         <div class="boot-kicker" aria-hidden="true">ELDEN RING NIGHTREIGN</div>
         <div class="boot-sigil" aria-hidden="true"></div>
-        <h1 class="boot-title" data-title="黑夜从未结束" aria-label="黑夜从未结束"><span class="boot-letter" data-letter="黑" aria-hidden="true">黑</span><span class="boot-letter" data-letter="夜" aria-hidden="true">夜</span><span class="boot-letter" data-letter="从" aria-hidden="true">从</span><span class="boot-letter" data-letter="未" aria-hidden="true">未</span><span class="boot-letter" data-letter="结" aria-hidden="true">结</span><span class="boot-letter" data-letter="束" aria-hidden="true">束</span><span class="boot-shine" aria-hidden="true">黑夜从未结束</span></h1>
+        <h1 class="boot-title"><span class="boot-title-text">黑夜从未结束</span><span class="boot-shine" aria-hidden="true">黑夜从未结束</span></h1>
         <div class="boot-rule" aria-hidden="true"><span></span></div>
         <p class="boot-text">正在唤醒遗物档案</p>
         <div class="boot-progress" aria-hidden="true"></div>
