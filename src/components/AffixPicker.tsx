@@ -20,9 +20,10 @@ interface Props {
   onClear: () => void;
   invalid?: boolean;
   label?: string;
+  emptyHint?: string;
 }
 
-export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, onClear, invalid, label = '槽位' }: Props) {
+export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, onClear, invalid, label = '槽位', emptyHint }: Props) {
   const listId = useId();
   const [recent, setRecent] = useState<number[]>(() => {
     try {
@@ -279,7 +280,7 @@ export function AffixPicker({ num, candidates, selectedId, takenIds, onSelect, o
           {!query && recentCandidates.length > 0 && <div className="recent-picks"><span>最近使用</span>{recentCandidates.slice(0, 4).map((c) => <button key={c.effectId} className="btn ghost small" disabled={takenIds.has(c.effectId)} onClick={() => commit(c.effectId)}>{c.name}</button>)}</div>}
           <div className="picker-count">共 {filtered.length} 条</div>
           {filtered.length === 0 ? (
-            <EmptyState icon="🔍" title="无匹配词条" hint="试试清空搜索或调整筛选条件" />
+            <EmptyState icon="🔍" title={emptyHint ? '没有可搭配词条' : '无匹配词条'} hint={emptyHint ?? '试试清空搜索或调整筛选条件'} />
           ) : (
             <VirtualList
               className="picker-list"

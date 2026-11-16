@@ -3,7 +3,7 @@
 //   asset referenced by the built index.html (so the site works fully offline).
 // - fetch:   navigations are network-first with a cached-shell fallback;
 //            same-origin assets are cache-first.
-const VERSION = 'v10-20261102-screenshot-maps';
+const VERSION = 'v11-20261116-compatible-affixes';
 const CACHE = `nightreign-affix-${VERSION}`;
 
 // Files with names known at build time (copied verbatim from public/).

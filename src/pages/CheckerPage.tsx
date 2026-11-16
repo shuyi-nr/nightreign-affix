@@ -11,6 +11,7 @@ import { parseHash, readHash, shareUrl, writeHash } from '../lib/url';
 import { copyText } from '../lib/clipboard';
 import { buildTextSummary, statusLabel } from '../lib/summary';
 import { deepRelics, sortPairedRows, validateDeep } from '../lib/deep';
+import { compatibleAffixes } from '../lib/compatibleAffixes';
 
 function candidatesFor(mode: CheckModeKey): CatalogEntry[] {
   switch (mode) {
@@ -40,6 +41,7 @@ export function CheckerPage() {
   const [curses, setCurses] = useState<Array<number | null>>(initial.curses ?? [null, null, null]);
   const [relicId, setRelicId] = useState(initial.relicId ?? deepRelics[0].id);
   const [buildName, setBuildName] = useState('');
+  const [compatibleOnly, setCompatibleOnly] = useState(false);
   const full = mode === 'DEEP_POSITIVE' && deepFull;
   const [toast, setToast] = useState<string | null>(null);
   const [favs, setFavs] = useState<SavedBuild[]>(() => loadFavorites());
@@ -117,6 +119,11 @@ export function CheckerPage() {
   }, [ids]);
 
   const negativeCandidates = useMemo(() => catalog.all.filter((e) => e.deepCurse), []);
+  const compatible = useMemo(() => {
+    if (!compatibleOnly) return null;
+    return compatibleAffixes(mode, ids, candidates, negativeCandidates, full ? { curses, relicId } : undefined);
+  }, [compatibleOnly, mode, ids, candidates, negativeCandidates, full, curses, relicId]);
+  const noCompatibleHint = '可以清除其他槽位的词条，或关闭自动筛选。';
   const negativeTaken = new Set(curses.filter((id): id is number => id != null));
   const problemIds = new Set(result.issues.flatMap((issue) => issue.effectIds));
   // Live conflict highlighting also works before the third positive is chosen.
@@ -259,23 +266,48 @@ export function CheckerPage() {
           <span className="idx-badge">2</span>三个词条
         </h2>
         <p className="hint">{full ? '每列为一行配对：上方选正面，下方选对应负面。没有负面的行请留空。' : '点击槽位搜索词条；冲突会实时标红。'}</p>
+        <label className="deep-toggle compatible-toggle">
+          <input type="checkbox" checked={compatibleOnly} onChange={(e) => setCompatibleOnly(e.target.checked)} aria-describedby={compatibleOnly ? 'compatible-selection-hint' : undefined} />
+          只显示可搭配词条
+        </label>
+        {compatibleOnly && <p className="hint" id="compatible-selection-hint">候选随已选词条更新，只显示能凑成完整组合的词条。选满后可一键调整顺序。</p>}
         <div className="slots">
-          {[0, 1, 2].map((i) => (
-            <div className="paired-row" key={i}>
-            <AffixPicker
-              key={i}
-              num={i + 1}
-              candidates={candidates}
-              selectedId={ids[i]}
-              takenIds={takenIds}
-              onSelect={(id) => setSlot(i, id)}
-              onClear={() => clearSlot(i)}
-              invalid={ids[i] != null && problemIds.has(ids[i]!)}
-              label={full ? '正面词条' : '槽位'}
-            />
-            {full && <AffixPicker num={i + 1} label="配对负面（可留空）" candidates={negativeCandidates} selectedId={curses[i]} takenIds={negativeTaken} onSelect={(id) => setCurses((prev) => prev.map((v, j) => i === j ? id : v))} onClear={() => setCurses((prev) => prev.map((v, j) => i === j ? null : v))} invalid={curses[i] != null && problemIds.has(curses[i]!)} />}
-            </div>
-          ))}
+          {ids.map((id, i) => {
+            const positiveOptions = compatible?.positive[i] ?? candidates;
+            const negativeOptions = compatible?.negative[i] ?? negativeCandidates;
+            const current = id == null ? undefined : getAffix(id);
+            const negativeEmptyHint = current && !current.requiresCurse
+              ? '这条正面词条无需配对负面，请留空。'
+              : noCompatibleHint;
+            return (
+              <div className="paired-row" key={i}>
+                <AffixPicker
+                  num={i + 1}
+                  candidates={positiveOptions}
+                  selectedId={id}
+                  takenIds={takenIds}
+                  onSelect={(nextId) => setSlot(i, nextId)}
+                  onClear={() => clearSlot(i)}
+                  invalid={id != null && problemIds.has(id)}
+                  label={full ? '正面词条' : '槽位'}
+                  emptyHint={compatible && positiveOptions.length === 0 ? noCompatibleHint : undefined}
+                />
+                {full && (
+                  <AffixPicker
+                    num={i + 1}
+                    label="配对负面（可留空）"
+                    candidates={negativeOptions}
+                    selectedId={curses[i]}
+                    takenIds={negativeTaken}
+                    onSelect={(nextId) => setCurses((prev) => prev.map((v, j) => i === j ? nextId : v))}
+                    onClear={() => setCurses((prev) => prev.map((v, j) => i === j ? null : v))}
+                    invalid={curses[i] != null && problemIds.has(curses[i]!)}
+                    emptyHint={compatible && negativeOptions.length === 0 ? negativeEmptyHint : undefined}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {liveConflicts.length > 0 && (

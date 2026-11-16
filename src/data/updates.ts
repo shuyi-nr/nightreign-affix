@@ -9,6 +9,13 @@ export interface UpdateEntry {
 // 后续更新在此添加记录，按日期从新到旧排列，共用同一个更新入口。
 export const updates: readonly UpdateEntry[] = [
   {
+    date: '2026-11-16',
+    title: '合法词条自动筛选',
+    status: 'published',
+    items: ['检测页可勾选「只显示可搭配词条」。候选随当前选择更新，只显示能凑成完整组合的词条，深夜完整检测同时考虑逐行负面配对。'],
+    notes: ['选满后仍可使用一键调整顺序。'],
+  },
+  {
     "date": "2026-11-02",
     "title": "探索资料、底图融合与导航整理",
     "status": "published",

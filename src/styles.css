@@ -571,6 +571,7 @@ mark.hl { background: rgba(201, 162, 92, 0.35); color: var(--gold-hi); border-ra
 .deep-options { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 16px; }
 .deep-toggle { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; cursor: pointer; }
 .deep-toggle input { accent-color: var(--gold); width: 18px; height: 18px; }
+.compatible-toggle { width: fit-content; min-height: 44px; margin-bottom: 4px; }
 .build-name { max-width: 430px; margin-top: 18px; }
 .recent-picks { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 12px; border-bottom: 1px solid var(--border); max-height: 110px; overflow-y: auto; }
 .recent-picks > span { width: 100%; color: var(--text-dim); font-size: 12px; }

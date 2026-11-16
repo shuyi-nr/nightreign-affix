@@ -62,23 +62,28 @@ export function canonicalOrder(affixes: Affix[]): Affix[] {
   return [...affixes].sort((a, b) => a.sortId - b.sortId || a.effectId - b.effectId);
 }
 
-/** Whether `affixes` can be assigned one-to-one onto `slotPools` (backtracking). */
-export function hasPoolAssignment(affixes: Affix[], slotPools: number[]): boolean {
-  if (affixes.length !== slotPools.length) return false;
-  if (slotPools.length === 0) return true;
-  const used = new Array<boolean>(affixes.length).fill(false);
-  const assign = (slotIndex: number): boolean => {
-    if (slotIndex === slotPools.length) return true;
-    for (let i = 0; i < affixes.length; i++) {
-      if (!used[i] && affixes[i].poolIds.includes(slotPools[slotIndex])) {
+type PoolAffix = Pick<Affix, 'poolIds'>;
+
+/** Whether every selected affix can fit a distinct slot in this template. */
+export function canFitPoolSlots(affixes: readonly PoolAffix[], slotPools: readonly number[]): boolean {
+  if (affixes.length > slotPools.length) return false;
+  const used = new Array<boolean>(slotPools.length).fill(false);
+  const assign = (affixIndex: number): boolean => {
+    if (affixIndex === affixes.length) return true;
+    for (let i = 0; i < slotPools.length; i++) {
+      if (!used[i] && affixes[affixIndex].poolIds.includes(slotPools[i])) {
         used[i] = true;
-        if (assign(slotIndex + 1)) return true;
+        if (assign(affixIndex + 1)) return true;
         used[i] = false;
       }
     }
     return false;
   };
   return assign(0);
+}
+
+export function hasPoolAssignment(affixes: readonly PoolAffix[], slotPools: number[]): boolean {
+  return affixes.length === slotPools.length && canFitPoolSlots(affixes, slotPools);
 }
 
 export function hasPoolPatternAssignment(affixes: Affix[], sequences: number[][]): boolean {
