@@ -1,0 +1,3054 @@
+{
+  "gameVersion": "regulation 10350000",
+  "verifiedAt": "2026-11-20",
+  "regulationSha256": "876a3ca279a4561d0c69f81fe5e510c75c59ab9a8a201694f8cf4a42c91e0268",
+  "bosses": [
+    {
+      "id": "resource-30100270",
+      "nameZh": "失乡骑士",
+      "nameEn": "Banished Knight",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 30100270,
+          "label": "营地 · 剑盾",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 30100270,
+            "rowName": "Banished Knight (Encampment, Shield)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 30101250,
+          "label": "营地 · 双剑",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 30101250,
+            "rowName": "Banished Knight (Encampment, Dual Swords)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 30102240,
+          "label": "营地 · 戟",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 30102240,
+            "rowName": "Banished Knight (Encampment, Halberd)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 30100010,
+          "label": "城堡 · 剑盾",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "城堡"
+          ],
+          "evidence": {
+            "npcId": 30100010,
+            "rowName": "Banished Knight (Castle, Shield)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 30101010,
+          "label": "城堡 · 双剑",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "城堡"
+          ],
+          "evidence": {
+            "npcId": 30101010,
+            "rowName": "Banished Knight (Castle, Dual Swords)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 30102010,
+          "label": "城堡 · 戟",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "城堡"
+          ],
+          "evidence": {
+            "npcId": 30102010,
+            "rowName": "Banished Knight (Castle, Halberd)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 30100280,
+          "label": "城堡 · 红眼剑盾",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "城堡"
+          ],
+          "evidence": {
+            "npcId": 30100280,
+            "rowName": "Banished Knight (Castle, Red Eyes, Shield)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 30101260,
+          "label": "城堡 · 红眼双剑",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "城堡"
+          ],
+          "evidence": {
+            "npcId": 30101260,
+            "rowName": "Banished Knight (Castle, Red Eyes, Dual Swords)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-43510020",
+      "nameZh": "君王军队长",
+      "nameEn": "Lordsworn Captain",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 43510020,
+          "label": "堡垒 · 队长",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "堡垒"
+          ],
+          "evidence": {
+            "npcId": 43510020,
+            "rowName": "Lordsworn Captain (Fort)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-43530035",
+      "nameZh": "罗德尔骑士",
+      "nameEn": "Leyndell Knight",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 43530035,
+          "label": "营地 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 0.6,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 43530035,
+            "rowName": "Leyndell Knight (Encampment, healthbar)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 43530030,
+          "label": "营地 · 塔旁剑盾",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 0.6,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 43530030,
+            "rowName": "Leyndell Knight (Encampment, by tower)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 43531030,
+          "label": "营地 · 中央",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 0.6,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 43531030,
+            "rowName": "Leyndell Knight (Encampment, middle)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 43532030,
+          "label": "营地 · 投石机旁",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 0.6,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 43532030,
+            "rowName": "Leyndell Knight (Encampment, by catapult)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-43540015",
+      "nameZh": "红狮子骑士",
+      "nameEn": "Redmane Knight",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 43540015,
+          "label": "营地 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 43540015,
+            "rowName": "Redmane Knight (Encampment, healthbar)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 43541010,
+          "label": "营地 · 投石机旁",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 43541010,
+            "rowName": "Redmane Knight (Encampment, by catapult)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 43542010,
+          "label": "营地 · 塔中",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 43542010,
+            "rowName": "Redmane Knight (Encampment, in tower)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-43401010",
+      "nameZh": "南瓜头士兵",
+      "nameEn": "Mad Pumpkin Head",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 43401010,
+          "label": "营地 · 南瓜头",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1,
+            "lightning": 1.2,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 84,
+            "frost": 84,
+            "sleep": 154,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 43401010,
+            "rowName": "Mad Pumpkin Head (Encampment)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-46601010",
+      "nameZh": "魔像守卫",
+      "nameEn": "Guardian Golem",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 46601010,
+          "label": "堡垒 · 魔像",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.9,
+            "strike": 1,
+            "pierce": 0.9,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 0.6,
+            "holy": 0.6
+          },
+          "resist": {
+            "poison": 999,
+            "rot": 999,
+            "bleed": 999,
+            "frost": 999,
+            "sleep": 999,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "poison",
+            "rot",
+            "bleed",
+            "frost",
+            "sleep",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "堡垒"
+          ],
+          "evidence": {
+            "npcId": 46601010,
+            "rowName": "Guardian Golem (Fort)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-33500020",
+      "nameZh": "结晶人",
+      "nameEn": "Crystalian",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 33500020,
+          "label": "堡垒 · 结晶人",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 0.65,
+            "magic": 0.6,
+            "fire": 0.6,
+            "lightning": 0.6,
+            "holy": 0.6
+          },
+          "resist": {
+            "poison": 252,
+            "rot": 252,
+            "bleed": 999,
+            "frost": 252,
+            "sleep": 999,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "bleed",
+            "sleep",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "堡垒"
+          ],
+          "evidence": {
+            "npcId": 33500020,
+            "rowName": "Crystalian (Fort)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-34715315",
+      "nameZh": "大型白金之子",
+      "nameEn": "Large Albinauric",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 34715315,
+          "label": "遗迹 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1.1,
+            "slash": 1.1,
+            "strike": 0.9,
+            "pierce": 1.1,
+            "magic": 1,
+            "fire": 0.8,
+            "lightning": 1.2,
+            "holy": 1.4
+          },
+          "resist": {
+            "poison": 999,
+            "rot": 154,
+            "bleed": 84,
+            "frost": 252,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "poison",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 34715315,
+            "rowName": "Large Albinauric (Ruins, healthbar)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 34715310,
+          "label": "遗迹 · 守卫",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1.1,
+            "slash": 1.1,
+            "strike": 0.9,
+            "pierce": 1.1,
+            "magic": 1,
+            "fire": 0.8,
+            "lightning": 1.2,
+            "holy": 1.4
+          },
+          "resist": {
+            "poison": 999,
+            "rot": 154,
+            "bleed": 84,
+            "frost": 252,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "poison",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 34715310,
+            "rowName": "Large Albinauric (Ruins)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-37040025",
+      "nameZh": "战场魔法师",
+      "nameEn": "Battlemage",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 37040025,
+          "label": "遗迹 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.6,
+            "fire": 0.8,
+            "lightning": 0.8,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 84,
+            "rot": 84,
+            "bleed": 112,
+            "frost": 112,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 37040025,
+            "rowName": "Battlemage (Ruins, healthbar)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-39701125",
+      "nameZh": "法姆·亚兹拉兽人",
+      "nameEn": "Azula Beastman",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 39701125,
+          "label": "遗迹 · 首领变体",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1.2,
+            "lightning": 0.8,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 39701125,
+            "rowName": "Azula Beastman (Ruins, healthbar)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 39701120,
+          "label": "遗迹 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1.2,
+            "lightning": 0.8,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 154,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 39701120,
+            "rowName": "Azula Beastman (Ruins Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-39100130",
+      "nameZh": "火焰主教",
+      "nameEn": "Fire Prelate",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 39100130,
+          "label": "火山口 · 雾门旁",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 0.9,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 0.8,
+            "holy": 1.2
+          },
+          "resist": {
+            "poison": 154,
+            "rot": 154,
+            "bleed": 112,
+            "frost": 252,
+            "sleep": 252,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "火山口"
+          ],
+          "evidence": {
+            "npcId": 39100130,
+            "rowName": "Fire Prelate (Crater by fog gate)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 39100140,
+          "label": "火山口",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 0.9,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 0.8,
+            "holy": 1.2
+          },
+          "resist": {
+            "poison": 154,
+            "rot": 154,
+            "bleed": 112,
+            "frost": 252,
+            "sleep": 252,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "火山口"
+          ],
+          "evidence": {
+            "npcId": 39100140,
+            "rowName": "Fire Prelate (Crater)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 39101120,
+          "label": "火山口 · 第二武器变体",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 0.9,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 0.8,
+            "holy": 1.2
+          },
+          "resist": {
+            "poison": 154,
+            "rot": 154,
+            "bleed": 112,
+            "frost": 252,
+            "sleep": 252,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "火山口"
+          ],
+          "evidence": {
+            "npcId": 39101120,
+            "rowName": "Fire Prelate (Crater)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-21400310",
+      "nameZh": "恶兆之子",
+      "nameEn": "Omen",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 21400310,
+          "label": "地下要塞 · 东方要塞剑型精英",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1,
+            "lightning": 1,
+            "holy": 0.6
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 112,
+            "frost": 112,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "地下要塞"
+          ],
+          "evidence": {
+            "npcId": 21400310,
+            "rowName": "Omen - Sword (Eastern Underground Fort Elite)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 21401310,
+          "label": "地下要塞 · 东方要塞斧型精英",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1,
+            "lightning": 1,
+            "holy": 0.6
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 112,
+            "frost": 112,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "地下要塞"
+          ],
+          "evidence": {
+            "npcId": 21401310,
+            "rowName": "Omen - Axe (Eastern Underground Fort Elite)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-31700020",
+      "nameZh": "白金之子弓箭手",
+      "nameEn": "Albinauric Archer",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 31700020,
+          "label": "山顶遗迹 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 1,
+            "lightning": 1,
+            "holy": 1.4
+          },
+          "resist": {
+            "poison": 999,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 252,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "poison",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹",
+            "山顶遗迹"
+          ],
+          "evidence": {
+            "npcId": 31700020,
+            "rowName": "Albinauric Archer (Mountaintop Ruins Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 31700040,
+          "label": "遗迹 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 1,
+            "lightning": 1,
+            "holy": 1.4
+          },
+          "resist": {
+            "poison": 999,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 252,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "poison",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 31700040,
+            "rowName": "Albinauric Archer (Ruins Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-31800020",
+      "nameZh": "白金之子的狼",
+      "nameEn": "Albinauric Archer Wolf",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 31800020,
+          "label": "山顶遗迹 · 弓手伴随狼",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1.2,
+            "lightning": 1,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 252,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹",
+            "山顶遗迹"
+          ],
+          "evidence": {
+            "npcId": 31800020,
+            "rowName": "Albinauric Archer's Wolf (Mountaintop Ruins Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 31800030,
+          "label": "遗迹 · 弓手伴随狼",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1.2,
+            "lightning": 1,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 154,
+            "frost": 252,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 31800030,
+            "rowName": "Albinauric Archer's Wolf (Ruins Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-35500010",
+      "nameZh": "鲜血贵族",
+      "nameEn": "Sanguine Noble",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 35500010,
+          "label": "遗迹",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 0.8,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 84,
+            "frost": 112,
+            "sleep": 154,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 35500010,
+            "rowName": "Sanguine Noble (Ruins)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-37000010",
+      "nameZh": "堕落调香师",
+      "nameEn": "Depraved Perfumer",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 37000010,
+          "label": "遗迹 · 守卫",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 0.8,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 252,
+            "rot": 252,
+            "bleed": 84,
+            "frost": 112,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 37000010,
+            "rowName": "Depraved Perfumer (Ruins)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-37010030",
+      "nameZh": "调香师",
+      "nameEn": "Perfumer",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 37010030,
+          "label": "遗迹 · 守卫",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 0.6,
+            "fire": 0.6,
+            "lightning": 0.6,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 252,
+            "rot": 252,
+            "bleed": 84,
+            "frost": 84,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 37010030,
+            "rowName": "Perfumer (Ruins)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-37020030",
+      "nameZh": "辉石魔法师",
+      "nameEn": "Glintstone Sorcerer",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 37020030,
+          "label": "堡垒 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1.1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1.1,
+            "magic": 0.6,
+            "fire": 0.8,
+            "lightning": 0.8,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 84,
+            "rot": 84,
+            "bleed": 84,
+            "frost": 84,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "堡垒"
+          ],
+          "evidence": {
+            "npcId": 37020030,
+            "rowName": "Glintstone Sorcerer (Fort Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-37300210",
+      "nameZh": "魔法师球",
+      "nameEn": "Graven Mass",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 37300210,
+          "label": "地下要塞 · 西方要塞精英",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 0.2,
+            "magic": 0.2,
+            "fire": 0.6,
+            "lightning": 0.6,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 999,
+            "rot": 999,
+            "bleed": 999,
+            "frost": 999,
+            "sleep": 999,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "poison",
+            "rot",
+            "bleed",
+            "frost",
+            "sleep",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "地下要塞"
+          ],
+          "evidence": {
+            "npcId": 37300210,
+            "rowName": "Graven Mass (Western Underground Fort Elite)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-42601610",
+      "nameZh": "归树看门犬",
+      "nameEn": "Erdtree Burial Watchdog",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 42601610,
+          "label": "遗迹 · 权杖",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.65,
+            "slash": 0.65,
+            "strike": 0.9,
+            "pierce": 0.65,
+            "magic": 0.6,
+            "fire": 0.6,
+            "lightning": 0.6,
+            "holy": 0.6
+          },
+          "resist": {
+            "poison": 999,
+            "rot": 999,
+            "bleed": 999,
+            "frost": 999,
+            "sleep": 999,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "poison",
+            "rot",
+            "bleed",
+            "frost",
+            "sleep",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 42601610,
+            "rowName": "Erdtree Burial Watchdog (Ruins, Staff)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-44600015",
+      "nameZh": "火焰战车",
+      "nameEn": "Flame Chariot",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 44600015,
+          "label": "营地 · 带首领血条",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.9,
+            "strike": 1,
+            "pierce": 0.9,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 0.8,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 252,
+            "rot": 252,
+            "bleed": 154,
+            "frost": 252,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "营地"
+          ],
+          "evidence": {
+            "npcId": 44600015,
+            "rowName": "Flame Chariot (Encampment, healthbar)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-46300010",
+      "nameZh": "卢恩熊",
+      "nameEn": "Runebear",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 46300010,
+          "label": "遗迹 · 棕色",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1.2,
+            "lightning": 1,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 154,
+            "rot": 154,
+            "bleed": 252,
+            "frost": 252,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 46300010,
+            "rowName": "Runebear (Ruins, Brown)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        },
+        {
+          "npcId": 46300210,
+          "label": "遗迹 · 银色",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1.2,
+            "lightning": 1,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 154,
+            "rot": 154,
+            "bleed": 252,
+            "frost": 252,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 46300210,
+            "rowName": "Runebear (Ruins, Silver)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-48200020",
+      "nameZh": "恶兆猎人",
+      "nameEn": "Omenkiller",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 48200020,
+          "label": "地下要塞 · 西方要塞精英",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 0.8,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 252,
+            "rot": 252,
+            "bleed": 112,
+            "frost": 112,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "地下要塞"
+          ],
+          "evidence": {
+            "npcId": 48200020,
+            "rowName": "Omenkiller (Western Underground Fort Elite)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-50810020",
+      "nameZh": "血怪之首",
+      "nameEn": "Chief Bloodfiend",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 50810020,
+          "label": "遗迹 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1,
+            "slash": 1.2,
+            "strike": 1,
+            "pierce": 1,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 0.8,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 252,
+            "frost": 112,
+            "sleep": 999,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "sleep",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 50810020,
+            "rowName": "Chief Bloodfiend (Ruins Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-51920020",
+      "nameZh": "大型蜘蛛蝎",
+      "nameEn": "Large Spider Scorpion",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 51920020,
+          "label": "遗迹 · 集群首领成员",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.75,
+            "slash": 0.55,
+            "strike": 1,
+            "pierce": 0.75,
+            "magic": 0.8,
+            "fire": 1.2,
+            "lightning": 0.8,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 252,
+            "rot": 252,
+            "bleed": 154,
+            "frost": 84,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 51920020,
+            "rowName": "Large Spider Scorpion (Ruins Group Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-71000115",
+      "nameZh": "萨米尔的古英雄",
+      "nameEn": "Ancient Hero",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 71000115,
+          "label": "遗迹 · 带首领血条",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 0.9,
+            "strike": 0.9,
+            "pierce": 1,
+            "magic": 1,
+            "fire": 1.2,
+            "lightning": 1.2,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 154,
+            "rot": 154,
+            "bleed": 252,
+            "frost": 542,
+            "sleep": 112,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "遗迹"
+          ],
+          "evidence": {
+            "npcId": 71000115,
+            "rowName": "Ancient Hero (Ruins, healthbar)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-22740030",
+      "nameZh": "睡眠巨蟹",
+      "nameEn": "Giant Sleep Crab",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 22740030,
+          "label": "大教堂 · 集群首领成员",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.65,
+            "slash": 0.65,
+            "strike": 1,
+            "pierce": 0.65,
+            "magic": 0.8,
+            "fire": 0.8,
+            "lightning": 0.8,
+            "holy": 1.4
+          },
+          "resist": {
+            "poison": 999,
+            "rot": 154,
+            "bleed": 154,
+            "frost": 84,
+            "sleep": 84,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "poison",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "大教堂"
+          ],
+          "evidence": {
+            "npcId": 22740030,
+            "rowName": "Giant Sleep Crab (Great Church Group Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-33201110",
+      "nameZh": "仿身泪滴（山妖）",
+      "nameEn": "Mimic Tear Troll",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 33201110,
+          "label": "大教堂 · 集群首领成员",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.65,
+            "slash": 0.65,
+            "strike": 0.65,
+            "pierce": 0.65,
+            "magic": 0.8,
+            "fire": 0.6,
+            "lightning": 1,
+            "holy": 0.8
+          },
+          "resist": {
+            "poison": 252,
+            "rot": 252,
+            "bleed": 999,
+            "frost": 252,
+            "sleep": 999,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "bleed",
+            "sleep",
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "大教堂"
+          ],
+          "evidence": {
+            "npcId": 33201110,
+            "rowName": "Mimic Tear - Troll (Great Church Group Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-41402210",
+      "nameZh": "唤灵蜗牛",
+      "nameEn": "Spiritcaller Snail",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 41402210,
+          "label": "大教堂 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 1.1,
+            "slash": 1.4,
+            "strike": 1.1,
+            "pierce": 1.1,
+            "magic": 0.6,
+            "fire": 1,
+            "lightning": 1.2,
+            "holy": 1
+          },
+          "resist": {
+            "poison": 84,
+            "rot": 84,
+            "bleed": 84,
+            "frost": 63,
+            "sleep": 63,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "大教堂"
+          ],
+          "evidence": {
+            "npcId": 41402210,
+            "rowName": "Spiritcaller Snail (Great Church Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "resource-53200010",
+      "nameZh": "拷问官（肥大型）",
+      "nameEn": "Fat Inquisitor",
+      "group": "boss",
+      "form": "资源点首领 / 相关守卫",
+      "variants": [
+        {
+          "npcId": 53200010,
+          "label": "大教堂 · 首领",
+          "uncertain": false,
+          "damageRates": {
+            "standard": 0.9,
+            "slash": 1.2,
+            "strike": 0.75,
+            "pierce": 1,
+            "magic": 0.9,
+            "fire": 1.2,
+            "lightning": 0.9,
+            "holy": 0.9
+          },
+          "resist": {
+            "poison": 112,
+            "rot": 112,
+            "bleed": 112,
+            "frost": 112,
+            "sleep": 63,
+            "madness": 999,
+            "death": 999
+          },
+          "immune": [
+            "madness",
+            "death"
+          ],
+          "roles": [
+            "stronghold"
+          ],
+          "locations": [
+            "大教堂"
+          ],
+          "evidence": {
+            "npcId": 53200010,
+            "rowName": "Fat Inquisitor (Great Church Boss)",
+            "fields": [
+              "neutralDamageCutRate",
+              "slashDamageCutRate",
+              "blowDamageCutRate",
+              "thrustDamageCutRate",
+              "magicDamageCutRate",
+              "fireDamageCutRate",
+              "thunderDamageCutRate",
+              "darkDamageCutRate",
+              "resist_poison",
+              "resist_desease",
+              "resist_blood",
+              "resist_freeze",
+              "resist_sleep",
+              "resist_madness",
+              "resist_curse"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

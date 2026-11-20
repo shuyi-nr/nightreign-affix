@@ -1,6 +1,7 @@
 import { useId, useState } from 'react';
 import { attributes, heroes } from '../lib/compendium';
 import { DataSourceNote } from '../components/DataSourceNote';
+import { HeroAbilities } from '../components/HeroAbilities';
 
 const MAX_STAT = 80;
 const RADIUS = 116;
@@ -28,12 +29,12 @@ export function HeroesPage() {
 
   return <div className="compendium-page heroes-page">
     <div className="card">
-      <div className="section-eyebrow">NIGHTFARERS / ATTRIBUTE ATLAS</div>
-      <h2>角色数值 · 八维雷达</h2>
-      <p className="hint">选一位角色，直观看出八项属性的分布。图上直接标值，右侧属性条方便逐项比较。</p>
+      <div className="section-eyebrow">渡夜者 · 属性与技能</div>
+      <h2>角色数值与技能</h2>
+      <p className="hint">选择角色查看基础属性、技能说明及相关遗物效果。</p>
       <div className="hero-tabs">{heroes.map(h => <button className={`btn ${h.key === key ? 'primary' : ''}`} aria-pressed={h.key === key} key={h.key} onClick={() => { setKey(h.key); setActive(null); }}>{h.nameZh}</button>)}</div>
       <div className="level-control">
-        <label htmlFor="hero-level">角色等级 <strong>Lv. {level}</strong></label>
+        <label htmlFor="hero-level">角色等级 <strong>{level} 级</strong></label>
         <input id="hero-level" type="range" min="1" max="15" value={level} onChange={e => setLevel(Number(e.target.value))}/>
         <span className="tag">{row.isAnchor ? '参数锚点' : '插值等级'}</span>
       </div>
@@ -41,8 +42,8 @@ export function HeroesPage() {
 
     <div className="card hero-profile">
       <div className="hero-profile-head">
-        <div><div className="section-eyebrow">NIGHTFARER PROFILE</div><h2>{hero.nameZh}<span>{hero.nameEn}</span></h2></div>
-        <div className="hero-level-stamp"><span>LEVEL</span><strong>{String(level).padStart(2, '0')}</strong></div>
+        <div><div className="section-eyebrow">基础档案</div><h2>{hero.nameZh}</h2></div>
+        <div className="hero-level-stamp"><span>等级</span><strong>{String(level).padStart(2, '0')}</strong></div>
       </div>
       <div className="hero-detail">
         <div className="radar-panel">
@@ -76,7 +77,7 @@ export function HeroesPage() {
         </div>
 
         <div className="hero-numbers">
-          <div className="stat-tiles">{[['血量', 'HP', row.hp], ['专注值', 'FP', row.fp], ['精力', 'STA', row.stamina]].map(([name, code, n]) => <div className="stat-tile" key={name}><span>{name}<small>{code}</small></span><strong>{n}</strong></div>)}</div>
+          <div className="stat-tiles">{[['血量', row.hp], ['专注值', row.fp], ['精力', row.stamina]].map(([name, n]) => <div className="stat-tile" key={name}><span>{name}</span><strong>{n}</strong></div>)}</div>
           <div className="attribute-list-head"><h3>属性明细</h3><span>点击属性定位图中顶点</span></div>
           <div className="attribute-list">{attributes.map((a, i) => <button type="button" key={a.key} className={`attribute-row${active === a.key ? ' is-active' : ''}`} aria-pressed={active === a.key} onClick={() => setActive(active === a.key ? null : a.key)}>
             <span className="attribute-name"><i style={{ background: colors[i] }}/>{a.zh}</span>
@@ -87,6 +88,7 @@ export function HeroesPage() {
         </div>
       </div>
     </div>
+    <HeroAbilities heroKey={key} level={level}/>
     <DataSourceNote/>
   </div>;
 }

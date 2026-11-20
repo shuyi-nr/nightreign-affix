@@ -877,3 +877,46 @@ mark.hl { background: rgba(201, 162, 92, 0.35); color: var(--gold-hi); border-ra
  .castle-node-list button { min-height:60px; }
  .resonance-target { flex-basis:100%; }
 }
+
+/* Character abilities and the relic effects that modify them. */
+.ability-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; align-items: start; }
+.ability-card { min-width: 0; padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: rgba(255, 255, 255, .02); }
+.ability-kind { font-size: 12px; color: var(--gold); letter-spacing: .08em; }
+.ability-card h3 { font-size: 19px; line-height: 1.4; margin: 8px 0 12px; overflow-wrap: anywhere; }
+.ability-description { font-size: 14px; line-height: 1.8; color: #b7bcc7; margin: 0 0 18px; }
+.ability-related summary, .ability-extra > summary { cursor: pointer; padding: 12px 0; line-height: 1.6; }
+.ability-related summary { font-size: 13px; color: #d4ba85; border-top: 1px solid var(--border); }
+.ability-related summary span, .ability-extra > summary span { color: #949ba8; font-size: 12px; margin-left: 6px; }
+.ability-relics { list-style: none; padding: 0; margin: 0; }
+.ability-relics > li { padding: 16px 0; border-top: 1px solid var(--border); }
+.ability-relic-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.ability-relic-title h4 { font-size: 14px; line-height: 1.8; font-weight: 500; margin: 0; overflow-wrap: anywhere; }
+.ability-pool, .ability-effect-id { font-size: 11px; color: #929cab; }
+.ability-pool { white-space: nowrap; }
+.ability-relics p { margin: 8px 0; font-size: 13px; color: #b7bcc7; line-height: 1.8; }
+.ability-evidence { margin-top: 8px; font-size: 11px; color: #929cab; overflow-wrap: anywhere; }
+.ability-evidence summary { padding: 6px 0; border: 0; font-size: 11px; }
+.ability-evidence ul { padding-left: 16px; line-height: 1.8; }
+.ability-extra { margin-top: 16px; border-top: 1px solid var(--border); }
+.ability-extra > summary { min-height: 44px; box-sizing: border-box; }
+.ability-sources p { color: #929cab; font-size: 13px; line-height: 1.8; }
+@media (max-width: 960px) { .ability-grid { grid-template-columns: 1fr; gap: 12px; } .ability-card { padding: 16px; } }
+.ability-mechanics { margin: 0; }
+.ability-mechanics > div { margin: 18px 0; }
+.ability-mechanics dt { color: #e3cca0; font-size: 13px; margin-bottom: 6px; }
+.ability-mechanics dd { margin: 0; font-size: 13px; color: #adb8c5; line-height: 1.9; }
+.ability-hit-list, .mixture-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 16px 0; }
+.ability-hit, .mixture-card { min-width: 0; padding: 16px; border: 1px solid var(--border); border-radius: 8px; background: #ffffff03; }
+.ability-hit > strong { color: #e3cca0; font-size: 14px; }
+.ability-hit dl { margin: 14px 0 0; font-size: 12px; }
+.ability-hit dl > div { display: flex; justify-content: space-between; gap: 12px; margin: 8px 0; }
+.ability-hit dt { color: #929cab; }
+.ability-hit dd { margin: 0; text-align: right; color: #dce2e9; overflow-wrap: anywhere; }
+.ability-hit .hint { font-size: 11px; margin: 10px 0 0; }
+.ability-hit-group > h3 { font-size: 16px; margin-top: 24px; }
+.mixture-card h3 { font-size: 17px; margin: 6px 0; }
+.mixture-card > p { font-size: 13px; line-height: 1.8; color: #adb8c5; }
+.mixture-card .mixture-recipe { font-size: 12px; color: #c6ab78; }
+.mixture-card summary { cursor: pointer; padding: 8px 0; font-size: 13px; }
+.mixture-card .ability-hit-list { grid-template-columns: 1fr; }
+@media (max-width: 640px) { .ability-hit-list, .mixture-grid { grid-template-columns: 1fr; } }

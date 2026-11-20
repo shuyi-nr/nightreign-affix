@@ -1,0 +1,1238 @@
+{
+  "gameVersion": "regulation 1.03.5 + DLC1",
+  "checkedAt": "2026-11-20",
+  "sources": {
+    "official": "https://nightreign.eldenring.jp/news.html",
+    "gameplay": "https://www.bandainamcoent.com/games/nightreign/gameplay-guide",
+    "chineseNames": "https://wiki.biligame.com/nightreign/三语:所有菜单文本",
+    "chineseDlcNames": "https://wiki.biligame.com/nightreign/三语:所有菜单文本_dlc01",
+    "affixes": "https://github.com/sganggs/nightreign-relic-checker/blob/6fe8267682149568058649b5f25a1481ac06384e/data/nightreign-affixes-v1.03.4.json",
+    "parameters": "https://github.com/sganggs/nightreign-relic-checker/blob/6fe8267682149568058649b5f25a1481ac06384e/data/nightreign-buffs-v1.03.5.json"
+  },
+  "inputSha256": "5205be2d33c0ad408d0b3399966b5dd5134bf546160c7a8741705870ea05aca7",
+  "heroes": [
+    {
+      "key": "wylder",
+      "prefix": "追踪者",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "第六感",
+          "description": "受到致命攻击时触发一次保命能力。死亡复活或在赐福休息后可恢复使用机会。",
+          "effectIds": [
+            7032400
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "钩爪射击",
+          "description": "发射钩爪牵引敌人，或借收回钩爪迅速接近目标。",
+          "effectIds": [
+            6500000,
+            7020000,
+            7033200
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "袭击桩柱",
+          "description": "打出伴随爆炸的铁桩重击。",
+          "effectIds": [
+            7010500
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/wylder",
+      "otherEffectIds": [
+        6640000,
+        6640100
+      ]
+    },
+    {
+      "key": "guardian",
+      "prefix": "守护者",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "强力防御",
+          "description": "站稳脚步并架盾，进入强化防御姿态。",
+          "effectIds": [
+            7033400
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "旋风",
+          "description": "振翅卷起旋风，攻击周围敌人。",
+          "effectIds": [
+            6500100,
+            7011000
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "救世展翼",
+          "description": "跃起后俯冲落地，形成保护区域。",
+          "effectIds": [
+            7012000
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/guardian",
+      "otherEffectIds": [
+        6641000,
+        6641100,
+        7011600
+      ]
+    },
+    {
+      "key": "ironeye",
+      "prefix": "铁之眼",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "观察入微",
+          "description": "提升发现战利品的能力，使敌人更容易掉落物品，效果也适用于队友。",
+          "effectIds": []
+        },
+        {
+          "kind": "skill",
+          "name": "标记",
+          "description": "以短刀划伤敌人，使目标暂时显露弱点。",
+          "effectIds": [
+            6500200,
+            7270100,
+            7280000
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "穿杨一箭",
+          "description": "射出具有强大贯穿能力的高速箭矢。",
+          "effectIds": [
+            7034600,
+            7034700
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/ironeye",
+      "otherEffectIds": [
+        6642000,
+        6642100
+      ]
+    },
+    {
+      "key": "duchess",
+      "prefix": "女爵",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "优雅身段",
+          "description": "擅长节省攻击与闪避的精力，能够连续闪避。",
+          "effectIds": []
+        },
+        {
+          "kind": "skill",
+          "name": "重演",
+          "description": "让附近敌人再次承受最近一段时间内发生的伤害。",
+          "effectIds": [
+            6500300,
+            7010700,
+            7290000
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "落幕之章",
+          "description": "隐去自己与周围队友的身形，暂时躲避敌人的注意。",
+          "effectIds": [
+            7032700
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/duchess",
+      "otherEffectIds": [
+        6643000,
+        6643100,
+        7031800
+      ]
+    },
+    {
+      "key": "raider",
+      "prefix": "无赖",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "好胜心",
+          "description": "承受伤害会强化反击技艺；强化反击时能抵抗击倒。",
+          "effectIds": []
+        },
+        {
+          "kind": "skill",
+          "name": "反击",
+          "description": "摆出架势后挥拳反击，架势期间减轻来袭伤害；强化后可使大型敌人踉跄。",
+          "effectIds": [
+            6500400,
+            7031300
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "图腾碑石",
+          "description": "在地面唤起巨型墓碑，强化附近队友，也可阻挡箭矢并供攀爬。",
+          "effectIds": [
+            7310000
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/raider",
+      "otherEffectIds": [
+        6644000,
+        6644100
+      ]
+    },
+    {
+      "key": "revenant",
+      "prefix": "复仇者",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "死灵术",
+          "description": "召出被击败敌人的灵魂，暂时作为友方参战。",
+          "effectIds": [
+            6500500
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "召唤灵魂",
+          "description": "弹奏竖琴，选择召唤海伦、弗雷德利克或塞巴斯蒂安参战。",
+          "effectIds": [
+            7220000
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "不死行军",
+          "description": "暂时赋予自己与周围队友不死效果，救起濒死队友，并让家人进入强化状态。",
+          "effectIds": [
+            7010900,
+            7011200,
+            7031200
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/revenant",
+      "otherEffectIds": [
+        6645000,
+        6645100
+      ]
+    },
+    {
+      "key": "recluse",
+      "prefix": "隐士",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "驾驭元素",
+          "description": "识别可收集的属性痕，收集后恢复专注值。",
+          "effectIds": [
+            6500600,
+            7032800
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "混合魔法",
+          "description": "收集目标身上的属性痕，再将不同属性组合为混合魔法。",
+          "effectIds": [
+            6500600,
+            7032800
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "血魂歌",
+          "description": "咏唱禁忌血歌，在周围敌人身上刻下血印。",
+          "effectIds": [
+            7032900,
+            7034100
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/recluse",
+      "otherEffectIds": [
+        6646000,
+        6646100
+      ]
+    },
+    {
+      "key": "executor",
+      "prefix": "执行者",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "不屈",
+          "description": "从异常状态中恢复后，暂时提升攻击力与精力恢复速度。",
+          "effectIds": [
+            6500700
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "妖刀",
+          "description": "拔出妖刀，精准防御可弹开攻击；连续弹开攻击后解放刀身，获得强化攻击。持刀时无法奔跑。",
+          "effectIds": [
+            7034400,
+            7034500
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "熔炉百相之兽",
+          "description": "变身为原始野兽，以兽形发动攻击。",
+          "effectIds": [
+            7011700
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/executor",
+      "otherEffectIds": [
+        6647000,
+        6647100
+      ]
+    },
+    {
+      "key": "scholar",
+      "prefix": "学者",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "携物知识",
+          "description": "可携带更多道具；使用道具可提升对应类别的熟练度，解锁强化效果与额外效果。",
+          "effectIds": []
+        },
+        {
+          "kind": "skill",
+          "name": "探索",
+          "description": "观察目标并推进分析，记录可对目标产生效果。增加敌人样本、取得特殊记录和观察队友有助于推进分析。",
+          "effectIds": [
+            6500800,
+            7036200,
+            7036300,
+            7036500
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "共感术",
+          "description": "用书页连结敌人与队友。连结敌人间可传递伤害，也可恢复连结队友的血量；遭连结敌人攻击时可反伤。",
+          "effectIds": [
+            7036400
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/scholar",
+      "otherEffectIds": [
+        6647200,
+        6647300
+      ]
+    },
+    {
+      "key": "undertaker",
+      "prefix": "送葬者",
+      "abilities": [
+        {
+          "kind": "passive",
+          "name": "感知力量",
+          "description": "附近队友发动绝招，或吸收特定敌人的黑暗攻击后，可获得额外发动绝招的机会。",
+          "effectIds": []
+        },
+        {
+          "kind": "skill",
+          "name": "恍惚",
+          "description": "进入强化状态，提高机动能力，连续攻击可提升攻击力；消耗绝招量表可进一步强化。",
+          "effectIds": [
+            6500900
+          ]
+        },
+        {
+          "kind": "art",
+          "name": "不祥一击",
+          "description": "抽出体内异骨，快速飞向目标并发动重击，可在空中移动。",
+          "effectIds": [
+            6500900,
+            7036800,
+            7037300
+          ]
+        }
+      ],
+      "source": "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign/characters/undertaker",
+      "otherEffectIds": [
+        6647400,
+        6647500,
+        7036900,
+        7037000
+      ]
+    }
+  ],
+  "relics": [
+    {
+      "effectId": 7032400,
+      "name": "【追踪者】发动能力时，能累积绝招量表",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6500000,
+      "name": "【追踪者】技艺会附加引发异常状态出血的效果",
+      "detail": "钩爪相关的两个效果参数分别提供 60、55 点出血累积。",
+      "evidence": [
+        [
+          7500001,
+          "bloodAttackPower",
+          60
+        ],
+        [
+          7500002,
+          "bloodAttackPower",
+          55
+        ]
+      ],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7020000,
+      "name": "【追踪者】发动技艺时，轻攻击能使出 缠绕火焰的追加攻击（仅限大剑）",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7033200,
+      "name": "【追踪者】技艺的使用次数＋１",
+      "detail": "增加 1 次可储存的角色技艺使用次数。",
+      "evidence": [
+        [
+          7033200,
+          "additionalCharacterSkillUse",
+          1
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7010500,
+      "name": "【追踪者】发动绝招时，能燃起火焰、蔓延周围",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6640000,
+      "name": "【追踪者】提升集中力，但降低生命力",
+      "detail": "1 级时生命力 -1、集中力 +1；12 级时生命力 -5、集中力 +10。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6640100,
+      "name": "【追踪者】提升智力、信仰，但降低力气、灵巧",
+      "detail": "1 级时力气 -1、灵巧 -1、智力 +1、信仰 +1；12 级时力气 -7、灵巧 -5、智力 +15、信仰 +15。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7033400,
+      "name": "【守护者】在能力发动期间，防御成功时能形成冲击波",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6500100,
+      "name": "【守护者】发动技艺时，能提升周围我方人物的减伤率",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7011000,
+      "name": "【守护者】延长技艺的有效时间",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7012000,
+      "name": "【守护者】发动绝招时，能缓慢恢复周围我方人物的血量",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6641000,
+      "name": "【守护者】提升力气、灵巧，但降低生命力",
+      "detail": "1 级时生命力 -1、力气 +1、灵巧 +2；12 级时生命力 -8、力气 +9、灵巧 +19。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6641100,
+      "name": "【守护者】提升集中力、信仰，但降低生命力",
+      "detail": "1 级时生命力 -1、集中力 +1、信仰 +2；12 级时生命力 -6、集中力 +8、信仰 +17。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7011600,
+      "name": "【守护者】以戟蓄力攻击时，能引发旋风",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6500200,
+      "name": "【铁之眼】技艺会附加引发异常状态中毒的效果 对上陷入中毒的敌人，能给予大伤害",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7270100,
+      "name": "【铁之眼】技艺的使用次数＋１",
+      "detail": "增加 1 次可储存的角色技艺使用次数。",
+      "evidence": [
+        [
+          7270100,
+          "additionalCharacterSkillUse",
+          1
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7280000,
+      "name": "【铁之眼】延长弱点显露的时间",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7034600,
+      "name": "【铁之眼】蓄力发动绝招时，附加异常状态中毒",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7034700,
+      "name": "【铁之眼】发动绝招后，强化突刺反击",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6642000,
+      "name": "【铁之眼】提升感应，但降低灵巧",
+      "detail": "1 级时灵巧 -1、感应 +2；12 级时灵巧 -9、感应 +15。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6642100,
+      "name": "【铁之眼】提升生命力、力气，但降低灵巧",
+      "detail": "1 级时生命力 +1、力气 +2、灵巧 -2；12 级时生命力 +5、力气 +20、灵巧 -13。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6500300,
+      "name": "【女爵】发动技艺时，能进入短暂无敌状态",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7010700,
+      "name": "【女爵】短剑连击的最后攻击命中时， 能对着周围的敌人，再次上演最近做过的行动",
+      "detail": "追加再演的伤害倍率参数为 0.4。",
+      "evidence": [
+        [
+          7010701,
+          "restageAttackRate",
+          0.4
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7290000,
+      "name": "【女爵】提升技艺造成的伤害",
+      "detail": "强化再演的伤害倍率参数为 0.6。",
+      "evidence": [
+        [
+          7290001,
+          "restageAttackRate",
+          0.6
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7032700,
+      "name": "【女爵】在绝招发动期间，打倒敌人时能提升攻击力",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6643000,
+      "name": "【女爵】提升生命力、力气，但降低集中力",
+      "detail": "1 级时生命力 +1、集中力 -2、力气 +2；12 级时生命力 +3、集中力 -14、力气 +24。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6643100,
+      "name": "【女爵】提升集中力、信仰，但降低智力",
+      "detail": "1 级时集中力 +1、智力 -1、信仰 +2；12 级时集中力 +3、智力 -5、信仰 +13。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7031800,
+      "name": "【女爵】从背后使出致命一击后 自己的身影会变得难以辨识，并消除脚步声",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6500400,
+      "name": "【无赖】技艺命中敌人时，能降低对方的攻击力",
+      "detail": "目标五类攻击倍率设为 0.87，参数持续时间为 13 秒。",
+      "evidence": [
+        [
+          7500401,
+          "physicsAttackRate",
+          0.87
+        ],
+        [
+          7500401,
+          "duration",
+          13
+        ]
+      ],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7031300,
+      "name": "【无赖】在技艺发动期间，受到攻击时 能提升攻击力与精力上限",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7310000,
+      "name": "【无赖】延长绝招的有效时间",
+      "detail": "墓碑有效时间参数为 30 秒。",
+      "evidence": [
+        [
+          7310001,
+          "ultimateArtDuration",
+          30
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6644000,
+      "name": "【无赖】提升集中力、智力，但降低生命力、耐力",
+      "detail": "1 级时生命力 -1、集中力 +1、耐力 -1、智力 +2；12 级时生命力 -8、集中力 +9、耐力 -4、智力 +35。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6644100,
+      "name": "【无赖】提升感应，但降低生命力",
+      "detail": "1 级时生命力 -1、感应 +2；12 级时生命力 -4、感应 +17。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6500500,
+      "name": "【复仇者】发动能力时，能提升专注值上限",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7220000,
+      "name": "【复仇者】与家人并肩战斗期间，能强化自身",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7010900,
+      "name": "【复仇者】发动绝招时，能以自己的血量为代价 完全恢复周围我方人物的血量",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7011200,
+      "name": "【复仇者】发动绝招时，能引发灵火爆炸",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7031200,
+      "name": "【复仇者】发动绝招时，能强化家人与我方人物",
+      "detail": "强化效果的五类攻击倍率为 1.25，持续 30 秒。",
+      "evidence": [
+        [
+          7031202,
+          "physicsAttackRate",
+          1.25
+        ],
+        [
+          7031202,
+          "duration",
+          30
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6645000,
+      "name": "【复仇者】提升生命力、耐力，但降低集中力",
+      "detail": "1 级时生命力 +1、集中力 -1、耐力 +1；12 级时生命力 +5、集中力 -11、耐力 +5。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6645100,
+      "name": "【复仇者】提升力气，但降低信仰",
+      "detail": "1 级时力气 +2、信仰 -1；12 级时力气 +25、信仰 -6。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6500600,
+      "name": "【隐士】收集属性痕时，能提升该属性的减伤率",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7032800,
+      "name": "【隐士】收集属性痕时，能触发“魔法之境”",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7032900,
+      "name": "【隐士】发动绝招时 自己陷入异常状态出血，提升攻击力",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7034100,
+      "name": "【隐士】发动绝招时，能提升血量上限",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6646000,
+      "name": "【隐士】提升生命力、耐力、灵巧，但降低智力、信仰",
+      "detail": "1 级时生命力 +1、耐力 +1、灵巧 +2、智力 -1、信仰 -1；12 级时生命力 +4、耐力 +5、灵巧 +20、智力 -10、信仰 -10。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6646100,
+      "name": "【隐士】提升智力、信仰，但降低集中力",
+      "detail": "1 级时集中力 -2、智力 +2、信仰 +2；12 级时集中力 -13、智力 +12、信仰 +12。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6500700,
+      "name": "【执行者】发动能力时，能缓慢恢复血量",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7034400,
+      "name": "【执行者】提升技艺发动期间的攻击力 但攻击时会降低减伤率",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7034500,
+      "name": "【执行者】在技艺发动期间 妖刀进入解放状态时，能恢复血量",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7011700,
+      "name": "【执行者】在绝招发动期间，能以咆哮恢复血量",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6647000,
+      "name": "【执行者】提升生命力、耐力，但降低感应",
+      "detail": "1 级时生命力 +1、耐力 +1、感应 -2；12 级时生命力 +5、耐力 +6、感应 -13。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6647100,
+      "name": "【执行者】提升灵巧、感应，但降低生命力",
+      "detail": "1 级时生命力 -1、灵巧 +1、感应 +1；12 级时生命力 -7、灵巧 +12、感应 +9。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6500800,
+      "name": "【学者】对自己使用技艺时，能减少消耗的专注值",
+      "detail": "给自己的分析增益参数中，战技、魔法及祷告的专注值消耗倍率均为 0.85，持续 40 秒。",
+      "evidence": [
+        [
+          7500801,
+          "artsConsumptionRate",
+          0.85
+        ],
+        [
+          7500801,
+          "magicConsumptionRate",
+          0.85
+        ],
+        [
+          7500801,
+          "miracleConsumptionRate",
+          0.85
+        ],
+        [
+          7500801,
+          "duration",
+          40
+        ]
+      ],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7036200,
+      "name": "【学者】减缓技艺进行率的下降幅度",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7036300,
+      "name": "【学者】使用技艺时，提升目标我方人物的攻击力",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7036500,
+      "name": "【学者】每次使用技艺增加样本，能获得卢恩",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7036400,
+      "name": "【学者】对上已用绝招连结的敌人，持续给予伤害",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6647200,
+      "name": "【学者】提升集中力，但降低生命力",
+      "detail": "1 级时生命力 -1、集中力 +1；12 级时生命力 -3、集中力 +9。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6647300,
+      "name": "【学者】提升耐力、灵巧，但降低智力、感应",
+      "detail": "1 级时耐力 +1、灵巧 +6、智力 -1、感应 -5；12 级时耐力 +6、灵巧 +40、智力 -4、感应 -20。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6500900,
+      "name": "【送葬者】发动绝招后，能再次使用技艺",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7036800,
+      "name": "【送葬者】发动绝招时，提升攻击力",
+      "detail": "发动后的增益五类攻击倍率为 1.18，持续 40 秒。",
+      "evidence": [
+        [
+          7036801,
+          "physicsAttackRate",
+          1.18
+        ],
+        [
+          7036801,
+          "duration",
+          40
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7037300,
+      "name": "【送葬者】发动绝招时，恢复触碰到的我方人物的血量",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 6647400,
+      "name": "【送葬者】提升灵巧，但降低生命力、信仰",
+      "detail": "1 级时生命力 -1、灵巧 +2、信仰 -2；12 级时生命力 -5、灵巧 +19、信仰 -13。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6647500,
+      "name": "【送葬者】提升集中力、信仰，但降低力气",
+      "detail": "1 级时集中力 +1、力气 -2、信仰 +1；12 级时集中力 +9、力气 -15、信仰 +12。",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7036900,
+      "name": "【送葬者】连击的最后攻击命中时，提升攻击力",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7037000,
+      "name": "【送葬者】使用祷告将辅助效果附加在自己身上时 提升物理攻击力",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7000800,
+      "name": "缩短技艺的冷却时间＋１",
+      "detail": "角色技艺冷却时间乘以 0.95，单条缩短 5%。",
+      "evidence": [
+        [
+          7000800,
+          "characterSkillCooldownReduction",
+          0.95
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7000801,
+      "name": "缩短技艺的冷却时间＋２",
+      "detail": "角色技艺冷却时间乘以 0.925，单条缩短 7.5%。",
+      "evidence": [
+        [
+          7000801,
+          "characterSkillCooldownReduction",
+          0.925
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7000802,
+      "name": "缩短技艺的冷却时间＋３",
+      "detail": "角色技艺冷却时间乘以 0.9，单条缩短 10%。",
+      "evidence": [
+        [
+          7000802,
+          "characterSkillCooldownReduction",
+          0.9
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7000900,
+      "name": "自然累积绝招量表＋１",
+      "detail": "绝招量表自然累积速率参数为 1.05 倍。",
+      "evidence": [
+        [
+          7000900,
+          "ultimateArtGaugeRate",
+          1.05
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7000901,
+      "name": "自然累积绝招量表＋２",
+      "detail": "绝招量表自然累积速率参数为 1.075 倍。",
+      "evidence": [
+        [
+          7000901,
+          "ultimateArtGaugeRate",
+          1.075
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7000902,
+      "name": "自然累积绝招量表＋３",
+      "detail": "绝招量表自然累积速率参数为 1.1 倍。",
+      "evidence": [
+        [
+          7000902,
+          "ultimateArtGaugeRate",
+          1.1
+        ]
+      ],
+      "isCurse": false,
+      "normal": true,
+      "deep": false
+    },
+    {
+      "effectId": 7030600,
+      "name": "防御成功时，能累积绝招量表",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": true
+    },
+    {
+      "effectId": 6030600,
+      "name": "防御成功时，能累积绝招量表＋１",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7030800,
+      "name": "使出致命一击时，能累积绝招量表",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": true
+    },
+    {
+      "effectId": 6030800,
+      "name": "使出致命一击时，能累积绝招量表＋１",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 7090000,
+      "name": "打倒敌人时，能累积绝招量表",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": true,
+      "deep": true
+    },
+    {
+      "effectId": 6090000,
+      "name": "打倒敌人时，能累积绝招量表＋１",
+      "detail": "",
+      "evidence": [],
+      "isCurse": false,
+      "normal": false,
+      "deep": true
+    },
+    {
+      "effectId": 6840200,
+      "name": "降低绝招量表累积",
+      "detail": "",
+      "evidence": [],
+      "isCurse": true,
+      "normal": false,
+      "deep": true
+    }
+  ],
+  "generalIds": [
+    7000800,
+    7000801,
+    7000802,
+    7000900,
+    7000901,
+    7000902,
+    7030600,
+    6030600,
+    7030800,
+    6030800,
+    7090000,
+    6090000,
+    6840200
+  ]
+}

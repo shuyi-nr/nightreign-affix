@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-20T14:01:21.200Z",
+  "regulationSha256": "876a3ca279a4561d0c69f81fe5e510c75c59ab9a8a201694f8cf4a42c91e0268",
+  "definitionCommit": "f5969c060cea240476e9dd4d6a64eafa9dbafaab",
+  "checks": {
+    "bossGroups": 150,
+    "variants": 278,
+    "damageNumbers": 2224,
+    "ailmentNumbers": 1946,
+    "heroMechanicFacts": 126,
+    "hitNumbers": 756,
+    "resourceClasses": 30,
+    "resourceVariants": 50,
+    "explicitResourceLeaderRows": 46
+  },
+  "differences": []
+}

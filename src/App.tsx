@@ -27,7 +27,7 @@ const NAV_GROUPS: Array<{ label: string; items: Array<{ page: Page; label: strin
     label: '战斗资料',
     items: [
       { page: 'heroes', label: '角色数值' },
-      { page: 'bosses', label: 'Boss 抗性' },
+      { page: 'bosses', label: '首领抗性' },
       { page: 'nightlord', label: '夜王推算' },
     ],
   },

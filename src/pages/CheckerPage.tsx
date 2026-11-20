@@ -27,7 +27,7 @@ function candidatesFor(mode: CheckModeKey): CatalogEntry[] {
 }
 
 const MODE_DESC: Record<CheckModeKey, string> = {
-  CURRENT_NORMAL: '普通大遗物 · 1.03 / DLC 当前池',
+  CURRENT_NORMAL: '普通大遗物 · 1.03 / 追加内容当前池',
   LEGACY_NORMAL: '普通大遗物 · 1.02 及更早旧池',
   DEEP_POSITIVE: '深夜遗物 · 正面词条预检',
   COMPATIBILITY_ONLY: '只查重复 / 互斥 / 顺序',
@@ -404,7 +404,7 @@ export function CheckerPage() {
         <div className="favs-head">
           <div>
             <h2>本地收藏</h2>
-            <p className="hint">保存在浏览器 localStorage，仅本机可见；可导出备份，清理缓存后导入恢复。</p>
+            <p className="hint">保存在浏览器本地存储，仅本机可见；可导出备份，清理缓存后导入恢复。</p>
           </div>
           <div className="favs-tools">
             <button className="btn ghost small" onClick={exportFavorites}>

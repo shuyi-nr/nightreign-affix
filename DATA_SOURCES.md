@@ -1,5 +1,29 @@
 # 角色、Boss 与夜王模式数据（2026-10-31）
 
+## 角色技能说明与关联遗物（2026-11-20）
+
+### 本次扩充与独立参数复核
+
+`src/data/hero-mechanics.json` 新增全部 30 项技能的机制分解、基础冷却、14 类混合魔法与九类道具经验阈值。命中行分开记录攻击分量、基础削韧和冲击等级，不把参数分量当最终扣血；有技能武器时显示等级成长后的基础分量，未计属性补正、敌方防御和临时增益。兽形与混合魔法的固定攻击行保持原始分量，不伪造完整结算。未确认的重演精确窗口、共感术比例和召唤家人各招式完整伤害明确留空或注明范围，不根据未命名字段猜测。
+
+首领资料现为 **150 类 / 278 个变体**，比旧版增加 23 类 / 49 个变体。`src/data/resource-bosses.json` 提取 30 类 / 50 个资源点配置（一行已存在于旧表），包含营地、堡垒、城堡、遗迹、大教堂、地下要塞和火山口。按英文参数行名的明确地点标记归类；伴随狼、集群成员和普通守卫另行标注，不冒充全部都是独立首领。所用参数行名中带资源点以及 Boss / Elite / healthbar 标记的 46 行已全部收录；这项覆盖检查仅针对有明确标记的行，不等于已经逆向全部地图抽选脚本。
+
+来源是站长本机安装的 `regulation.bin`，容器版本 `10350000`，SHA-256 为 `876a3ca279a4561d0c69f81fe5e510c75c59ab9a8a201694f8cf4a42c91e0268`。定义和英文行名采用 [Smithbox 固定提交](https://github.com/vawser/Smithbox/tree/f5969c060cea240476e9dd4d6a64eafa9dbafaab/src/Smithbox.Data/Assets/PARAM/NR)；仅提取事实字段，不打包完整游戏文件。中文有游戏原名时采用原名，没有统一简中菜单名的类别使用中文描述，不宣称自行描述都是官方译名。英文标识保留用于内部查找与参数溯源，页面普通文案、首领与事件说明改为中文；作者名、版权和参数字段保留原标识。
+
+2026-11-20 重新查阅[官方更新目录](https://nightreign.eldenring.jp/news.html)：最近的 [PlayStation 1.03.4 更新](https://nightreign.eldenring.jp/article/260918_1.html)与 [PC 1.03.3 更新](https://nightreign.eldenring.jp/article/260702_1.html)仍均列 Regulation 1.03.5。软件版本与参数版本分开记录，不把软件安全更新误判为抗性数值已经变更。
+
+本次复核记录在 `COMBAT_DATA_VERIFICATION.json`：2,224 个伤害倍率、1,946 个异常阈值及对应免疫标记、126 个机制字段和 756 个命中／成长字段与原始参数一致，无差异。数值来源一致不代表所有动态交互已经实机验证，抗性仍是对应敌人参数的基础值。
+
+准备已解码 JSON 后，依次运行 `node tools/prepare-resource-bosses.mjs`、`node tools/prepare-compendium.mjs`、`node tools/prepare-hero-mechanics.mjs`、`node tools/audit-combat-data.mjs`。解码输入保留在忽略目录 `tools/shots/hero-details/`；生成器逐字段断言，缺少输入会失败，不自动用网络攻略补数。历史 `DATA_VERIFICATION.json` 保留 2026-10-31 核查范围，不覆盖历史记录。
+
+`src/data/hero-abilities.json` 覆盖 10 名角色的 30 项技能，以及 66 条专属和 13 条通用词条。基础技能描述分别根据 Bandai Namco 官方角色页整理，名称与说明均为中文。中文名称对照 BWIKI 收录的游戏菜单原文「三语:所有菜单文本」及其 dlc01 增量，仅取名称，不引用其社区机制分析。追踪者保命恢复条件、铁之眼被动对队友生效、无赖墓碑支援作用另对照官方玩法指南。每个角色在页面保留对应官方链接。
+
+遗物效果按现有 `affixes.json` 的 effectId 和游戏简中名称关联；按「能力」「技艺」「绝招」及触发条件人工归类。隐士的收集属性痕同时涉及被动恢复和技艺，因此允许同一效果在两个相关技能下出现；连击、背刺、属性转换等其余专属词条收在同页折叠区。通用冷却 / 量表词条单列，避免遗漏负面效果。
+
+额外数值仅取固定上游 `6fe8267682149568058649b5f25a1481ac06384e` 的 `nightreign-buffs-v1.03.5.json`。数据生成器会检查每条说明关联的 SpEffect 是否确实归属于该遗物，并逐字段断言数值与持续时间。女爵再演只引用 `restageAttackRate`，不据此推断异常累积、多人覆盖或多条叠加。无法确认详细数值的条目只展示游戏词条原文。属性变化取同修订 heroes 数据的 1 / 12 级参数锚点，不用有取整歧义的中间等级推算。
+
+生成命令为 `node tools/prepare-hero-abilities.mjs`，只打包小型展示数据，保留输入 SHA-256 和字段依据。与角色技能有关的通用物理 / 属性增伤是否作用于具体命中段仍需攻击数据及实测支持，此次不做逐段增伤计算。页面原有雷达仍显示基础属性。
+
 ## 角色与 Boss
 
 - 来源：[夜幕验物](https://github.com/sganggs/nightreign-relic-checker) 的 `data/nightreign-heroes-v1.03.5.json`、`data/nightreign-bosses-v1.03.5.json`。

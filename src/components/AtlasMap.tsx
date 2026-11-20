@@ -16,7 +16,7 @@ export function AtlasMap({title,points,note,background}:{title:string;points:Map
  const selected=points.find(p=>p.id===selectedId)??points[0];
  const filtered=points.filter(p=>(p.title+' '+p.detail+' '+p.id).toLowerCase().includes(query.trim().toLowerCase()));
  return <section className="atlas-panel" aria-label={title}>
-  <div className="atlas-panel-head"><div><span className="section-eyebrow">{usingBackground?'GAME MAP / FIELD MARKERS':'ORIGINAL POINT ATLAS'}</span><h3>{title}</h3></div><div className="map-zoom"><button className="btn ghost" aria-label="缩小点位图" disabled={zoom===1} onClick={()=>setZoom(Math.max(1,zoom-.5))}>−</button><span>{zoom}×</span><button className="btn ghost" aria-label="放大点位图" disabled={zoom===3} onClick={()=>setZoom(Math.min(3,zoom+.5))}>＋</button></div></div>
+  <div className="atlas-panel-head"><div><span className="section-eyebrow">{usingBackground?'游戏地图 · 点位标记':'点位示意'}</span><h3>{title}</h3></div><div className="map-zoom"><button className="btn ghost" aria-label="缩小点位图" disabled={zoom===1} onClick={()=>setZoom(Math.max(1,zoom-.5))}>−</button><span>{zoom}×</span><button className="btn ghost" aria-label="放大点位图" disabled={zoom===3} onClick={()=>setZoom(Math.min(3,zoom+.5))}>＋</button></div></div>
   {hasBackground&&<div className="map-layer-controls"><label><input type="checkbox" checked={showBackground} onChange={e=>setShowBackground(e.target.checked)}/>游戏地图底图</label><label><input type="checkbox" checked={showPoints} onChange={e=>setShowPoints(e.target.checked)}/>点位标记</label><label className="map-brightness">底图明暗<input type="range" min="35" max="100" value={brightness} disabled={!usingBackground} onChange={e=>setBrightness(Number(e.target.value))}/><output>{brightness}%</output></label></div>}
   <div className="atlas-layout">
    <div className="atlas-map-column">
@@ -29,8 +29,8 @@ export function AtlasMap({title,points,note,background}:{title:string;points:Map
       <rect x="100" y="130" width="880" height="850" fill="url(#atlas-grid)"/>
       <circle cx="530" cy="550" r="320" fill="none" stroke="#c9a25c" strokeOpacity=".08" strokeDasharray="3 12"/>
       <circle cx="530" cy="550" r="210" fill="none" stroke="#c9a25c" strokeOpacity=".06"/>
-      <path d="M150 225 V170 M136 190 L150 170 L164 190" fill="none" stroke="#c3d0dc" strokeWidth="2"/><text x="150" y="155" fill="#c3d0dc" fontSize="19" textAnchor="middle">N</text>
-      <text x="950" y="166" fill="#7e929e" fontSize="15" textAnchor="end">POINTS • NOT A TERRAIN MAP</text>
+      <path d="M150 225 V170 M136 190 L150 170 L164 190" fill="none" stroke="#c3d0dc" strokeWidth="2"/><text x="150" y="155" fill="#c3d0dc" fontSize="19" textAnchor="middle">北</text>
+      <text x="950" y="166" fill="#7e929e" fontSize="15" textAnchor="end">点位投影 · 不表示道路</text>
       {['A','B','C','D','E','F','G','H'].map((c,i)=><text key={c} x={150+i*100} y="960" fill="#7e929e" fontSize="15" textAnchor="middle">{c}</text>)}
       </g>}
       {(!hasBackground||showPoints)&&points.map(p=><g key={p.id} role="button" tabIndex={0} aria-label={`${p.id} ${p.title}`} aria-pressed={selected?.id===p.id} className="atlas-pin" onClick={()=>setSelectedId(p.id)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setSelectedId(p.id);}}}>
@@ -43,13 +43,13 @@ export function AtlasMap({title,points,note,background}:{title:string;points:Map
       </g>)}
      </svg>
     </div>
-    <div className="map-legend"><span><i style={{background:colors.boss}}/>Boss 候选点</span><span><i style={{background:colors.crystal}}/>共鸣结晶</span><span><i style={{background:colors.reward}}/>特殊奖励</span></div>
+    <div className="map-legend"><span><i style={{background:colors.boss}}/>首领 候选点</span><span><i style={{background:colors.crystal}}/>共鸣结晶</span><span><i style={{background:colors.reward}}/>特殊奖励</span></div>
     <p className="map-caption">{usingBackground?'游戏截图为一次出击示例，原有营地、夜雨与图标会随局变化；本站编号为候选点总览。可放大查看、单独开关标记，地下与地表请分层查看。':'原创点位图 · 上北下南 · 放大后可滚动。仅表达平面投影，图上网格与装饰圆不代表道路、楼层或可通行地形。'}</p>
     {hasBackground&&background&&<p className="map-image-credit">底图：{background.credit} · <a href={background.permissionReference} target="_blank" rel="noreferrer">来源与使用说明</a></p>}
     {!!background&&failedImage===background.image&&<p className="map-caption" role="status">底图加载失败，已显示点位示意图。点位查询仍可使用。</p>}
    </div>
    <div className="map-info">
-    <div className="selected-point" role="status"><span className="section-eyebrow">{selected?.id??'—'} / POINT INTEL</span><h4>{selected?.title??'暂无点位'}</h4><p>{selected?.detail??'此筛选下没有点位，请调整条件。'}</p>{selected&&<small>投影坐标 {selected.x} / {selected.y}</small>}</div>
+    <div className="selected-point" role="status"><span className="section-eyebrow">{selected?.id??'—'} · 点位详情</span><h4>{selected?.title??'暂无点位'}</h4><p>{selected?.detail??'此筛选下没有点位，请调整条件。'}</p>{selected&&<small>投影坐标 {selected.x} / {selected.y}</small>}</div>
     <label className="map-search">搜索点位<input className="input" value={query} placeholder="名称或编号，例如 B01" onChange={e=>setQuery(e.target.value)}/></label>
     <div className="point-list" aria-label="地图点位列表">{filtered.map(p=><button key={p.id} className={selected?.id===p.id?'is-active':''} onClick={()=>setSelectedId(p.id)} aria-pressed={selected?.id===p.id}><b style={{color:colors[p.kind]}}>{p.id}</b><span>{p.title}</span>{p.underground&&<small>地下</small>}</button>)}{!filtered.length&&<p className="hint">没有匹配点位。</p>}</div>
    </div>
