@@ -32,6 +32,7 @@ export function prepareIntro(): () => void {
   return () => {
     if (ready) return;
     ready = true;
+    document.dispatchEvent(new Event('nr-app-ready'));
     const remaining = seen || screen.dataset.skip === 'true' ? 0 : Math.max(0, 2000 - (performance.now() - started));
     if (remaining === 0) finish();
     else timer = window.setTimeout(finish, remaining);

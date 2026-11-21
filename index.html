@@ -92,6 +92,11 @@
       .boot-progress::after { content: ''; position: absolute; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, #e8c884, transparent); animation: boot-travel 2s ease-in-out infinite; }
       .boot-skip { margin-top: 25px; min-height: 44px; padding: 8px 20px; border: 1px solid #c9a25c45; border-radius: 24px; background: #11151dcc; color: #b9aa8f; font: 12px system-ui, sans-serif; cursor: pointer; letter-spacing: .15em; }
       .boot-skip:focus-visible { outline: 2px solid #edcf94; outline-offset: 4px; }
+      .boot-recovery { max-width: 340px; margin: 16px 24px 0; color: #b9aa8f; font: 13px/1.8 system-ui, sans-serif; text-align: center; }
+      .boot-recovery[hidden] { display: none; }
+      .boot-recovery p { margin: 8px 0; }
+      .boot-recovery .boot-skip { margin-top: 8px; }
+      .boot-recovery small { display: block; margin-top: 8px; color: #8e929c; }
       @keyframes boot-shine-pass { 0%, 4% { background-position: 120% 50%; } 48%, 100% { background-position: -120% 50%; } }
       @keyframes boot-travel { from { transform: translateX(-110%); } to { transform: translateX(310%); } }
       @media (max-width: 480px) { .boot-kicker { font-size: 9px; letter-spacing: .22em; margin-bottom: 30px; } .boot-title { letter-spacing: 0; margin-bottom: 18px; } .boot-splash::before { width: 86vw; } }
@@ -108,17 +113,96 @@
         <p class="boot-text">正在唤醒遗物档案</p>
         <div class="boot-progress" aria-hidden="true"></div>
         <button class="boot-skip" type="button">点击跳过</button>
+        <div class="boot-recovery" hidden role="status" aria-live="polite">
+          <p id="boot-recovery-message"></p>
+          <button class="boot-skip" id="boot-reload" type="button">重新加载</button>
+          <small>重新加载会保留本地收藏</small>
+        </div>
       </div>
     <script>
-      (() => {
-        const screen = document.getElementById('boot-screen');
+      (function () {
+        var screen = document.getElementById('boot-screen');
+        var root = document.getElementById('root');
+        var panel = screen.querySelector('.boot-recovery');
+        var message = document.getElementById('boot-recovery-message');
+        var skip = screen.querySelector('button');
+        var ready = false;
+        var retrying = false;
+        var retryKey = 'nr-recover';
+        var scope = new URL('./', location.href).href;
+        var recoveryAttempt = new URL(location.href).searchParams.has(retryKey);
         screen.dataset.started = String(performance.now());
-        screen.addEventListener('click', () => {
-          screen.dataset.skip = 'true';
-          const button = screen.querySelector('button');
-          if (button) button.textContent = '正在进入…';
-          document.dispatchEvent(new Event('nr-intro-skip'));
+
+        function showIssue(text) {
+          if (ready || !screen.isConnected) return;
+          panel.hidden = false;
+          message.textContent = text;
+          screen.querySelector('.boot-text').textContent = '连接暂时遇到问题';
+          skip.hidden = true;
+        }
+        function retry() {
+          if (ready || retrying) return;
+          retrying = true;
+          showIssue('正在重新获取网站文件，请稍候…');
+          var button = document.getElementById('boot-reload');
+          button.disabled = true;
+          button.textContent = '正在重新加载…';
+          var url = new URL(location.href);
+          url.searchParams.set(retryKey, String(Date.now()));
+          var navigated = false;
+          function reload() {
+            if (navigated || ready) return;
+            navigated = true;
+            location.replace(url.href);
+          }
+          var tasks = [];
+          // Only this site's offline files are reset; favorites stay untouched.
+          if ('serviceWorker' in navigator) tasks.push(navigator.serviceWorker.getRegistrations().then(function (workers) {
+            return Promise.all(workers.filter(function (worker) { return worker.scope === scope; }).map(function (worker) { return worker.unregister(); }));
+          }).catch(function () {}));
+          if ('caches' in window) tasks.push(caches.keys().then(function (keys) {
+            return Promise.all(keys.filter(function (key) { return key.indexOf('nightreign-affix-') === 0; }).map(function (key) { return caches.delete(key); }));
+          }).catch(function () {}));
+          Promise.all(tasks).then(reload, reload);
+          setTimeout(reload, 1500);
+        }
+        function failed() {
+          if (ready) return;
+          showIssue(navigator.onLine === false ? '当前网络不可用，请恢复连接后重新加载。' : '网站文件未能完整加载，请重新加载。');
+          if (!recoveryAttempt && navigator.onLine !== false) retry();
+        }
+        function appReady() {
+          if (ready) return;
+          ready = true;
+          clearTimeout(slowTimer);
+          clearTimeout(retryTimer);
+          observer.disconnect();
+          if (recoveryAttempt) {
+            var url = new URL(location.href);
+            url.searchParams.delete(retryKey);
+            try { history.replaceState(history.state, '', url.href); } catch (e) {}
+          }
+        }
+        // Also recognize older app bundles during an HTML/cache version change.
+        var observer = new MutationObserver(function () {
+          if (root.querySelector('.app-shell')) appReady();
         });
+        observer.observe(root, { childList: true, subtree: true });
+        document.addEventListener('nr-app-ready', appReady);
+        window.addEventListener('error', function (event) {
+          if (event.target && event.target.tagName === 'SCRIPT' || event.message) failed();
+        }, true);
+        window.addEventListener('vite:preloadError', failed);
+        document.getElementById('boot-reload').addEventListener('click', function (event) { event.stopPropagation(); retry(); });
+        screen.addEventListener('click', function (event) {
+          if (panel.contains(event.target)) return;
+          screen.dataset.skip = 'true';
+          skip.textContent = '正在进入…';
+          document.dispatchEvent(new Event('nr-intro-skip'));
+          if (!ready) showIssue('主程序仍在加载。若长时间没有进入，请重新加载。');
+        });
+        var slowTimer = setTimeout(function () { showIssue('加载时间较长，可以重新加载以获取最新网站文件。'); }, 10000);
+        var retryTimer = setTimeout(function () { if (!ready && !recoveryAttempt && navigator.onLine !== false) retry(); }, 20000);
       })();
     </script>
     <script type="module" src="/src/main.tsx"></script>

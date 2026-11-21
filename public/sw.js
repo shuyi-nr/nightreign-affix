@@ -3,7 +3,7 @@
 //   asset referenced by the built index.html (so the site works fully offline).
 // - fetch:   navigations are network-first with a cached-shell fallback;
 //            same-origin assets are cache-first.
-const VERSION = 'v13-20261120-combat-guide';
+const VERSION = 'v14-20261121-startup-recovery';
 const CACHE = `nightreign-affix-${VERSION}`;
 
 // Files with names known at build time (copied verbatim from public/).
@@ -57,7 +57,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     (async () => {
       const keys = await caches.keys();
-      await Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)));
+      await Promise.all(keys.filter((k) => k.startsWith('nightreign-affix-') && k !== CACHE).map((k) => caches.delete(k)));
       await self.clients.claim();
     })(),
   );
@@ -73,14 +73,20 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       (async () => {
         try {
-          const net = await fetch(req);
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 5000);
+          let net;
+          try { net = await fetch(req, { signal: controller.signal }); }
+          finally { clearTimeout(timeout); }
+          if (!net.ok) throw new Error('Navigation response was not successful');
           const cache = await caches.open(CACHE);
-          cache.put('./', net.clone());
+          event.waitUntil(cache.put('./', net.clone()).catch(() => {}));
           return net;
         } catch {
-          const cached = await caches.match('./');
+          const cache = await caches.open(CACHE);
+          const cached = await cache.match('./');
           if (cached) return cached;
-          return new Response('Offline', { status: 503, headers: { 'Content-Type': 'text/plain' } });
+          return new Response('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>暂时无法连接</title><p>当前网络连接不可用，且尚未保存离线页面。</p><p>恢复连接后请刷新重试，本地收藏不会被清除。</p></html>', { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
         }
       })(),
     );
